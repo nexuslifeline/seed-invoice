@@ -5,11 +5,11 @@ import Modal from './components/Forms/Modal'
 import { useState } from 'react';
 
 function App() {
-  let [ isOpen, setIsOpen ] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const onModalClose = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   const ModalContent = () => (
     <div>
@@ -19,7 +19,7 @@ function App() {
         <button style={{ marginLeft: '8px' }}  onClick={() => setIsOpen(false)}>Cancel</button>
       </div>
     </div>
-  )
+  );
 
   return (
     <div style={{ padding: '30px' }}>
@@ -36,9 +36,9 @@ function App() {
       <Modal
         isOpen={isOpen}
         title={'this is a modal title'}
-        onClose={onModalClose}
-        size={'xl'}
-        content={<ModalContent/>}>
+        // onClose={onModalClose}
+        size={Modal.Sizes.LARGE}
+        content={<ModalContent />}>
       </Modal>
       <button onClick={() => setIsOpen(true)}>Open Modal</button>
     </div>

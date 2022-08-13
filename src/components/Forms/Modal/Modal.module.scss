@@ -1,6 +1,6 @@
 @import '../../../shared/styles/variables.scss';
 
-.modal_container {
+.container {
   position: relative;
   z-index: 50;
 }
@@ -12,7 +12,7 @@
   opacity: 0.3;
 }
 
-.panel_container {
+.panelContainer {
   position: fixed;
   inset: 0;
   display: flex;
@@ -27,46 +27,46 @@
   border-radius: 8px;
 }
 
-.modal--sm  {
+.small  {
   width: 300px;
   max-width: 300px;
 }
 
-.modal--md {
+.medium {
   width: 500px;
   max-width: 500px;
 }
 
-.modal--lg {
- width: 800px;
+.large {
+  width: 800px;
   max-width: 800px;
 }
 
-.modal--xl {
+.extraLarge {
   width: 1140px;
   max-width: 1140px;
 }
 
-.modal_transition_enter {
+.transitionEnter {
   transition: opacity .3s ease-out;
 }
 
-.modal_transition_leave {
+.transitionLeave {
   transition: opacity 0.2s ease-out;
 }
 
-.modal_transform_enter_from {
+.enterFrom {
   opacity: 0;
 }
 
-.modal_transform_enter_to {
+.enterTo {
   opacity: 100;
 }
 
-.modal_transform_leave_from {
+.leaveFrom {
   opacity: 100;
 }
 
-.modal_transform_leave_to {
+.leaveTo {
   opacity: 0;
 }

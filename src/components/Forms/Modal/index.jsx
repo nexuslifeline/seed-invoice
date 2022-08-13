@@ -1,38 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Styles from './Modal.module.scss';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
-const Modal = ({ isOpen, title, description, content, onClose, size }) => {
-  let cx = classNames.bind(Styles);
-  const panelClass = cx({
-    panel: true,
-    'modal--sm': size === 'sm',
-    'modal--md': size === 'md',
-    'modal--lg': size === 'lg',
-    'modal--xl': size === 'xl'
-  })
+const sizeClasses = {
+  sm: Styles.small,
+  md: Styles.medium,
+  lg: Styles.large,
+  xl: Styles.extraLarge
+};
+
+const sizes = {
+  SMALL: 'sm',
+  MEDIUM: 'md',
+  LARGE: 'lg',
+  EXTRA_LARGE: 'xl',
+};
+
+const Modal = ({ isOpen, title, content, children, onClose, size }) => {
   return (
     <Transition
       show={isOpen}
-      enter={Styles.modal_transition_enter}
-      enterFrom={Styles.modal_transform_enter_from}
-      enterTo={Styles.modal_transform_enter_to}
-      leave={Styles.modal_transition_leave}
-      leaveFrom={Styles.modal_transform_leave_from}
-      leaveTo={Styles.modal_transform_leave_to}
+      // enter={Styles.modal_transition_enter}
+      enterFrom={Styles.enterFrom}
+      enterTo={Styles.enterTo}
+      // leave={Styles.modal_transition_leave}
+      leaveFrom={Styles.leaveFrom}
+      leaveTo={Styles.leaveTo}
       as={Fragment}
     >
       <Dialog
         onClose={() => {}} //prevent closing on backdrop click
-        className={Styles.modal_container}>
+        className={Styles.container}>
         <div className={Styles.backdrop}></div>
-        <div className={Styles.panel_container}>
-          <Dialog.Panel className={panelClass}>
-            { title && (<Dialog.Title>{title}</Dialog.Title>) }
-            {content}
+        <div className={Styles.panelContainer}>
+          <Dialog.Panel className={classNames(Styles.panel, sizeClasses[size])}>
+            {title && (<Dialog.Title>{title}</Dialog.Title>)}
+            {content || children}
           </Dialog.Panel>
         </div>
       </Dialog>
@@ -40,8 +46,15 @@ const Modal = ({ isOpen, title, description, content, onClose, size }) => {
   );
 };
 
-Modal.propTypes = {
+Modal.Sizes = sizes;
 
+Modal.propTypes = {
+  isOpen: PropTypes.bool,
+  title: PropTypes.string,
+  content: PropTypes.string,
+  children: PropTypes.node,
+  onClose: PropTypes.func,
+  size: PropTypes.string,
 };
 
 export default Modal;
