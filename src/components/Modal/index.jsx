@@ -51,7 +51,7 @@ Modal.Sizes = sizes;
 Modal.propTypes = {
   isOpen: PropTypes.bool,
   title: PropTypes.string,
-  content: PropTypes.string,
+  content: PropTypes.any,
   children: PropTypes.node,
   onClose: PropTypes.func,
   size: PropTypes.string,

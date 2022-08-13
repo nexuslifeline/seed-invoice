@@ -10,16 +10,16 @@ $orange-80: #ffbc70;
 $orange-90: #ffb45e;
 $orange-100: #FFA33A;
 
-$gray-10: #eeeeee;
-$gray-20: #dedede;
-$gray-30: #cdcdcd;
-$gray-40: #bdbdbd;
-$gray-50: #acacac;
-$gray-60: #9b9b9b;
-$gray-70: #8b8b8b;
-$gray-80: #acacac;
-$gray-90: #7a7a7a;
-$gray-100: #6a6a6a;
+$gray-10: #f0f0f0;
+$gray-20: #e0e0e0;
+$gray-30: #d1d1d1;
+$gray-40: #c1c1c1;
+$gray-50: #b2b2b2;
+$gray-60: #a2a2a2;
+$gray-70: #939393;
+$gray-80: #838383;
+$gray-90: #747474;
+$gray-100: #646464;
 
 $purple-10: #f3e5fe;
 $purple-20: #e8cbfd;
@@ -81,7 +81,6 @@ $input-height: 48px;
 $textarea-height: 80px;
 
 
-
 $fs-1: 12px;
 $fs-2: 13px;
 $fs-3: 14px;
@@ -90,5 +89,8 @@ $fs-5: 20px;
 $fs-6: 24px;
 $fs-7: 30px;
 
-$primary: $orange-100;
-$secondary: $purple-100;
+$primary: $purple-90;
+$primary-border-color: $purple-100;
+
+$secondary: $gray-10;
+$secondary-border-color: $gray-80;

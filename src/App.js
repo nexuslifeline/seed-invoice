@@ -1,15 +1,16 @@
-import TextInput from './components/Forms/TextInput';
-import TextArea from './components/Forms/TextArea';
+import TextInput from './components/Form/TextInput';
+import TextArea from './components/Form/TextArea';
 import Tab from './components/Tab';
-import Modal from './components/Forms/Modal'
+import Modal from './components/Modal';
+import Toggle from './components/Form/Toggle';
 import { useState } from 'react';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onModalClose = () => {
-    setIsOpen(false);
-  };
+  // const onModalClose = () => {
+  //   setIsOpen(false);
+  // };
 
   const ModalContent = () => (
     <div>
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div style={{ padding: '30px' }}>
+      <Toggle label={`Yes, I am above 18y/o`} />
       <TextInput label={'Full Name'} placeholder={'Enter Full Name'} />
       <TextArea label={'Address'} placeholder={'Enter Address'} />
       <Tab>

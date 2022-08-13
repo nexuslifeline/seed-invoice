@@ -6,13 +6,13 @@ const Panel = ({ children }) => {
   return <Tab.Panel className={Styles.panelItem}>{children}</Tab.Panel>;
 };
 
-const SimpleTab = ({ children, ...props }) => {
+const BaseTab = ({ children, ...props }) => {
   return (
     <Tab.Group {...props}>
       {children.length > 0 && (
         <Tab.List className={Styles.tabList}>
-          {children.map((item) => (
-            <Tab className={Styles.listItem}>{item?.props?.title}</Tab>
+          {children.map((item, idx) => (
+            <Tab key={idx} className={Styles.listItem}>{item?.props?.title}</Tab>
           ))}
         </Tab.List>
       )}
@@ -21,11 +21,11 @@ const SimpleTab = ({ children, ...props }) => {
   );
 };
 
-SimpleTab.Panel = Panel;
+BaseTab.Panel = Panel;
 
-SimpleTab.propTypes = {
+BaseTab.propTypes = {
   items: PropTypes.array,
   children: PropTypes.node,
 };
 
-export default SimpleTab;
+export default BaseTab;
