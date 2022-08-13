@@ -20,21 +20,19 @@
   -webkit-transition: 0.2s ease all;
 }
 
-.input {
+.textarea {
   font-size: $fs-3;
   display: block;
   width: 100%;
-  height: $input-height;
-  padding: 0 20px;
+  // min-height: $input-height;
+  padding: 15px 20px;
   background: $white;
   color: $black;
   border: 1px solid;
   border-radius: $input-radius;
   box-sizing: border-box;
 
-
   &:focus{
-
 
     outline: none;
 
@@ -63,10 +61,7 @@
 }
 
 
-
-
-
-.input:not(:placeholder-shown) ~ .label {
+.textarea:not(:placeholder-shown) ~ .label {
   top:-8px;
   font-size:13px;
 }

@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Styles from './TextInput.module.scss';
+import Styles from './TextArea.module.scss';
 import classNames from 'classnames';
 
-const TextInput = ({ label, ...props }) => {
+const TextArea = ({ label, ...props }) => {
   return (
     <div className={Styles.container}>
-      <input type='text' className={Styles.input} {...props}  />
+      <textarea className={Styles.textarea} {...props}  />
       <label className={Styles.label}>{label}</label>
     </div>
   );
 };
 
-TextInput.propTypes = {
+TextArea.propTypes = {
 
 };
 
-export default TextInput;
+export default TextArea;
