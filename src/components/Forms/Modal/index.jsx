@@ -23,16 +23,16 @@ const Modal = ({ isOpen, title, content, children, onClose, size }) => {
   return (
     <Transition
       show={isOpen}
-      // enter={Styles.modal_transition_enter}
+      enter={Styles.transitionEnter}
       enterFrom={Styles.enterFrom}
       enterTo={Styles.enterTo}
-      // leave={Styles.modal_transition_leave}
+      leave={Styles.transitionLeave}
       leaveFrom={Styles.leaveFrom}
       leaveTo={Styles.leaveTo}
       as={Fragment}
     >
       <Dialog
-        onClose={() => {}} //prevent closing on backdrop click
+        onClose={onClose} 
         className={Styles.container}>
         <div className={Styles.backdrop}></div>
         <div className={Styles.panelContainer}>
@@ -51,10 +51,16 @@ Modal.Sizes = sizes;
 Modal.propTypes = {
   isOpen: PropTypes.bool,
   title: PropTypes.string,
-  content: PropTypes.string,
+  content: PropTypes.any,
   children: PropTypes.node,
-  onClose: PropTypes.func,
+  onClose: PropTypes.func, //called when click on backdrop
   size: PropTypes.string,
 };
+
+Modal.defaultProps = {
+  onClose: () => {},
+  size: Modal.Sizes.SMALL
+}
+
 
 export default Modal;
