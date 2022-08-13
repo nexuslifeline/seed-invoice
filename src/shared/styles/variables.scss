@@ -1,35 +1,94 @@
 
-$orange-10: #fff4e6;
-$orange-20: #ffeed8;
-$orange-80: #ffa33a;
+$orange-10: #fff7ed;
+$orange-20: #ffeedb;
+$orange-30: #ffe6c9;
+$orange-40: #ffdeb7;
+$orange-50: #ffd5a5;
+$orange-60: #ffcd94;
+$orange-70: #ffc482;
+$orange-80: #ffbc70;
+$orange-90: #ffb45e;
+$orange-100: #FFA33A;
 
-$purple-80: #7908cf;
+$gray-10: #eeeeee;
+$gray-20: #dedede;
+$gray-30: #cdcdcd;
+$gray-40: #bdbdbd;
+$gray-50: #acacac;
+$gray-60: #9b9b9b;
+$gray-70: #8b8b8b;
+$gray-80: #acacac;
+$gray-90: #7a7a7a;
+$gray-100: #6a6a6a;
 
-$light-gray-10: #fbfbfb;
-$light-gray-20: #f6f6f6;
+$purple-10: #f3e5fe;
+$purple-20: #e8cbfd;
+$purple-30: #dcb2fc;
+$purple-40: #d098fb;
+$purple-50: #c47efa;
+$purple-60: #b964f9;
+$purple-70: #ad4af8;
+$purple-80: #a130f7;
+$purple-90: #9517f6;
+$purple-100: #8809e9;
 
-$gray-10: #e3e3e3;
-$gray-20: #8b8b8b;
-$gray-30: #7d7d7d;
-$gray-40: #6b6b6b;
-$gray-50: #595959;
+$red-10: #fee9ec;
+$red-20: #fcd3d9;
+$red-30: #fbbdc6;
+$red-40: #f9a7b3;
+$red-50: #f8929f;
+$red-60: #f77c8c;
+$red-70: #f56679;
+$red-80: #f45066;
+$red-90: #f23a53;
+$red-100: #f12440;
 
-$red: #f12440;
+$green-10: #e0fee9;
+$green-20: #c1fdd3;
+$green-30: #a2fcbd;
+$green-40: #83fba7;
+$green-50: #64fa92;
+$green-60: #45f97c;
+$green-70: #26f866;
+$green-80: #08f650;
+$green-90: #07d746;
+$green-100: #06B83C;
 
-$green: #08c45f;
-
-$blue: #1269db;
+$blue-10: #e6f0fd;
+$blue-20: #cde1fb;
+$blue-30: #b3d1f9;
+$blue-40: #9ac2f7;
+$blue-50: #81b3f5;
+$blue-60: #68a4f3;
+$blue-70: #4e95f0;
+$blue-80: #3585ee;
+$blue-90: #1c76ec;
+$blue-100: #1269db;
 
 $white: #ffffff;
 $black: #212529;
 
-
 $cubic: cubic-bezier(.165, .84, .44, 1);
 
-$input-radius: 6px;
+// form elements variables
+$form-input-radius: 6px;
+$form-input-border-color: $gray-30;
+
+// input variables
 $input-height: 48px;
+
+// textarea variables
+$textarea-height: 80px;
+
+
 
 $fs-1: 12px;
 $fs-2: 13px;
 $fs-3: 14px;
 $fs-4: 16px;
+$fs-5: 20px;
+$fs-6: 24px;
+$fs-7: 30px;
+
+$primary: $orange-100;
+$secondary: $purple-100;

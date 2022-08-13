@@ -3,17 +3,18 @@ import PropTypes from 'prop-types';
 import Styles from './TextArea.module.scss';
 import classNames from 'classnames';
 
-const TextArea = ({ label, ...props }) => {
+const TextArea = ({ label, containerClassName, ...props }) => {
   return (
-    <div className={Styles.container}>
-      <textarea className={Styles.textarea} {...props}  />
+    <div className={classNames(Styles.container, containerClassName)}>
+      <textarea className={Styles.input} {...props} placeholder=' ' />
       <label className={Styles.label}>{label}</label>
     </div>
   );
 };
 
 TextArea.propTypes = {
-
+  label: PropTypes.string,
+  containerClassName: PropTypes.string,
 };
 
 export default TextArea;
