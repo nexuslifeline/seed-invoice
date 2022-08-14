@@ -91,6 +91,21 @@ $fs-7: 30px;
 
 $primary: $purple-90;
 $primary-border-color: $purple-100;
+$primary-hover-bg-color: $purple-100;
+$primary-disabled-bg-color: $purple-10;
 
-$secondary: $gray-10;
-$secondary-border-color: $gray-80;
+$secondary: $gray-90;
+$secondary-border-color: $gray-100;
+$secondary-hover-bg-color: $gray-100;
+$secondary-disabled-bg-color: $gray-10;
+
+$danger: $red-90;
+$danger-border-color: $red-100;
+$danger-hover-bg-color: $red-100;
+$danger-disabled-bg-color: $red-10;
+
+$success: $green-90;
+$success-border-color: $green-100;
+$success-hover-bg-color: $green-100;
+$success-disabled-bg-color: $green-10;
+
