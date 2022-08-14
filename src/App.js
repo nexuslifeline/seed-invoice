@@ -14,7 +14,7 @@ function App() {
 
   const ModalContent = () => (
     <div>
-      <div style={{ margin: '0 0 20px 0'}}> this is sample content props fro modal</div>
+      <div style={{ margin: '0 0 20px 0'}}> this is sample content props for modal</div>
       <div style={{ display: 'flex', justifyContent:'flex-end', alignItems:'center' }}>
         <button onClick={() => setIsOpen(false)}>Deactivate</button>
         <button style={{ marginLeft: '8px' }}  onClick={() => setIsOpen(false)}>Cancel</button>
@@ -38,7 +38,6 @@ function App() {
       <Modal
         isOpen={isOpen}
         title={'this is a modal title'}
-        // onClose={onModalClose}
         size={Modal.Sizes.LARGE}
         content={<ModalContent />}>
       </Modal>
