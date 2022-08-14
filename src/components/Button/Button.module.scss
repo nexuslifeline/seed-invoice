@@ -1,0 +1,93 @@
+@import '../../shared/styles/variables.scss';
+
+.container {
+  border: solid 1px transparent;
+  text-align: center;
+  vertical-align: center;
+  line-height: 1.5;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.small {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+
+.medium {
+  font-size: 1rem;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+}
+
+.large {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
+.primary {
+  background-color: $primary;
+  color: $white;
+  border-color: $primary-border-color;
+
+  &:hover {
+    background-color: $primary-hover-bg-color;
+  }
+
+  &:disabled {
+    background-color: $primary-disabled-bg-color;
+    color: $gray-60;
+  }
+}
+
+.secondary {
+  background-color: $secondary;
+  color: $white;
+  border-color: $secondary-border-color;
+
+  &:hover {
+    background-color: $secondary-hover-bg-color;
+  }
+
+  &:disabled {
+    background-color: $secondary-disabled-bg-color;
+    color: $gray-60;
+  }
+}
+
+.danger {
+  background-color: $danger;
+  color: $white;
+  border-color: $danger-border-color;
+
+  &:hover {
+    background-color: $danger-hover-bg-color;
+  }
+
+  &:disabled {
+    background-color: $danger-disabled-bg-color;
+    color: $gray-60;
+  }
+}
+
+.success {
+  background-color: $success;
+  color: $white;
+  border-color: $success-border-color;
+
+  &:hover {
+    background-color: $success-hover-bg-color;
+  }
+
+  &:disabled {
+    background-color: $success-disabled-bg-color;
+    color: $gray-60;
+  }
+}
