@@ -1,8 +1,8 @@
-import TextInput from './components/Form/TextInput';
-import TextArea from './components/Form/TextArea';
-import Tab from './components/Tab';
-import Modal from './components/Modal';
-import Toggle from './components/Form/Toggle';
+import TextInput from 'components/Form/TextInput';
+import TextArea from 'components/Form/TextArea';
+import Tab from 'components/Tab';
+import Modal from 'components/Modal';
+import Toggle from 'components/Form/Toggle';
 import { useState } from 'react';
 
 function App() {
@@ -24,15 +24,15 @@ function App() {
 
   return (
     <div style={{ padding: '30px' }}>
-      <Toggle label={`Yes, I am above 18y/o`} />
+      <Toggle label={'Yes, I am above 18y/o'} />
       <TextInput label={'Full Name'} placeholder={'Enter Full Name'} />
       <TextArea label={'Address'} placeholder={'Enter Address'} />
       <Tab>
         <Tab.Panel title={'Full time'}>
-          <h1>{`Tab 1`}</h1>
+          <h1>{'Tab 1'}</h1>
         </Tab.Panel>
         <Tab.Panel title={'Part time'}>
-          <h1>{`Tab 2`}</h1>
+          <h1>{'Tab 2'}</h1>
         </Tab.Panel>
       </Tab>
       <Modal
