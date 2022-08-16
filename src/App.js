@@ -7,7 +7,6 @@ import Button from 'components/Button';
 import { useState } from 'react';
 import PasswordInput from 'components/Form/PasswordInput';
 
-
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -69,10 +68,7 @@ function App() {
           label={'Im a primary sm Button'}
           size={Button.Sizes.SMALL}
         />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary md button')}
-          label={'Im a primary md Button'}
-        />
+        <Button onClick={(e) => handleButtonClick(e, 'primary md button')} label={'Im a primary md Button'} />
         <Button
           onClick={(e) => handleButtonClick(e, 'primary lg button')}
           label={'Im a primary lg Button'}
@@ -182,15 +178,16 @@ function App() {
         />
       </div>
 
-      <div style={{marginTop: '20px'}}>
+      <div style={{ marginTop: '20px' }}>
         <PasswordInput
-          label={"Password"}
+          label={'Password'}
           placeholder={'Enter your password.'}
           value={password}
-          onChange={(e) => setPassword(e.target.value)}/>
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
         <ul>
-          <li>Strong: 1 Uppercase, 1 Lowercase, 1 digit, 1 special char,  >8 char</li>
+          <li>Strong: 1 Uppercase, 1 Lowercase, 1 digit, 1 special char, >8 char</li>
           <li>Medium: atleast 6 char, no digit || no upper || no lowercase || no special char</li>
           <li>Weak: not strong and not medium</li>
         </ul>
