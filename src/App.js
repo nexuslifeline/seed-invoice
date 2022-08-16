@@ -5,9 +5,13 @@ import Modal from 'components/Modal';
 import Toggle from 'components/Form/Toggle';
 import Button from 'components/Button';
 import { useState } from 'react';
+import PasswordInput from 'components/Form/PasswordInput';
+
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [password, setPassword] = useState('');
 
   const buttonContainerStyle = {
     marginTop: '10px',
@@ -176,6 +180,20 @@ function App() {
           variant={Button.Variants.SUCCESS}
           disabled
         />
+      </div>
+
+      <div style={{marginTop: '20px'}}>
+        <PasswordInput
+          label={"Password"}
+          placeholder={'Enter your password.'}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}/>
+
+        <ul>
+          <li>Strong: 1 Uppercase, 1 Lowercase, 1 digit, 1 special char,  >8 char</li>
+          <li>Medium: atleast 6 char, no digit || no upper || no lowercase || no special char</li>
+          <li>Weak: not strong and not medium</li>
+        </ul>
       </div>
     </div>
   );
