@@ -12,7 +12,9 @@ const BaseTab = ({ children, ...props }) => {
       {children.length > 0 && (
         <Tab.List className={Styles.tabList}>
           {children.map((item, idx) => (
-            <Tab key={idx} className={Styles.listItem}>{item?.props?.title}</Tab>
+            <Tab key={idx} className={Styles.listItem}>
+              {item?.props?.title}
+            </Tab>
           ))}
         </Tab.List>
       )}

@@ -9,7 +9,7 @@ const sizeClasses = {
   sm: Styles.small,
   md: Styles.medium,
   lg: Styles.large,
-  xl: Styles.extraLarge
+  xl: Styles.extraLarge,
 };
 
 const sizes = {
@@ -29,15 +29,12 @@ const Modal = ({ isOpen, title, content, children, onClose, size }) => {
       leave={Styles.transitionLeave}
       leaveFrom={Styles.leaveFrom}
       leaveTo={Styles.leaveTo}
-      as={Fragment}
-    >
-      <Dialog
-        onClose={onClose} 
-        className={Styles.container}>
+      as={Fragment}>
+      <Dialog onClose={onClose} className={Styles.container}>
         <div className={Styles.backdrop}></div>
         <div className={Styles.panelContainer}>
           <Dialog.Panel className={classNames(Styles.panel, sizeClasses[size])}>
-            {title && (<Dialog.Title>{title}</Dialog.Title>)}
+            {title && <Dialog.Title>{title}</Dialog.Title>}
             {content || children}
           </Dialog.Panel>
         </div>
@@ -59,8 +56,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   onClose: () => {},
-  size: Modal.Sizes.SMALL
-}
-
+  size: Modal.Sizes.SMALL,
+};
 
 export default Modal;

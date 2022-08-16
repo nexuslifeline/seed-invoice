@@ -2,9 +2,7 @@ import TextArea from './TextArea';
 import TextInput from './TextInput';
 import PropTypes from 'prop-types';
 
-const Form = ({ children }) => (
-  <form>{children}</form>
-);
+const Form = ({ children }) => <form>{children}</form>;
 
 Form.TextArea = TextArea;
 Form.TextInput = TextInput;

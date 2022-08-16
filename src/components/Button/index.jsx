@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import Styles from './Button.module.scss';
 import classNames from 'classnames';
 
-const sizeClasses = {
-  sm: Styles.small,
-  md: Styles.medium,
-  lg: Styles.large
-};
+const sizeClasses = { sm: Styles.small, md: Styles.medium, lg: Styles.large };
 
 const sizes = {
   SMALL: 'sm',
@@ -20,20 +16,23 @@ const variantClasses = {
   secondary: Styles.secondary,
   warning: Styles.warning,
   danger: Styles.danger,
-  success: Styles.success
-}
+  success: Styles.success,
+};
 
 const variants = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   WARNING: 'warning',
   DANGER: 'danger',
-  SUCCESS: 'success'
-}
+  SUCCESS: 'success',
+};
 
-const Button = ({ label, size, variant, onClick, disabled, children }) => {
+const Button = ({ label, size, variant, disabled, children, ...props }) => {
   return (
-    <button onClick={onClick} disabled={disabled} className={classNames(Styles.container, variantClasses[variant], sizeClasses[size])}>
+    <button
+      disabled={disabled}
+      className={classNames(Styles.container, variantClasses[variant], sizeClasses[size])}
+      {...props}>
       {children || label}
     </button>
   );
@@ -47,14 +46,14 @@ Button.propTypes = {
   size: PropTypes.string,
   isBlock: PropTypes.bool,
   onClick: PropTypes.func,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
   label: 'Button',
   size: Button.Sizes.MEDIUM,
   variant: Button.Variants.PRIMARY,
-  disabled: false
-}
+  disabled: false,
+};
 
 export default Button;

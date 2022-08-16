@@ -1,0 +1,25 @@
+{
+    "plugins": [
+        "unused-imports",
+        "prettier"
+    ],
+    "extends": [
+        "react-app",
+        "prettier",
+        "react-app/jest",
+    ],
+    "ignorePatterns": [
+        "archive/**/*"
+    ],
+    "rules": {
+        "react/jsx-no-target-blank": "off",
+        "no-unused-expressions": "off",
+        "react/display-name": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "usePrettierrc": true
+            }
+        ]
+    }
+}
