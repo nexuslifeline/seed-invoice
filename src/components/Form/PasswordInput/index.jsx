@@ -28,7 +28,7 @@ const strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-
 //medium strength if 6 char or below length or no digit, or no capital char
 const mediumPassword = new RegExp(`${minSix}|${noDigit}|${noCapital}|${noSpecialChar}`);
 
-const PasswordInput = ({ label, containerClassName, ...props }) => {
+const PasswordInput = ({ label, containerClassName, showStrength, ...props }) => {
   const [passwordStrength, setPasswordStrength] = useState('');
 
   const checkPassword = (value) => {
@@ -49,14 +49,16 @@ const PasswordInput = ({ label, containerClassName, ...props }) => {
   const debounceCheckPassword = useCallback(debounce(checkPassword, 350), []);
 
   useEffect(() => {
-    debounceCheckPassword(props?.value);
+    if (showStrength) {
+      debounceCheckPassword(props?.value);
+    }
   }, [props.value]);
 
   return (
     <div className={classNames(Styles.container, containerClassName)}>
       <input type='password' className={Styles.input} {...props} />
       <label className={Styles.label}>{label}</label>
-      {passwordStrength && (
+      {showStrength && passwordStrength && (
         <span className={classNames(Styles.strength, passwordStrengthClasses[passwordStrength])}>
           {passwordStrength}
         </span>
@@ -70,6 +72,7 @@ PasswordInput.PasswordStrengths = passwordStrengths;
 PasswordInput.propTypes = {
   label: PropTypes.string,
   containerClassName: PropTypes.string,
+  showStrength: PropTypes.bool,
 };
 
 export default PasswordInput;
