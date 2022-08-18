@@ -1,5 +1,21 @@
 @import '../../shared/styles/variables.scss';
 
+.menu {
+  position: relative;
+  min-width: 10rem;
+  text-align: right;
+  display: inline-block;
+}
+
+.chevronDown {
+  fill: $white;
+  height: .875rem;
+  width: .875rem;
+  margin-left: 8px;
+  text-align: center;
+  vertical-align: center;
+}
+
 .container {
   border: solid 1px transparent;
   text-align: center;
@@ -10,6 +26,14 @@
   &:disabled {
     cursor: default;
   }
+}
+
+.pill {
+  border-radius: 50rem !important;
+}
+
+.block {
+  width: 100%;
 }
 
 .small {
@@ -90,4 +114,121 @@
     background-color: $success-disabled-bg-color;
     color: $gray-60;
   }
+}
+
+.primaryOutline {
+  background-color: $white;
+  color: $primary;
+  border-color: $primary-border-color;
+
+  &:hover {
+    background-color: $primary-outline-hover-bg-color;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: $primary-disabled-bg-color;
+    color: $gray-60;
+  }
+}
+
+.secondaryOutline {
+  background-color: $white;
+  color: $secondary;
+  border-color: $secondary-border-color;
+
+  &:hover {
+    background-color: $secondary-outline-hover-bg-color;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: $secondary-disabled-bg-color;
+    color: $gray-60;
+  }
+}
+
+.dangerOutline {
+  background-color: $white;
+  color: $danger;
+  border-color: $danger-border-color;
+
+  &:hover {
+    background-color: $danger-outline-hover-bg-color;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: $danger-disabled-bg-color;
+    color: $gray-60;
+  }
+}
+
+.successOutline {
+  background-color: $white;
+  color: $success;
+  border-color: $success-border-color;
+
+  &:hover {
+    background-color: $success-outline-hover-bg-color;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: $success-disabled-bg-color;
+    color: $gray-60;
+  }
+}
+
+.menuItems {
+  position: absolute;
+  right: 0;
+  margin-top: .3rem;
+  width: 100%;
+  transform-origin: top right;
+  z-index: 30;
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 0.25rem;
+  padding: .5rem;
+
+}
+
+.menuItem {
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  padding: .3rem 0.5rem;
+  border-radius: 0.25rem;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+
+}
+
+
+.transitionEnter {
+  transition: opacity .3s ease-out;
+}
+
+.transitionLeave {
+  transition: opacity 0.2s ease-out;
+}
+
+.enterFrom {
+  opacity: 0;
+}
+
+.enterTo {
+  opacity: 100;
+}
+
+.leaveFrom {
+  opacity: 100;
+}
+
+.leaveTo {
+  opacity: 0;
 }

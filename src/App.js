@@ -10,6 +10,37 @@ import PasswordInput from 'components/Form/PasswordInput';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handMoreActionClick = (e, button) => {
+    alert(button);
+  };
+
+  const [moreActions, setMoreActions] = useState([
+    {
+      label: 'Action1',
+      onClick: (e) => {
+        handMoreActionClick(e, 'action 1');
+      },
+    },
+    {
+      label: 'Action2',
+      onClick: (e) => {
+        handMoreActionClick(e, 'action 2');
+      },
+    },
+    {
+      label: 'Action3',
+      onClick: (e) => {
+        handMoreActionClick(e, 'action 3');
+      },
+    },
+    {
+      label: 'Action4',
+      onClick: (e) => {
+        handMoreActionClick(e, 'action 4');
+      },
+    },
+  ]);
+
   const [password, setPassword] = useState('');
 
   const buttonContainerStyle = {
@@ -178,16 +209,212 @@ function App() {
         />
       </div>
 
+      <div style={buttonContainerStyle}>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'primary sm outline button')}
+          label={'Im a primary outline sm Button'}
+          size={Button.Sizes.SMALL}
+          variant={Button.Variants.PRIMARY_OUTLINE}>
+          <span>children content</span>
+        </Button>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'primary sm  outline button')}
+          label={'Im a primaryoutline  sm Button'}
+          size={Button.Sizes.SMALL}
+          variant={Button.Variants.PRIMARY_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'primary md outline button')}
+          label={'Im a primary outline md Button'}
+          variant={Button.Variants.PRIMARY_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'primary lg outline button')}
+          label={'Im a primary outline lg Button'}
+          size={Button.Sizes.LARGE}
+          variant={Button.Variants.PRIMARY_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'primary md outline button')}
+          label={'Im a primary outline md disabled Button'}
+          disabled
+          variant={Button.Variants.PRIMARY_OUTLINE}
+        />
+      </div>
+
+      <div style={buttonContainerStyle}>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'secondary sm outline button')}
+          label={'Im a secondary outline sm Button'}
+          size={Button.Sizes.SMALL}
+          variant={Button.Variants.SECONDARY_OUTLINE}>
+          <span>children content</span>
+        </Button>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'secondary sm  outline button')}
+          label={'Im a secondary outline  sm Button'}
+          size={Button.Sizes.SMALL}
+          variant={Button.Variants.SECONDARY_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'secondary md outline button')}
+          label={'Im a secondary outline md Button'}
+          variant={Button.Variants.SECONDARY_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'secondary lg outline button')}
+          label={'Im a secondary outline lg Button'}
+          size={Button.Sizes.LARGE}
+          variant={Button.Variants.SECONDARY_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'secondary md outline button')}
+          label={'Im a secondary outline md disabled Button'}
+          disabled
+          variant={Button.Variants.SECONDARY_OUTLINE}
+        />
+      </div>
+
+      <div style={buttonContainerStyle}>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'danger sm outline button')}
+          label={'Im a danger outline sm Button'}
+          size={Button.Sizes.SMALL}
+          variant={Button.Variants.DANGER_OUTLINE}>
+          <span>children content</span>
+        </Button>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'danger sm  outline button')}
+          label={'Im a danger outline  sm Button'}
+          size={Button.Sizes.SMALL}
+          variant={Button.Variants.DANGER_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'danger md outline button')}
+          label={'Im a danger outline md Button'}
+          variant={Button.Variants.DANGER_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'danger lg outline button')}
+          label={'Im a danger outline lg Button'}
+          size={Button.Sizes.LARGE}
+          variant={Button.Variants.DANGER_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'danger md outline button')}
+          label={'Im a danger outline md disabled Button'}
+          disabled
+          variant={Button.Variants.DANGER_OUTLINE}
+        />
+      </div>
+
+      <div style={buttonContainerStyle}>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'success sm outline button')}
+          label={'Im a success outline sm Button'}
+          size={Button.Sizes.SMALL}
+          variant={Button.Variants.SUCCESS_OUTLINE}>
+          <span>children content</span>
+        </Button>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'success sm  outline button')}
+          label={'Im a success outline  sm Button'}
+          size={Button.Sizes.SMALL}
+          variant={Button.Variants.SUCCESS_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'success md outline button')}
+          label={'Im a success outline md Button'}
+          variant={Button.Variants.SUCCESS_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'success lg outline button')}
+          label={'Im a success outline lg Button'}
+          size={Button.Sizes.LARGE}
+          variant={Button.Variants.SUCCESS_OUTLINE}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'success md outline button')}
+          label={'Im a success outline md disabled Button'}
+          disabled
+          variant={Button.Variants.SUCCESS_OUTLINE}
+        />
+      </div>
+
+      <div style={buttonContainerStyle}>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'primary pill sm button')}
+          label={'Im a primary pill sm Button'}
+          size={Button.Sizes.SMALL}
+          pill
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'secondary pill sm button')}
+          label={'Im a secondary pill sm Button'}
+          size={Button.Sizes.SMALL}
+          pill
+          variant={Button.Variants.SECONDARY}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'danger pill sm button')}
+          label={'Im a danger pill sm Button'}
+          size={Button.Sizes.SMALL}
+          pill
+          variant={Button.Variants.DANGER}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'success pill sm button')}
+          label={'Im a success pill sm Button'}
+          size={Button.Sizes.SMALL}
+          pill
+          variant={Button.Variants.SUCCESS}
+        />
+        <Button
+          onClick={(e) => handleButtonClick(e, 'success pill sm button')}
+          label={'Im a success pill sm Button'}
+          size={Button.Sizes.SMALL}
+          pill
+          variant={Button.Variants.PRIMARY_OUTLINE}
+        />
+      </div>
+
+      <div style={buttonContainerStyle}>
+        <Button onClick={(e) => handleButtonClick(e, 'block button')} label={'Im a block button'} block />
+      </div>
+
+      <div style={buttonContainerStyle}>
+        <Button
+          onClick={(e) => handleButtonClick(e, 'block button')}
+          label={'More Actions'}
+          moreActions={moreActions}
+        />
+
+        <Button
+          onClick={(e) => handleButtonClick(e, 'block button')}
+          label={'More Actions'}
+          moreActions={moreActions}
+          size='sm'
+        />
+
+        <Button
+          onClick={(e) => handleButtonClick(e, 'block button')}
+          label={'More Actions'}
+          moreActions={moreActions}
+          size='lg'
+        />
+      </div>
+
       <div style={{ marginTop: '20px' }}>
         <PasswordInput
           label={'Password'}
           placeholder={'Enter your password.'}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          showStrength
         />
 
         <ul>
-          <li>Strong: 1 Uppercase, 1 Lowercase, 1 digit, 1 special char, >8 char</li>
+          <li>Strong: 1 Uppercase, 1 Lowercase, 1 digit, 1 special char, 8 char</li>
           <li>Medium: atleast 6 char, no digit || no upper || no lowercase || no special char</li>
           <li>Weak: not strong and not medium</li>
         </ul>
