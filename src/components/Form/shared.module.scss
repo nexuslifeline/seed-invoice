@@ -46,11 +46,13 @@ input.input {
 
   &:focus,
   &:not(:placeholder-shown) {
+
     ~.label {
       top: -8px;
       font-size: $fs-2;
     }
   }
+
 
   &:not(:focus)::-webkit-input-placeholder {
     /* WebKit browsers */

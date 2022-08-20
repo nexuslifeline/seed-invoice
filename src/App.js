@@ -6,9 +6,11 @@ import Toggle from 'components/Form/Toggle';
 import Button from 'components/Button';
 import { useState } from 'react';
 import PasswordInput from 'components/Form/PasswordInput';
+import Select from 'components/Form/Select';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [fruits, setFruits] = useState('');
 
   const handMoreActionClick = (e, button) => {
     alert(button);
@@ -67,9 +69,24 @@ function App() {
     alert(desc);
   };
 
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+  ];
+
   return (
     <div style={{ padding: '30px' }}>
       <Toggle label={'Yes, I am above 18y/o'} />
+      <Select
+        label={'Fruits'}
+        closeMenuOnSelect={false}
+        value={fruits}
+        onChange={(e) => setFruits(e)}
+        options={options}
+        isClearable
+      />
+      <br />
       <TextInput label={'Full Name'} placeholder={'Enter Full Name'} />
       <br />
       <TextArea label={'Address'} placeholder={'Enter Address'} />
