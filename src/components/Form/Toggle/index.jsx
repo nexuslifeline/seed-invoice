@@ -5,10 +5,13 @@ import classNames from 'classnames';
 
 const Toggle = ({ label, ...props }) => {
   return (
-    <label className={Styles.switch}>
-      <input type='checkbox' {...props} />
-      <span className={classNames(Styles.slider, Styles.round)} />
-    </label>
+    <div className={Styles.container}>
+      <label className={Styles.switch}>
+        <input type='checkbox' {...props} />
+        <span className={classNames(Styles.slider, Styles.round)} />
+      </label>
+      {label && <label className={Styles.label}>{label}</label>}
+    </div>
   );
 };
 

@@ -78,6 +78,8 @@ function App() {
   return (
     <div style={{ padding: '30px' }}>
       <Toggle label={'Yes, I am above 18y/o'} />
+      <br />
+      <br />
       <Select
         label={'Fruits'}
         closeMenuOnSelect={false}
