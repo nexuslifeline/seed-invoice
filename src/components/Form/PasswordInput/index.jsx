@@ -4,17 +4,18 @@ import PropTypes from 'prop-types';
 import Styles from './PasswordInput.module.scss';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
+import StrengthBar from './StrengthBar';
 
-const passwordStrengthClasses = {
-  strong: Styles.strong,
-  medium: Styles.medium,
-  weak: Styles.weak,
-};
-
-const passwordStrengths = {
+const strengths = {
   STRONG: 'strong',
   MEDIUM: 'medium',
   WEAK: 'weak',
+};
+
+const score = {
+  strong: 100,
+  medium: 65,
+  weak: 40,
 };
 
 const noCapital = '(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{8,})|(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{6,})';
@@ -29,45 +30,41 @@ const strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-
 const mediumPassword = new RegExp(`${minSix}|${noDigit}|${noCapital}|${noSpecialChar}`);
 
 const PasswordInput = ({ label, containerClassName, showStrength, ...props }) => {
-  const [passwordStrength, setPasswordStrength] = useState('');
+  const [strength, setStrength] = useState('');
 
   const checkPassword = (value) => {
     if (!value) {
-      setPasswordStrength('');
+      setStrength('');
       return;
     }
 
     if (strongPassword.test(value)) {
-      setPasswordStrength(passwordStrengths.STRONG);
+      setStrength(strengths.STRONG);
     } else if (mediumPassword.test(value)) {
-      setPasswordStrength(passwordStrengths.MEDIUM);
+      setStrength(strengths.MEDIUM);
     } else {
-      setPasswordStrength(passwordStrengths.WEAK);
+      setStrength(strengths.WEAK);
     }
   };
 
-  const debounceCheckPassword = useCallback(debounce(checkPassword, 350), []);
+  const debounceCheckPassword = useCallback(debounce(checkPassword, 200), []);
 
   useEffect(() => {
     if (showStrength) {
       debounceCheckPassword(props?.value);
     }
-  }, [props.value]);
+  }, [props.value, showStrength]);
 
   return (
     <div className={classNames(Styles.container, containerClassName)}>
       <input type='password' className={Styles.input} {...props} />
       <label className={Styles.label}>{label}</label>
-      {showStrength && passwordStrength && (
-        <span className={classNames(Styles.strength, passwordStrengthClasses[passwordStrength])}>
-          {passwordStrength}
-        </span>
-      )}
+      <StrengthBar {...{ strength, size: score[strength] }} />
     </div>
   );
 };
 
-PasswordInput.PasswordStrengths = passwordStrengths;
+PasswordInput.strengths = strengths;
 
 PasswordInput.propTypes = {
   label: PropTypes.string,

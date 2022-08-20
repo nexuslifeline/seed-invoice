@@ -71,7 +71,9 @@ function App() {
     <div style={{ padding: '30px' }}>
       <Toggle label={'Yes, I am above 18y/o'} />
       <TextInput label={'Full Name'} placeholder={'Enter Full Name'} />
+      <br />
       <TextArea label={'Address'} placeholder={'Enter Address'} />
+      <br />
       <Tab>
         <Tab.Panel title={'Full time'}>
           <h1>{'Tab 1'}</h1>

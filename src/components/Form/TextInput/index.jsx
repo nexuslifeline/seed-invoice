@@ -6,7 +6,7 @@ import classNames from 'classnames';
 const TextInput = ({ label, containerClassName, ...props }) => {
   return (
     <div className={classNames(Styles.container, containerClassName)}>
-      <input type='text' className={Styles.input} {...props} placeholder=' ' />
+      <input type='text' className={Styles.input} {...props} />
       <label className={Styles.label}>{label}</label>
     </div>
   );
