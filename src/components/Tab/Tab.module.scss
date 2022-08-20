@@ -1,16 +1,23 @@
 @import '../../shared/styles/variables.scss';
 
+.tabList {
+  border-bottom: 1px solid $gray-10;
+}
+
 .listItem {
-  font-size: $fs-2;
-  padding: 6px 40px;
+  font-size: $fs-3;
+  padding: 6px 10px;
   background: none;
   border: 0;
   cursor: pointer;
-  border-bottom: 1px solid $gray-10;
   outline: none;
 
   &[aria-selected='true'] {
     border-bottom: 2px solid $primary;
+  }
+
+  &:not(:last-child) {
+    margin-right: 30px;
   }
 }
 

@@ -14,8 +14,8 @@ const strengths = {
 
 const score = {
   strong: 100,
-  medium: 65,
-  weak: 40,
+  medium: 80,
+  weak: 30,
 };
 
 const noCapital = '(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{8,})|(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{6,})';
@@ -59,7 +59,7 @@ const PasswordInput = ({ label, containerClassName, showStrength, ...props }) =>
     <div className={classNames(Styles.container, containerClassName)}>
       <input type='password' className={Styles.input} {...props} />
       <label className={Styles.label}>{label}</label>
-      <StrengthBar {...{ strength, size: score[strength] }} />
+      {showStrength && <StrengthBar {...{ strength, size: score[strength] }} />}
     </div>
   );
 };
