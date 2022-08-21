@@ -16,24 +16,39 @@ function App() {
     alert(button);
   };
 
-  const [moreActions, setMoreActions] = useState([
+  const SampleIcon = ({ ...props }) => {
+    return (
+      <svg {...props} width='24px' height='24px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path d='M22.987 10.25l-9 7.99c-.57.51-1.28.76-1.99.76s-1.42-.25-1.98-.74c0-.01-.01-.01-.01-.01l-.02-.02-8.98-7.98c-1.24-1.1-1.35-3.002-.25-4.242 1.1-1.24 3-1.35 4.23-.25l7.01 6.23 7.01-6.23c1.24-1.1 3.13-.99 4.24.25 1.1 1.24.98 3.13-.26 4.24z' />
+      </svg>
+    );
+  };
+
+  const moreActions = [
     {
       label: 'Action1',
       onClick: (e) => {
         handMoreActionClick(e, 'action 1');
       },
+      icon: <SampleIcon style={{ fill: 'gray' }} />,
     },
     {
       label: 'Action2',
       onClick: (e) => {
         handMoreActionClick(e, 'action 2');
       },
+      children: (
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <SampleIcon style={{ marginRight: '8px' }} /> Using Children slot
+        </div>
+      ),
     },
     {
       label: 'Action3',
       onClick: (e) => {
         handMoreActionClick(e, 'action 3');
       },
+      icon: <SampleIcon style={{ fill: 'gray' }} />,
     },
     {
       label: 'Action4',
@@ -41,7 +56,7 @@ function App() {
         handMoreActionClick(e, 'action 4');
       },
     },
-  ]);
+  ];
 
   const [password, setPassword] = useState('');
 
@@ -109,23 +124,10 @@ function App() {
       <button onClick={() => setIsOpen(true)}>Open Modal</button>
 
       <div style={buttonContainerStyle}>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary sm button')}
-          label={'Im a primary sm Button'}
-          size={Button.Sizes.SMALL}>
+        <Button onClick={(e) => handleButtonClick(e, 'primary sm button')} label={'Im a primary sm Button'}>
           <span>children content</span>
         </Button>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary sm button')}
-          label={'Im a primary sm Button'}
-          size={Button.Sizes.SMALL}
-        />
-        <Button onClick={(e) => handleButtonClick(e, 'primary md button')} label={'Im a primary md Button'} />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary lg button')}
-          label={'Im a primary lg Button'}
-          size={Button.Sizes.LARGE}
-        />
+        <Button onClick={(e) => handleButtonClick(e, 'primary sm button')} label={'Im a primary sm Button'} />
         <Button
           onClick={(e) => handleButtonClick(e, 'primary md button')}
           label={'Im a primary md disabled Button'}
@@ -137,25 +139,12 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'secondary sm button')}
           label={'Im a secondary sm Button'}
-          size={Button.Sizes.SMALL}
           variant={Button.Variants.SECONDARY}>
           <span>children content</span>
         </Button>
         <Button
-          onClick={(e) => handleButtonClick(e, 'secondary sm button')}
-          label={'Im a secondary sm Button'}
-          size={Button.Sizes.SMALL}
-          variant={Button.Variants.SECONDARY}
-        />
-        <Button
           onClick={(e) => handleButtonClick(e, 'secondary md button')}
           label={'Im a secondary md Button'}
-          variant={Button.Variants.SECONDARY}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'secondary lg button')}
-          label={'Im a secondary lg Button'}
-          size={Button.Sizes.LARGE}
           variant={Button.Variants.SECONDARY}
         />
         <Button
@@ -170,25 +159,12 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'danger sm button')}
           label={'Im a danger sm Button'}
-          size={Button.Sizes.SMALL}
           variant={Button.Variants.DANGER}>
           <span>children content</span>
         </Button>
         <Button
-          onClick={(e) => handleButtonClick(e, 'danger sm button')}
-          label={'Im a danger sm Button'}
-          size={Button.Sizes.SMALL}
-          variant={Button.Variants.DANGER}
-        />
-        <Button
           onClick={(e) => handleButtonClick(e, 'danger md button')}
           label={'Im a danger md Button'}
-          variant={Button.Variants.DANGER}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'danger lg button')}
-          label={'Im a danger lg Button'}
-          size={Button.Sizes.LARGE}
           variant={Button.Variants.DANGER}
         />
         <Button
@@ -206,20 +182,8 @@ function App() {
           <span>children content</span>
         </Button>
         <Button
-          onClick={(e) => handleButtonClick(e, 'success sm button')}
-          label={'Im a success sm Button'}
-          size={Button.Sizes.SMALL}
-          variant={Button.Variants.SUCCESS}
-        />
-        <Button
           onClick={(e) => handleButtonClick(e, 'success md button')}
           label={'Im a success md Button'}
-          variant={Button.Variants.SUCCESS}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success lg button')}
-          label={'Im a success lg Button'}
-          size={Button.Sizes.LARGE}
           variant={Button.Variants.SUCCESS}
         />
         <Button
@@ -234,25 +198,12 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'primary sm outline button')}
           label={'Im a primary outline sm Button'}
-          size={Button.Sizes.SMALL}
           variant={Button.Variants.PRIMARY_OUTLINE}>
           <span>children content</span>
         </Button>
         <Button
-          onClick={(e) => handleButtonClick(e, 'primary sm  outline button')}
-          label={'Im a primaryoutline  sm Button'}
-          size={Button.Sizes.SMALL}
-          variant={Button.Variants.PRIMARY_OUTLINE}
-        />
-        <Button
           onClick={(e) => handleButtonClick(e, 'primary md outline button')}
           label={'Im a primary outline md Button'}
-          variant={Button.Variants.PRIMARY_OUTLINE}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary lg outline button')}
-          label={'Im a primary outline lg Button'}
-          size={Button.Sizes.LARGE}
           variant={Button.Variants.PRIMARY_OUTLINE}
         />
         <Button
@@ -267,25 +218,12 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'secondary sm outline button')}
           label={'Im a secondary outline sm Button'}
-          size={Button.Sizes.SMALL}
           variant={Button.Variants.SECONDARY_OUTLINE}>
           <span>children content</span>
         </Button>
         <Button
-          onClick={(e) => handleButtonClick(e, 'secondary sm  outline button')}
-          label={'Im a secondary outline  sm Button'}
-          size={Button.Sizes.SMALL}
-          variant={Button.Variants.SECONDARY_OUTLINE}
-        />
-        <Button
           onClick={(e) => handleButtonClick(e, 'secondary md outline button')}
           label={'Im a secondary outline md Button'}
-          variant={Button.Variants.SECONDARY_OUTLINE}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'secondary lg outline button')}
-          label={'Im a secondary outline lg Button'}
-          size={Button.Sizes.LARGE}
           variant={Button.Variants.SECONDARY_OUTLINE}
         />
         <Button
@@ -300,25 +238,12 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'danger sm outline button')}
           label={'Im a danger outline sm Button'}
-          size={Button.Sizes.SMALL}
           variant={Button.Variants.DANGER_OUTLINE}>
           <span>children content</span>
         </Button>
         <Button
-          onClick={(e) => handleButtonClick(e, 'danger sm  outline button')}
-          label={'Im a danger outline  sm Button'}
-          size={Button.Sizes.SMALL}
-          variant={Button.Variants.DANGER_OUTLINE}
-        />
-        <Button
           onClick={(e) => handleButtonClick(e, 'danger md outline button')}
           label={'Im a danger outline md Button'}
-          variant={Button.Variants.DANGER_OUTLINE}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'danger lg outline button')}
-          label={'Im a danger outline lg Button'}
-          size={Button.Sizes.LARGE}
           variant={Button.Variants.DANGER_OUTLINE}
         />
         <Button
@@ -333,27 +258,16 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'success sm outline button')}
           label={'Im a success outline sm Button'}
-          size={Button.Sizes.SMALL}
           variant={Button.Variants.SUCCESS_OUTLINE}>
           <span>children content</span>
         </Button>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success sm  outline button')}
-          label={'Im a success outline  sm Button'}
-          size={Button.Sizes.SMALL}
-          variant={Button.Variants.SUCCESS_OUTLINE}
-        />
+
         <Button
           onClick={(e) => handleButtonClick(e, 'success md outline button')}
           label={'Im a success outline md Button'}
           variant={Button.Variants.SUCCESS_OUTLINE}
         />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success lg outline button')}
-          label={'Im a success outline lg Button'}
-          size={Button.Sizes.LARGE}
-          variant={Button.Variants.SUCCESS_OUTLINE}
-        />
+
         <Button
           onClick={(e) => handleButtonClick(e, 'success md outline button')}
           label={'Im a success outline md disabled Button'}
@@ -366,36 +280,7 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'primary pill sm button')}
           label={'Im a primary pill sm Button'}
-          size={Button.Sizes.SMALL}
           pill
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'secondary pill sm button')}
-          label={'Im a secondary pill sm Button'}
-          size={Button.Sizes.SMALL}
-          pill
-          variant={Button.Variants.SECONDARY}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'danger pill sm button')}
-          label={'Im a danger pill sm Button'}
-          size={Button.Sizes.SMALL}
-          pill
-          variant={Button.Variants.DANGER}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success pill sm button')}
-          label={'Im a success pill sm Button'}
-          size={Button.Sizes.SMALL}
-          pill
-          variant={Button.Variants.SUCCESS}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success pill sm button')}
-          label={'Im a success pill sm Button'}
-          size={Button.Sizes.SMALL}
-          pill
-          variant={Button.Variants.PRIMARY_OUTLINE}
         />
       </div>
 
@@ -408,20 +293,16 @@ function App() {
           onClick={(e) => handleButtonClick(e, 'block button')}
           label={'More Actions'}
           moreActions={moreActions}
+          icon={<SampleIcon />}
+          iconPlacement={'left'}
         />
 
         <Button
           onClick={(e) => handleButtonClick(e, 'block button')}
           label={'More Actions'}
           moreActions={moreActions}
-          size='sm'
-        />
-
-        <Button
-          onClick={(e) => handleButtonClick(e, 'block button')}
-          label={'More Actions'}
-          moreActions={moreActions}
-          size='lg'
+          icon={<SampleIcon />}
+          iconPlacement={'right'}
         />
       </div>
 
