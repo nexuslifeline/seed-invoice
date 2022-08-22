@@ -5,6 +5,9 @@
   border-radius: $form-input-radius;
   height: $input-height;
   box-sizing: border-box;
+  box-shadow: 1px 1px 5px -3px $gray-50;
+  -webkit-box-shadow: 1px 1px 5px -3px $gray-50;
+  -moz-box-shadow: 1px 1px 5px -3px $gray-50;
   padding: 0;
 
   .baseSelect {
@@ -22,6 +25,10 @@
       border: 0;
       border: 1px solid $form-input-border-color;
       border-radius: $form-input-radius;
+    }
+
+    .select__single-value {
+      padding: 0 8px;
     }
 
     .select__placeholder {
