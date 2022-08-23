@@ -10,12 +10,14 @@ const strengths = {
   STRONG: 'strong',
   MEDIUM: 'medium',
   WEAK: 'weak',
+  VERY_WEAK: 'veryWeak',
 };
 
 const score = {
   strong: 100,
   medium: 80,
-  weak: 30,
+  weak: 40,
+  veryWeak: 20,
 };
 
 const noCapital = '(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{8,})|(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{6,})';
@@ -35,6 +37,11 @@ const PasswordInput = ({ label, containerClassName, showStrength, ...props }) =>
   const checkPassword = (value) => {
     if (!value) {
       setStrength('');
+      return;
+    }
+
+    if (value.length <= 3) {
+      setStrength(strengths.VERY_WEAK);
       return;
     }
 

@@ -7,25 +7,15 @@ import { Menu, Transition } from '@headlessui/react';
 const variantClasses = {
   primary: Styles.primary,
   secondary: Styles.secondary,
-  warning: Styles.warning,
-  danger: Styles.danger,
-  success: Styles.success,
   primaryOutline: Styles.primaryOutline,
   secondaryOutline: Styles.secondaryOutline,
-  dangerOutline: Styles.dangerOutline,
-  successOutline: Styles.successOutline,
 };
 
 const variants = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
-  WARNING: 'warning',
-  DANGER: 'danger',
-  SUCCESS: 'success',
   PRIMARY_OUTLINE: 'primaryOutline',
   SECONDARY_OUTLINE: 'secondaryOutline',
-  DANGER_OUTLINE: 'dangerOutline',
-  SUCCESS_OUTLINE: 'successOutline',
 };
 
 const iconPlacements = {
@@ -54,14 +44,13 @@ const MenuItemDefaultContent = ({ label, icon }) => {
   );
 };
 
-const Button = ({ moreActions, icon, iconPlacement, label, variant, pill, block, children, ...props }) => {
-  const pillClass = pill ? Styles.pill : '';
+const Button = ({ moreActions, icon, iconPlacement, label, variant, block, children, ...props }) => {
   const blockClass = block ? Styles.block : '';
 
-  if (moreActions && moreActions.length > 0) {
+  if (moreActions?.length > 0) {
     return (
       <Menu as='div' className={Styles.menu}>
-        <Menu.Button className={classNames(Styles.container, variantClasses[variant], pillClass, blockClass)}>
+        <Menu.Button className={classNames(Styles.button, variantClasses[variant], blockClass)}>
           <ButtonDefaultContent icon={icon} iconPlacement={iconPlacement} label={label} />
         </Menu.Button>
         <Transition
@@ -82,13 +71,13 @@ const Button = ({ moreActions, icon, iconPlacement, label, variant, pill, block,
         </Transition>
       </Menu>
     );
-  } else {
-    return (
-      <button className={classNames(Styles.container, variantClasses[variant], pillClass, blockClass)} {...props}>
-        {children || <ButtonDefaultContent icon={icon} iconPlacement={iconPlacement} label={label} />}
-      </button>
-    );
   }
+
+  return (
+    <button className={classNames(Styles.button, variantClasses[variant], blockClass)} {...props}>
+      {children || <ButtonDefaultContent icon={icon} iconPlacement={iconPlacement} label={label} />}
+    </button>
+  );
 };
 
 Button.Variants = variants;
@@ -96,7 +85,6 @@ Button.Variants = variants;
 Button.propTypes = {
   label: PropTypes.string,
   isBlock: PropTypes.bool,
-  pill: PropTypes.bool,
   block: PropTypes.bool,
   moreActions: PropTypes.array,
   icon: PropTypes.any,
@@ -105,7 +93,6 @@ Button.propTypes = {
 Button.defaultProps = {
   label: 'Button',
   variant: Button.Variants.PRIMARY,
-  pill: false,
   block: false,
 };
 
