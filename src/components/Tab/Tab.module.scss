@@ -5,12 +5,13 @@
 }
 
 .listItem {
-  font-size: $fs-3;
+  font-size: $fs-4;
   padding: 6px 10px;
   background: none;
   border: 0;
   cursor: pointer;
   outline: none;
+  color: $title-color;
 
   &[aria-selected='true'] {
     border-bottom: 2px solid $primary;

@@ -95,14 +95,7 @@ function App() {
       <Toggle label={'Yes, I am above 18y/o'} />
       <br />
       <br />
-      <Select
-        label={'Fruits'}
-        closeMenuOnSelect={false}
-        value={fruits}
-        onChange={(e) => setFruits(e)}
-        options={options}
-        isClearable
-      />
+      <Select label={'Fruits'} value={fruits} onChange={(e) => setFruits(e)} options={options} isClearable />
       <br />
       <TextInput label={'Full Name'} placeholder={'Enter Full Name'} />
       <br />
@@ -157,45 +150,6 @@ function App() {
 
       <div style={buttonContainerStyle}>
         <Button
-          onClick={(e) => handleButtonClick(e, 'danger sm button')}
-          label={'Im a danger sm Button'}
-          variant={Button.Variants.DANGER}>
-          <span>children content</span>
-        </Button>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'danger md button')}
-          label={'Im a danger md Button'}
-          variant={Button.Variants.DANGER}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'danger md button')}
-          label={'Im a danger md disabled Button'}
-          variant={Button.Variants.DANGER}
-          disabled
-        />
-      </div>
-      <div style={buttonContainerStyle}>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success md button')}
-          label={'Im a success md Button'}
-          variant={Button.Variants.SUCCESS}>
-          <span>children content</span>
-        </Button>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success md button')}
-          label={'Im a success md Button'}
-          variant={Button.Variants.SUCCESS}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success md button')}
-          label={'Im a success md disabled Button'}
-          variant={Button.Variants.SUCCESS}
-          disabled
-        />
-      </div>
-
-      <div style={buttonContainerStyle}>
-        <Button
           onClick={(e) => handleButtonClick(e, 'primary sm outline button')}
           label={'Im a primary outline sm Button'}
           variant={Button.Variants.PRIMARY_OUTLINE}>
@@ -231,56 +185,6 @@ function App() {
           label={'Im a secondary outline md disabled Button'}
           disabled
           variant={Button.Variants.SECONDARY_OUTLINE}
-        />
-      </div>
-
-      <div style={buttonContainerStyle}>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'danger sm outline button')}
-          label={'Im a danger outline sm Button'}
-          variant={Button.Variants.DANGER_OUTLINE}>
-          <span>children content</span>
-        </Button>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'danger md outline button')}
-          label={'Im a danger outline md Button'}
-          variant={Button.Variants.DANGER_OUTLINE}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'danger md outline button')}
-          label={'Im a danger outline md disabled Button'}
-          disabled
-          variant={Button.Variants.DANGER_OUTLINE}
-        />
-      </div>
-
-      <div style={buttonContainerStyle}>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success sm outline button')}
-          label={'Im a success outline sm Button'}
-          variant={Button.Variants.SUCCESS_OUTLINE}>
-          <span>children content</span>
-        </Button>
-
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success md outline button')}
-          label={'Im a success outline md Button'}
-          variant={Button.Variants.SUCCESS_OUTLINE}
-        />
-
-        <Button
-          onClick={(e) => handleButtonClick(e, 'success md outline button')}
-          label={'Im a success outline md disabled Button'}
-          disabled
-          variant={Button.Variants.SUCCESS_OUTLINE}
-        />
-      </div>
-
-      <div style={buttonContainerStyle}>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary pill sm button')}
-          label={'Im a primary pill sm Button'}
-          pill
         />
       </div>
 
