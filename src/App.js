@@ -7,10 +7,22 @@ import Button from 'components/Button';
 import { useState } from 'react';
 import PasswordInput from 'components/Form/PasswordInput';
 import Select from 'components/Form/Select';
+import ProfilePhoto from 'components/ProfilePhoto';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [fruits, setFruits] = useState('');
+  const [profilePhoto, setProfilePhoto] = useState(null);
+
+  const onPhotoChanged = (e) => {
+    const [file] = e.target.files;
+    console.log(file);
+    setProfilePhoto(URL.createObjectURL(file));
+  };
+
+  const onRemovePhoto = () => {
+    setProfilePhoto(null);
+  };
 
   const handMoreActionClick = (e, button) => {
     alert(button);
@@ -320,6 +332,10 @@ function App() {
           <li>Medium: atleast 6 char, no digit || no upper || no lowercase || no special char</li>
           <li>Weak: not strong and not medium</li>
         </ul>
+      </div>
+
+      <div>
+        <ProfilePhoto file={profilePhoto} onChange={(e) => onPhotoChanged(e)} onRemove={() => onRemovePhoto()} />
       </div>
     </div>
   );
