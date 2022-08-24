@@ -334,8 +334,25 @@ function App() {
         </ul>
       </div>
 
-      <div>
-        <ProfilePhoto file={profilePhoto} onChange={(e) => onPhotoChanged(e)} onRemove={() => onRemovePhoto()} />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
+        <ProfilePhoto
+          file={profilePhoto}
+          onChange={(e) => onPhotoChanged(e)}
+          onRemove={() => onRemovePhoto()}
+          showUploadRemove={true}
+          width={100}
+          height={100}
+          round
+        />
+
+        <ProfilePhoto
+          file={profilePhoto}
+          onChange={(e) => onPhotoChanged(e)}
+          onRemove={() => onRemovePhoto()}
+          showUploadRemove={true}
+          width={100}
+          height={100}
+        />
       </div>
     </div>
   );

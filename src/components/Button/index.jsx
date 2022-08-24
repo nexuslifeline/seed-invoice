@@ -54,7 +54,7 @@ const MenuItemDefaultContent = ({ label, icon }) => {
   );
 };
 
-const Button = ({ moreActions, icon, iconPlacement, label, variant, pill, block, children, ...props }) => {
+const Button = ({ moreActions, icon, iconPlacement, label, variant, pill, block, children, className, ...props }) => {
   const pillClass = pill ? Styles.pill : '';
   const blockClass = block ? Styles.block : '';
 
@@ -84,7 +84,9 @@ const Button = ({ moreActions, icon, iconPlacement, label, variant, pill, block,
     );
   } else {
     return (
-      <button className={classNames(Styles.container, variantClasses[variant], pillClass, blockClass)} {...props}>
+      <button
+        className={classNames(className, Styles.container, variantClasses[variant], pillClass, blockClass)}
+        {...props}>
         {children || <ButtonDefaultContent icon={icon} iconPlacement={iconPlacement} label={label} />}
       </button>
     );
