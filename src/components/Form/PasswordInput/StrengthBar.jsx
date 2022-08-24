@@ -7,6 +7,7 @@ const strengthClasses = {
   strong: Styles.strong,
   medium: Styles.medium,
   weak: Styles.weak,
+  veryWeak: Styles.veryWeak,
 };
 
 const StrengthBar = ({ strength, size = 0 }) => {

@@ -9,16 +9,16 @@ $orange-80: #ffbc70;
 $orange-90: #ffb45e;
 $orange-100: #FFA33A;
 
-$gray-10: #f0f0f0;
-$gray-20: #e0e0e0;
-$gray-30: #d1d1d1;
-$gray-40: #c1c1c1;
-$gray-50: #b2b2b2;
-$gray-60: #a2a2a2;
-$gray-70: #939393;
-$gray-80: #838383;
-$gray-90: #747474;
-$gray-100: #646464;
+$gray-10: #F0F4F8;
+$gray-20: #D9E2EC;
+$gray-30: #BCCCDC;
+$gray-40: #9FB3C8;
+$gray-50: #829AB1;
+$gray-60: #627D98;
+$gray-70: #486581;
+$gray-80: #334E68;
+$gray-90: #243B53;
+$gray-100: #102A43;
 
 $purple-10: #f3e5fe;
 $purple-20: #e8cbfd;
@@ -69,9 +69,15 @@ $black: #212529;
 
 $cubic: cubic-bezier(.165, .84, .44, 1);
 
+$border-radius: 6px;
+
+// Text, Title, Headlines
+$text-color: $gray-70;
+$title-color: $gray-100;
+
+
 // form elements variables
-$form-input-radius: 6px;
-$form-input-border-color: $gray-30;
+$form-input-border-color: $gray-20;
 
 // input variables
 $input-height: 44px;
@@ -91,23 +97,10 @@ $fs-7: 30px;
 $primary: $purple-90;
 $primary-border-color: $purple-100;
 $primary-hover-bg-color: $purple-100;
-$primary-disabled-bg-color: $purple-10;
-$primary-outline-hover-bg-color: $purple-100;
 
-$secondary: $gray-90;
-$secondary-border-color: $gray-100;
-$secondary-hover-bg-color: $gray-100;
-$secondary-disabled-bg-color: $gray-10;
-$secondary-outline-hover-bg-color: $gray-100;
+$secondary: $gray-50;
+$secondary-border-color: $gray-50;
+$secondary-hover-bg-color: $gray-60;
 
-$danger: $red-90;
-$danger-border-color: $red-100;
-$danger-hover-bg-color: $red-100;
-$danger-disabled-bg-color: $red-10;
-$danger-outline-hover-bg-color: $red-100;
-
-$success: $green-90;
-$success-border-color: $green-100;
-$success-hover-bg-color: $green-100;
-$success-disabled-bg-color: $green-10;
-$success-outline-hover-bg-color: $green-100;
+$secondary-outline-color: $gray-40;
+$secondary-outline-text-color: $gray-60;
