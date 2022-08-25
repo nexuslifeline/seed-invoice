@@ -82,3 +82,16 @@
   -webkit-box-shadow: 1px 1px 5px -4px $gray-50;
   -moz-box-shadow: 1px 1px 5px -4px $gray-50;
 }
+
+@mixin apply-loader-color($color) {
+  border-color: $color transparent $color transparent;
+
+  &:before,
+  &:after {
+    border-bottom-color: $color;
+  }
+
+  &:after {
+    border-color: $color transparent transparent transparent;
+  }
+}

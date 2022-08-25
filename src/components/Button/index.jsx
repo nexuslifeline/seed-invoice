@@ -6,8 +6,20 @@ import { variants, variantClasses } from './common/contants';
 
 import Content from './common/Content';
 import ButtonMenu from './ButtonMenu';
+import Loader from 'components/Loader';
 
-const Button = ({ moreActions, icon, iconPlacement, label, variant, block, classsName, children, ...props }) => {
+const Button = ({
+  moreActions,
+  icon,
+  iconPlacement,
+  label,
+  variant,
+  block,
+  isBusy,
+  classsName,
+  children,
+  ...props
+}) => {
   if (moreActions?.length > 0) {
     return <ButtonMenu {...{ moreActions, icon, iconPlacement, label, variant, block }} />;
   }
@@ -16,6 +28,7 @@ const Button = ({ moreActions, icon, iconPlacement, label, variant, block, class
     <button
       className={classNames(Styles.button, variantClasses[variant], classsName, { [Styles.block]: block })}
       {...props}>
+      {isBusy && <Loader marginRight={'8px'} />}
       {children || <Content {...{ icon, iconPlacement, label }} />}
     </button>
   );
@@ -25,7 +38,7 @@ Button.Variants = variants;
 
 Button.propTypes = {
   label: PropTypes.string,
-  isBlock: PropTypes.bool,
+  isBusy: PropTypes.bool,
   block: PropTypes.bool,
   moreActions: PropTypes.array,
   icon: PropTypes.any,

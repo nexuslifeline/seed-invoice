@@ -8,6 +8,7 @@ import { useState } from 'react';
 import PasswordInput from 'components/Form/PasswordInput';
 import Select from 'components/Form/Select';
 import ProfilePhoto from 'components/ProfilePhoto';
+import Loader from 'components/Loader';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,6 +105,8 @@ function App() {
 
   return (
     <div style={{ padding: '30px' }}>
+      <Loader />
+      <br />
       <Toggle label={'Yes, I am above 18y/o'} />
       <br />
       <br />
@@ -129,7 +132,7 @@ function App() {
       <button onClick={() => setIsOpen(true)}>Open Modal</button>
 
       <div style={buttonContainerStyle}>
-        <Button onClick={(e) => handleButtonClick(e, 'primary sm button')} label={'Im a primary sm Button'}>
+        <Button onClick={(e) => handleButtonClick(e, 'primary sm button')} label={'Im a primary sm Button'} isBusy>
           <span>children content</span>
         </Button>
         <Button onClick={(e) => handleButtonClick(e, 'primary sm button')} label={'Im a primary sm Button'} />
@@ -144,7 +147,8 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'secondary sm button')}
           label={'Im a secondary sm Button'}
-          variant={Button.Variants.SECONDARY}>
+          variant={Button.Variants.SECONDARY}
+          isBusy>
           <span>children content</span>
         </Button>
         <Button
@@ -164,7 +168,8 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'primary sm outline button')}
           label={'Im a primary outline sm Button'}
-          variant={Button.Variants.PRIMARY_OUTLINE}>
+          variant={Button.Variants.PRIMARY_OUTLINE}
+          isBusy>
           <span>children content</span>
         </Button>
         <Button
@@ -184,7 +189,8 @@ function App() {
         <Button
           onClick={(e) => handleButtonClick(e, 'secondary sm outline button')}
           label={'Im a secondary outline sm Button'}
-          variant={Button.Variants.SECONDARY_OUTLINE}>
+          variant={Button.Variants.SECONDARY_OUTLINE}
+          isBusy>
           <span>children content</span>
         </Button>
         <Button
@@ -201,7 +207,7 @@ function App() {
       </div>
 
       <div style={buttonContainerStyle}>
-        <Button onClick={(e) => handleButtonClick(e, 'block button')} label={'Im a block button'} block />
+        <Button onClick={(e) => handleButtonClick(e, 'block button')} label={'Im a block button'} block isBusy />
       </div>
 
       <div style={buttonContainerStyle}>

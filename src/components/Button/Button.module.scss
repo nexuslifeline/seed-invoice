@@ -29,8 +29,8 @@
 
 .button {
   border: 1px solid transparent;
-  text-align: center;
-  vertical-align: center;
+  display: inline-flex;
+  align-items: center;
   line-height: 1.5;
   cursor: pointer;
   font-size: 16px;
@@ -53,6 +53,10 @@
   color: $white;
   border-color: $primary-border-color;
 
+  :global(.loading__spinner) {
+    @include apply-loader-color($white);
+  }
+
   &:hover:not(:disabled) {
     background-color: $primary-hover-bg-color;
   }
@@ -62,6 +66,10 @@
   background-color: $secondary;
   color: $white;
   border-color: $secondary-border-color;
+
+  :global(.loading__spinner) {
+    @include apply-loader-color($white);
+  }
 
   &:hover:not(:disabled) {
     background-color: $secondary-hover-bg-color;
@@ -75,9 +83,17 @@
   color: $primary;
   border-color: $primary-border-color;
 
+  :global(.loading__spinner) {
+    @include apply-loader-color($primary);
+  }
+
   &:hover:not(:disabled) {
     background-color: $primary-hover-bg-color;
     color: $white;
+
+    :global(.loading__spinner) {
+      @include apply-loader-color($white);
+    }
   }
 }
 
@@ -87,9 +103,17 @@
   border-color: $secondary-outline-color;
   @include box-shadow;
 
+  :global(.loading__spinner) {
+    @include apply-loader-color($secondary-outline-text-color);
+  }
+
   &:hover:not(:disabled) {
     background-color: $secondary-outline-color;
     color: $white;
+
+    :global(.loading__spinner) {
+      @include apply-loader-color($secondary-outline-text-color);
+    }
   }
 }
 
@@ -122,7 +146,6 @@
   }
 
 }
-
 
 .transitionEnter {
   transition: opacity .3s ease-out;
