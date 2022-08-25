@@ -6,10 +6,11 @@ import Content from './common/Content';
 import { Menu, Transition } from '@headlessui/react';
 import { variants, variantClasses } from './common/contants';
 
-const ButtonMenu = ({ moreActions, icon, iconPlacement, label, variant, block, children }) => {
+const ButtonMenu = ({ moreActions, icon, iconPlacement, label, variant, block, classsName, children }) => {
   return (
     <Menu as='div' className={Styles.menu}>
-      <Menu.Button className={classNames(Styles.button, variantClasses[variant], { [Styles.block]: block })}>
+      <Menu.Button
+        className={classNames(Styles.button, variantClasses[variant], classsName, { [Styles.block]: block })}>
         {children || <Content icon={icon} iconPlacement={iconPlacement} label={label} />}
       </Menu.Button>
       <Transition

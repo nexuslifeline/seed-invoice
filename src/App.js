@@ -243,17 +243,17 @@ function App() {
           file={profilePhoto}
           onChange={(e) => onPhotoChanged(e)}
           onRemove={() => onRemovePhoto()}
-          showUploadRemove={true}
+          allowUpload
           width={100}
           height={100}
           round
         />
 
         <ProfilePhoto
-          file={profilePhoto}
+          src={profilePhoto}
           onChange={(e) => onPhotoChanged(e)}
           onRemove={() => onRemovePhoto()}
-          showUploadRemove={true}
+          allowUpload
           width={100}
           height={100}
         />
