@@ -9,6 +9,7 @@ import PasswordInput from 'components/Form/PasswordInput';
 import Select from 'components/Form/Select';
 import ProfilePhoto from 'components/ProfilePhoto';
 import Loader from 'components/Loader';
+import Card from 'components/Card';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -105,6 +106,20 @@ function App() {
 
   return (
     <div style={{ padding: '30px' }}>
+      <Card
+        header={`This is a sample title`}
+        footer={() => (
+          <>
+            <Button
+              label={'Cancel'}
+              variant={Button.Variants.SECONDARY_OUTLINE}
+              style={{ marginLeft: 'auto', marginRight: '10px' }}
+            />
+            <Button label={'Save'} isBusy />
+          </>
+        )}>{`body test`}</Card>
+      <br />
+      <br />
       <Loader />
       <br />
       <Toggle label={'Yes, I am above 18y/o'} />

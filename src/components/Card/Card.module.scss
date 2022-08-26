@@ -1,0 +1,26 @@
+@import '../../shared/styles/variables.scss';
+@import '../../shared/styles/mixins.scss';
+
+.container {
+  width: 100%;
+  border: 1px solid $gray-20;
+  border-radius: $border-radius;
+  @include box-shadow;
+}
+
+.header,
+.footer,
+.body {
+  padding: 15px;
+}
+
+.footer,
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $gray-10;
+
+  .left {
+    justify-content: flex-end;
+  }
+}
