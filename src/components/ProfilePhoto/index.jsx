@@ -6,18 +6,36 @@ import IconCamera from 'components/Icons/Camera';
 import IconRemove from 'components/Icons/Times';
 import classNames from 'classnames';
 
-const ProfilePhoto = ({ src, onRemove, initials, containerProps, allowUpload, round, ...props }) => {
+const ProfilePhoto = ({ src, onRemove, initials, containerProps, allowUpload, round, profileId, ...props }) => {
   const inputRef = useRef(null);
   const fileTypes = 'image/png, image/jpeg, image/jpg';
   const { width, height } = containerProps;
   const onBrowse = () => inputRef.current.click();
+  const initialStyles = [
+    { color: 'white', backgroundColor: 'red' },
+    { color: 'white', backgroundColor: 'blue' },
+    { color: 'white', backgroundColor: 'green' },
+    { color: 'white', backgroundColor: 'purple' },
+    { color: 'white', backgroundColor: 'gray' },
+    { color: 'white', backgroundColor: 'orange' },
+    { color: 'white', backgroundColor: 'yellow' },
+    { color: 'white', backgroundColor: 'maroon' },
+    { color: 'white', backgroundColor: 'olive' },
+    { color: 'white', backgroundColor: 'lime' },
+    { color: 'white', backgroundColor: 'aqua' },
+  ];
+  const initialStyleIndex = profileId
+    ? (profileId % initialStyles.length) - 1
+    : Math.floor(Math.random() * initialStyles.length - 1);
 
   return (
     <div
       className={classNames(Styles.container, (round && Styles.round) || Styles.square)}
       style={{ ...containerProps, width: `${width}px`, height: `${height}px` }}>
       {(src && <img src={src} alt='No Selected' className={Styles.photo} />) || (
-        <div className={Styles.initials}>{initials}</div>
+        <div className={Styles.initials} style={{ ...initialStyles[initialStyleIndex] }}>
+          {initials}
+        </div>
       )}
       <input type={'file'} className={Styles.input} ref={inputRef} {...props} accept={fileTypes} />
       {allowUpload && (
@@ -42,6 +60,7 @@ ProfilePhoto.propTypes = {
   allowUpload: PropTypes.bool,
   containerProps: PropTypes.object,
   initials: PropTypes.string,
+  profileId: PropTypes.number,
 };
 
 ProfilePhoto.defaultProps = {

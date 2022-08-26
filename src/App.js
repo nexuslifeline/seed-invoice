@@ -245,6 +245,7 @@ function App() {
           round
           containerProps={{ borderColor: 'red', borderWidth: '4px' }}
           initials={'AB'}
+          profileId={1}
         />
 
         <ProfilePhoto
@@ -254,6 +255,7 @@ function App() {
           allowUpload
           containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 120, width: 120 }}
           initials={'CD'}
+          profileId={35}
         />
 
         <ProfilePhoto
@@ -264,6 +266,7 @@ function App() {
           containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 200, width: 200 }}
           initials={'EF'}
           round
+          profileId={139}
         />
 
         <ProfilePhoto
@@ -273,7 +276,7 @@ function App() {
           allowUpload
           containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 300, width: 300 }}
           initials={'GH'}
-          round
+          profileId={58}
         />
       </div>
     </div>
