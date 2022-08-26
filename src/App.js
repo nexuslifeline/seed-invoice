@@ -253,6 +253,22 @@ function App() {
           onChange={(e) => onPhotoChanged(e)}
           onRemove={() => onRemovePhoto()}
           allowUpload
+          round
+          containerProps={{
+            borderColor: 'red',
+            borderWidth: '1px',
+            width: 60,
+            height: 60,
+          }}
+          initials={'AB'}
+          profileId={99}
+        />
+
+        <ProfilePhoto
+          src={profilePhoto}
+          onChange={(e) => onPhotoChanged(e)}
+          onRemove={() => onRemovePhoto()}
+          allowUpload
           containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 120, width: 120 }}
           initials={'CD'}
           profileId={35}

@@ -25,7 +25,7 @@ const ProfilePhoto = ({ src, onRemove, initials, containerProps, allowUpload, ro
     { color: 'white', backgroundColor: 'aqua' },
   ];
   const initialStyleIndex = profileId
-    ? (profileId % initialStyles.length) - 1
+    ? profileId % initialStyles.length
     : Math.floor(Math.random() * initialStyles.length - 1);
 
   return (
@@ -33,7 +33,7 @@ const ProfilePhoto = ({ src, onRemove, initials, containerProps, allowUpload, ro
       className={classNames(Styles.container, (round && Styles.round) || Styles.square)}
       style={{ ...containerProps, width: `${width}px`, height: `${height}px` }}>
       {(src && <img src={src} alt='No Selected' className={Styles.photo} />) || (
-        <div className={Styles.initials} style={{ ...initialStyles[initialStyleIndex] }}>
+        <div className={Styles.initials} style={{ ...initialStyles[initialStyleIndex], fontSize: width / 4 }}>
           {initials}
         </div>
       )}
