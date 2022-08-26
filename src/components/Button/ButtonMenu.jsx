@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import Content from './common/Content';
 import { Menu, Transition } from '@headlessui/react';
 import { variants, variantClasses } from './common/contants';
+import ChevronDown from 'components/Icons/ChevronDown';
 
 const ButtonMenu = ({ moreActions, icon, iconPlacement, label, variant, block, classsName, children }) => {
   return (
@@ -47,6 +48,7 @@ ButtonMenu.defaultProps = {
   label: 'Button',
   variant: ButtonMenu.Variants.PRIMARY,
   block: false,
+  icon: <ChevronDown />,
 };
 
 export default ButtonMenu;

@@ -209,7 +209,6 @@ function App() {
           onClick={(e) => handleButtonClick(e, 'block button')}
           label={'More Actions'}
           moreActions={moreActions}
-          icon={<SampleIcon />}
           iconPlacement={'left'}
         />
 
@@ -217,7 +216,6 @@ function App() {
           onClick={(e) => handleButtonClick(e, 'block button')}
           label={'More Actions'}
           moreActions={moreActions}
-          icon={<SampleIcon />}
           iconPlacement={'right'}
         />
       </div>
@@ -240,12 +238,31 @@ function App() {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
         <ProfilePhoto
-          file={profilePhoto}
+          src={profilePhoto}
           onChange={(e) => onPhotoChanged(e)}
           onRemove={() => onRemovePhoto()}
           allowUpload
-          width={100}
-          height={100}
+          round
+          containerProps={{ borderColor: 'red', borderWidth: '4px' }}
+          initials={'AB'}
+        />
+
+        <ProfilePhoto
+          src={profilePhoto}
+          onChange={(e) => onPhotoChanged(e)}
+          onRemove={() => onRemovePhoto()}
+          allowUpload
+          containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 120, width: 120 }}
+          initials={'CD'}
+        />
+
+        <ProfilePhoto
+          src={profilePhoto}
+          onChange={(e) => onPhotoChanged(e)}
+          onRemove={() => onRemovePhoto()}
+          allowUpload
+          containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 200, width: 200 }}
+          initials={'EF'}
           round
         />
 
@@ -254,8 +271,9 @@ function App() {
           onChange={(e) => onPhotoChanged(e)}
           onRemove={() => onRemovePhoto()}
           allowUpload
-          width={100}
-          height={100}
+          containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 300, width: 300 }}
+          initials={'GH'}
+          round
         />
       </div>
     </div>

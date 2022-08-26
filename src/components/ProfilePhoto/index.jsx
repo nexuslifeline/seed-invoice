@@ -4,21 +4,20 @@ import PropTypes from 'prop-types';
 import Button from 'components/Button';
 import IconCamera from 'components/Icons/Camera';
 import IconRemove from 'components/Icons/Times';
-import IconNoImage from 'components/Icons/NoImage';
 import classNames from 'classnames';
 
-const ProfilePhoto = ({ src, onRemove, width, height, allowUpload, round, ...props }) => {
+const ProfilePhoto = ({ src, onRemove, initials, containerProps, allowUpload, round, ...props }) => {
   const inputRef = useRef(null);
   const fileTypes = 'image/png, image/jpeg, image/jpg';
-
+  const { width, height } = containerProps;
   const onBrowse = () => inputRef.current.click();
 
   return (
     <div
       className={classNames(Styles.container, (round && Styles.round) || Styles.square)}
-      style={{ width: `${width}px`, height: `${height}px` }}>
+      style={{ ...containerProps, width: `${width}px`, height: `${height}px` }}>
       {(src && <img src={src} alt='No Selected' className={Styles.photo} />) || (
-        <IconNoImage className={Styles.noImage} />
+        <div className={Styles.initials}>{initials}</div>
       )}
       <input type={'file'} className={Styles.input} ref={inputRef} {...props} accept={fileTypes} />
       {allowUpload && (
@@ -27,7 +26,7 @@ const ProfilePhoto = ({ src, onRemove, width, height, allowUpload, round, ...pro
             <IconCamera className={Styles.browseIcon} />
           </Button>
           {src && (
-            <Button className={Styles.remove} onClick={onRemove} variant={Button.Variants.SECONDARY_OUTLINE}>
+            <Button className={Styles.remove} onClick={onRemove} variant={Button.Variants.SECONDARY}>
               <IconRemove className={Styles.iconRemove} />
             </Button>
           )}
@@ -41,13 +40,14 @@ ProfilePhoto.propTypes = {
   src: PropTypes.string,
   onRemove: PropTypes.func,
   allowUpload: PropTypes.bool,
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  containerProps: PropTypes.object,
+  initials: PropTypes.string,
 };
 
 ProfilePhoto.defaultProps = {
   allowUpload: true,
-  width: 100,
-  height: 100,
+  containerProps: { height: 100, width: 100 },
+  initials: 'UN', //Unnamed
 };
 
 export default ProfilePhoto;

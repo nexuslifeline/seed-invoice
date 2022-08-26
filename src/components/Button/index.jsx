@@ -7,14 +7,14 @@ import { variants, variantClasses } from './common/contants';
 import Content from './common/Content';
 import ButtonMenu from './ButtonMenu';
 
-const Button = ({ moreActions, icon, iconPlacement, label, variant, block, classsName, children, ...props }) => {
+const Button = ({ moreActions, icon, iconPlacement, label, variant, block, className, children, ...props }) => {
   if (moreActions?.length > 0) {
     return <ButtonMenu {...{ moreActions, icon, iconPlacement, label, variant, block }} />;
   }
 
   return (
     <button
-      className={classNames(Styles.button, variantClasses[variant], classsName, { [Styles.block]: block })}
+      className={classNames(Styles.button, variantClasses[variant], className, { [Styles.block]: block })}
       {...props}>
       {children || <Content {...{ icon, iconPlacement, label }} />}
     </button>

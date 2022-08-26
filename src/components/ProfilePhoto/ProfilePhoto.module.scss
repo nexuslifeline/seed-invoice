@@ -39,13 +39,13 @@
 }
 
 .browse {
-  top: 15px;
-  right: -12px;
+  top: calc(50% - 20px);
+  right: -14px;
 }
 
 .remove {
-  top: 44px;
-  right: -12px;
+  top: calc(50% + 10px);
+  right: -14px;
 }
 
 
@@ -69,7 +69,12 @@
   fill: white;
 }
 
-.noImage {
-  height: 50%;
-  width: 50%;
+.initials {
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
 }
