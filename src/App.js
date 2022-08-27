@@ -1,323 +1,41 @@
-import TextInput from 'components/Form/TextInput';
-import TextArea from 'components/Form/TextArea';
-import Tab from 'components/Tab';
-import Modal from 'components/Modal';
-import Toggle from 'components/Form/Toggle';
-import Button from 'components/Button';
-import { useState } from 'react';
-import PasswordInput from 'components/Form/PasswordInput';
-import Select from 'components/Form/Select';
-import ProfilePhoto from 'components/ProfilePhoto';
-import Loader from 'components/Loader';
-import Card from 'components/Card';
+import React from 'react';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
-function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [fruits, setFruits] = useState('');
-  const [profilePhoto, setProfilePhoto] = useState(null);
+import Layout from 'components/Layout';
+import { ProtectedRoute } from 'router/ProtectedRoute';
 
-  const onPhotoChanged = (e) => {
-    const [file] = e.target.files;
-    console.log(file);
-    setProfilePhoto(URL.createObjectURL(file));
-  };
+import Login from 'views/Login';
+import Signup from 'views/Signup';
+import Dashboard from 'views/Dashboard';
+import Settings from 'views/Settings';
+import Customers from 'views/Customers';
+import Users from 'views/Users';
+import Items from 'views/Items';
+import Payments from 'views/Payments';
+import NotFound from 'views/NotFound';
 
-  const onRemovePhoto = () => {
-    setProfilePhoto(null);
-  };
-
-  const handMoreActionClick = (e, button) => {
-    alert(button);
-  };
-
-  const SampleIcon = ({ ...props }) => {
-    return (
-      <svg {...props} width='24px' height='24px' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path d='M22.987 10.25l-9 7.99c-.57.51-1.28.76-1.99.76s-1.42-.25-1.98-.74c0-.01-.01-.01-.01-.01l-.02-.02-8.98-7.98c-1.24-1.1-1.35-3.002-.25-4.242 1.1-1.24 3-1.35 4.23-.25l7.01 6.23 7.01-6.23c1.24-1.1 3.13-.99 4.24.25 1.1 1.24.98 3.13-.26 4.24z' />
-      </svg>
-    );
-  };
-
-  const moreActions = [
-    {
-      label: 'Action1',
-      onClick: (e) => {
-        handMoreActionClick(e, 'action 1');
-      },
-      icon: <SampleIcon style={{ fill: 'gray' }} />,
-    },
-    {
-      label: 'Action2',
-      onClick: (e) => {
-        handMoreActionClick(e, 'action 2');
-      },
-      children: (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <SampleIcon style={{ marginRight: '8px' }} /> Using Children slot
-        </div>
-      ),
-    },
-    {
-      label: 'Action3',
-      onClick: (e) => {
-        handMoreActionClick(e, 'action 3');
-      },
-      icon: <SampleIcon style={{ fill: 'gray' }} />,
-    },
-    {
-      label: 'Action4',
-      onClick: (e) => {
-        handMoreActionClick(e, 'action 4');
-      },
-    },
-  ];
-
-  const [password, setPassword] = useState('');
-
-  const buttonContainerStyle = {
-    marginTop: '10px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '6px',
-  };
-
-  const ModalContent = () => (
-    <div>
-      <div style={{ margin: '0 0 20px 0' }}> this is sample content props for modal</div>
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-        <button onClick={() => setIsOpen(false)}>Deactivate</button>
-        <button style={{ marginLeft: '8px' }} onClick={() => setIsOpen(false)}>
-          Cancel
-        </button>
-      </div>
-    </div>
-  );
-
-  const handleButtonClick = (e, desc) => {
-    console.log(e.target);
-    alert(desc);
-  };
-
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ];
-
-  return (
-    <div style={{ padding: '30px' }}>
-      <Card
-        header={`This is a sample title`}
-        footer={() => (
-          <>
-            <Button
-              label={'Cancel'}
-              variant={Button.Variants.SECONDARY_OUTLINE}
-              style={{ marginLeft: 'auto', marginRight: '10px' }}
-            />
-            <Button label={'Save'} isBusy />
-          </>
-        )}>{`body test`}</Card>
-      <br />
-      <br />
-      <Loader />
-      <br />
-      <Toggle label={'Yes, I am above 18y/o'} />
-      <br />
-      <br />
-      <Select label={'Fruits'} value={fruits} onChange={(e) => setFruits(e)} options={options} isClearable />
-      <br />
-      <TextInput label={'Full Name'} placeholder={'Enter Full Name'} />
-      <br />
-      <TextArea label={'Address'} placeholder={'Enter Address'} />
-      <br />
-      <Tab>
-        <Tab.Panel title={'Full time'}>
-          <h1>{'Tab 1'}</h1>
-        </Tab.Panel>
-        <Tab.Panel title={'Part time'}>
-          <h1>{'Tab 2'}</h1>
-        </Tab.Panel>
-      </Tab>
-      <Modal
-        isOpen={isOpen}
-        title={'this is a modal title'}
-        size={Modal.Sizes.LARGE}
-        content={<ModalContent />}></Modal>
-      <button onClick={() => setIsOpen(true)}>Open Modal</button>
-
-      <div style={buttonContainerStyle}>
-        <Button onClick={(e) => handleButtonClick(e, 'primary sm button')} label={'Im a primary sm Button'} isBusy>
-          <span>children content</span>
-        </Button>
-        <Button onClick={(e) => handleButtonClick(e, 'primary sm button')} label={'Im a primary sm Button'} />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary md button')}
-          label={'Im a primary md disabled Button'}
-          disabled
-        />
-      </div>
-
-      <div style={buttonContainerStyle}>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'secondary sm button')}
-          label={'Im a secondary sm Button'}
-          variant={Button.Variants.SECONDARY}
-          isBusy>
-          <span>children content</span>
-        </Button>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'secondary md button')}
-          label={'Im a secondary md Button'}
-          variant={Button.Variants.SECONDARY}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'secondary md button')}
-          label={'Im a secondary md disabled Button'}
-          variant={Button.Variants.SECONDARY}
-          disabled
-        />
-      </div>
-
-      <div style={buttonContainerStyle}>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary sm outline button')}
-          label={'Im a primary outline sm Button'}
-          variant={Button.Variants.PRIMARY_OUTLINE}
-          isBusy>
-          <span>children content</span>
-        </Button>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary md outline button')}
-          label={'Im a primary outline md Button'}
-          variant={Button.Variants.PRIMARY_OUTLINE}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'primary md outline button')}
-          label={'Im a primary outline md disabled Button'}
-          disabled
-          variant={Button.Variants.PRIMARY_OUTLINE}
-        />
-      </div>
-
-      <div style={buttonContainerStyle}>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'secondary sm outline button')}
-          label={'Im a secondary outline sm Button'}
-          variant={Button.Variants.SECONDARY_OUTLINE}
-          isBusy>
-          <span>children content</span>
-        </Button>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'secondary md outline button')}
-          label={'Im a secondary outline md Button'}
-          variant={Button.Variants.SECONDARY_OUTLINE}
-        />
-        <Button
-          onClick={(e) => handleButtonClick(e, 'secondary md outline button')}
-          label={'Im a secondary outline md disabled Button'}
-          disabled
-          variant={Button.Variants.SECONDARY_OUTLINE}
-        />
-      </div>
-
-      <div style={buttonContainerStyle}>
-        <Button onClick={(e) => handleButtonClick(e, 'block button')} label={'Im a block button'} block isBusy />
-      </div>
-
-      <div style={buttonContainerStyle}>
-        <Button
-          onClick={(e) => handleButtonClick(e, 'block button')}
-          label={'More Actions'}
-          moreActions={moreActions}
-          iconPlacement={'left'}
-        />
-
-        <Button
-          onClick={(e) => handleButtonClick(e, 'block button')}
-          label={'More Actions'}
-          moreActions={moreActions}
-          iconPlacement={'right'}
-        />
-      </div>
-
-      <div style={{ marginTop: '20px' }}>
-        <PasswordInput
-          label={'Password'}
-          placeholder={'Enter your password.'}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          showStrength
-        />
-
-        <ul>
-          <li>Strong: 1 Uppercase, 1 Lowercase, 1 digit, 1 special char, 8 char</li>
-          <li>Medium: atleast 6 char, no digit || no upper || no lowercase || no special char</li>
-          <li>Weak: not strong and not medium</li>
-        </ul>
-      </div>
-
-      <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
-        <ProfilePhoto
-          src={profilePhoto}
-          onChange={(e) => onPhotoChanged(e)}
-          onRemove={() => onRemovePhoto()}
-          allowUpload
-          round
-          containerProps={{ borderColor: 'red', borderWidth: '4px' }}
-          initials={'AB'}
-          profileId={1}
-        />
-
-        <ProfilePhoto
-          src={profilePhoto}
-          onChange={(e) => onPhotoChanged(e)}
-          onRemove={() => onRemovePhoto()}
-          allowUpload
-          round
-          containerProps={{
-            borderColor: 'red',
-            borderWidth: '1px',
-            width: 60,
-            height: 60,
-          }}
-          initials={'AB'}
-          profileId={99}
-        />
-
-        <ProfilePhoto
-          src={profilePhoto}
-          onChange={(e) => onPhotoChanged(e)}
-          onRemove={() => onRemovePhoto()}
-          allowUpload
-          containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 120, width: 120 }}
-          initials={'CD'}
-          profileId={35}
-        />
-
-        <ProfilePhoto
-          src={profilePhoto}
-          onChange={(e) => onPhotoChanged(e)}
-          onRemove={() => onRemovePhoto()}
-          allowUpload
-          containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 200, width: 200 }}
-          initials={'EF'}
-          round
-          profileId={139}
-        />
-
-        <ProfilePhoto
-          src={profilePhoto}
-          onChange={(e) => onPhotoChanged(e)}
-          onRemove={() => onRemovePhoto()}
-          allowUpload
-          containerProps={{ borderColor: 'blue', borderWidth: '4px', height: 300, width: 300 }}
-          initials={'GH'}
-          profileId={58}
-        />
-      </div>
-    </div>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route exact path={'/'} element={<Login />} />
+      <Route exact path={`/signup`} element={<Signup />} />
+      <Route
+        path={`/`}
+        element={
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>
+        }>
+        <Route path={'dashboard'} element={<Dashboard />} />
+        <Route path={'settings'} element={<Settings />} />
+        <Route path={'customers'} element={<Customers />} />
+        <Route path={'users'} element={<Users />} />
+        <Route path={'items'} element={<Items />} />
+        <Route path={'payments'} element={<Payments />} />
+      </Route>
+      <Route path='*' element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;

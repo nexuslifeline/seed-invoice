@@ -20,7 +20,7 @@
         // "no-unused-expressions": "off",
         // "no-unused-vars": "off",
         "react/display-name": "off",
-        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-imports": "warn",
         "prettier/prettier": "error",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",

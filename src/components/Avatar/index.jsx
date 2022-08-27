@@ -1,29 +1,33 @@
 import React, { useRef } from 'react';
-import Styles from './ProfilePhoto.module.scss';
+import Styles from './Avatar.module.scss';
 import PropTypes from 'prop-types';
 import Button from 'components/Button';
 import IconCamera from 'components/Icons/Camera';
 import IconRemove from 'components/Icons/Times';
 import classNames from 'classnames';
 
-const ProfilePhoto = ({ src, onRemove, initials, containerProps, allowUpload, round, profileId, ...props }) => {
+const fileTypes = 'image/png, image/jpeg, image/jpg';
+
+const initialStyles = [
+  { color: 'white', backgroundColor: 'red' },
+  { color: 'white', backgroundColor: 'blue' },
+  { color: 'white', backgroundColor: 'green' },
+  { color: 'white', backgroundColor: 'purple' },
+  { color: 'white', backgroundColor: 'gray' },
+  { color: 'white', backgroundColor: 'orange' },
+  { color: 'white', backgroundColor: 'yellow' },
+  { color: 'white', backgroundColor: 'maroon' },
+  { color: 'white', backgroundColor: 'olive' },
+  { color: 'white', backgroundColor: 'lime' },
+  { color: 'white', backgroundColor: 'aqua' },
+];
+
+const Avatar = ({ src, onRemove, initials, containerProps, allowUpload, round, profileId, ...props }) => {
   const inputRef = useRef(null);
-  const fileTypes = 'image/png, image/jpeg, image/jpg';
+
   const { width, height } = containerProps;
   const onBrowse = () => inputRef.current.click();
-  const initialStyles = [
-    { color: 'white', backgroundColor: 'red' },
-    { color: 'white', backgroundColor: 'blue' },
-    { color: 'white', backgroundColor: 'green' },
-    { color: 'white', backgroundColor: 'purple' },
-    { color: 'white', backgroundColor: 'gray' },
-    { color: 'white', backgroundColor: 'orange' },
-    { color: 'white', backgroundColor: 'yellow' },
-    { color: 'white', backgroundColor: 'maroon' },
-    { color: 'white', backgroundColor: 'olive' },
-    { color: 'white', backgroundColor: 'lime' },
-    { color: 'white', backgroundColor: 'aqua' },
-  ];
+
   const initialStyleIndex = profileId
     ? profileId % initialStyles.length
     : Math.floor(Math.random() * initialStyles.length - 1);
@@ -33,7 +37,7 @@ const ProfilePhoto = ({ src, onRemove, initials, containerProps, allowUpload, ro
       className={classNames(Styles.container, (round && Styles.round) || Styles.square)}
       style={{ ...containerProps, width: `${width}px`, height: `${height}px` }}>
       {(src && <img src={src} alt='No Selected' className={Styles.photo} />) || (
-        <div className={Styles.initials} style={{ ...initialStyles[initialStyleIndex], fontSize: width / 4 }}>
+        <div className={Styles.initials} style={{ ...initialStyles[initialStyleIndex], fontSize: width / 3 }}>
           {initials}
         </div>
       )}
@@ -54,7 +58,7 @@ const ProfilePhoto = ({ src, onRemove, initials, containerProps, allowUpload, ro
   );
 };
 
-ProfilePhoto.propTypes = {
+Avatar.propTypes = {
   src: PropTypes.string,
   onRemove: PropTypes.func,
   allowUpload: PropTypes.bool,
@@ -63,10 +67,10 @@ ProfilePhoto.propTypes = {
   profileId: PropTypes.number,
 };
 
-ProfilePhoto.defaultProps = {
+Avatar.defaultProps = {
   allowUpload: true,
   containerProps: { height: 100, width: 100 },
   initials: 'UN', //Unnamed
 };
 
-export default ProfilePhoto;
+export default Avatar;
