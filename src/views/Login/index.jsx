@@ -10,11 +10,14 @@ import Select from 'components/Form/Select';
 import Avatar from 'components/Avatar';
 import Loader from 'components/Loader';
 import Card from 'components/Card';
+import FileUploader from 'components/FileUploader';
+import File from 'components/File';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [fruits, setFruits] = useState('');
   const [profilePhoto, setProfilePhoto] = useState(null);
+  const [myFiles, setMyFiles] = useState([]);
 
   const onPhotoChanged = (e) => {
     const [file] = e.target.files;
@@ -103,6 +106,15 @@ function App() {
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' },
   ];
+
+  const onAcceptFiles = (files) => {
+    //do something on files
+    files.forEach((file) => {
+      console.log(file);
+    });
+
+    setMyFiles((current) => [...current, ...files]);
+  };
 
   return (
     <div style={{ padding: '30px' }}>
@@ -315,6 +327,16 @@ function App() {
           initials={'GH'}
           profileId={58}
         />
+      </div>
+      <div style={{ marginTop: '20px', width: '300px', height: '200px' }}>
+        <FileUploader onDrop={(files) => onAcceptFiles(files)} />
+      </div>
+
+      <div>
+        Accepted Files :
+        {myFiles.map((file, index) => {
+          return <File file={file} key={index} />;
+        })}
       </div>
     </div>
   );
