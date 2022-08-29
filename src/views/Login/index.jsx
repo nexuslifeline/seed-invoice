@@ -96,6 +96,16 @@ function App() {
     </div>
   );
 
+  const onFileClick = (file) => {
+    console.log(file);
+    alert('file click');
+  };
+
+  const onFileRemove = (file) => {
+    console.log(file);
+    alert('file remove click');
+  };
+
   const handleButtonClick = (e, desc) => {
     console.log(e.target);
     alert(desc);
@@ -332,10 +342,10 @@ function App() {
         <FileUploader onDrop={(files) => onAcceptFiles(files)} />
       </div>
 
-      <div>
+      <div style={{ marginTop: '20px', width: '400px' }}>
         Accepted Files :
         {myFiles.map((file, index) => {
-          return <File file={file} key={index} />;
+          return <File file={file} key={index} onClick={() => onFileClick(file)} onRemove={() => onFileRemove(file)} />;
         })}
       </div>
     </div>
