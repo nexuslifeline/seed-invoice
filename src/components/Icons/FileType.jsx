@@ -5,19 +5,18 @@ import IconDocumentFileType from 'shared/icons/document-file-type.svg';
 
 const FileType = ({ fileType, ...props }) => {
   const imageFileTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'];
-  let icon;
 
-  switch (fileType) {
-    case imageFileTypes.includes(fileType):
-      icon = IconImageFileType;
-      break;
-    case 'application/pdf':
-      icon = IconPdfFileType;
-      break;
-    default:
-      icon = IconDocumentFileType;
-  }
-  return <SVG src={icon} {...props} />;
+  const icon = (fileType) => {
+    if (imageFileTypes.includes(fileType)) {
+      return IconImageFileType;
+    } else if (fileType === 'application/pdf') {
+      return IconPdfFileType;
+    } else {
+      return IconDocumentFileType;
+    }
+  };
+
+  return <SVG src={icon(fileType)} {...props} />;
 };
 
 export default FileType;
