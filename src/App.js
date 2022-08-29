@@ -2,30 +2,31 @@ import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 import Layout from 'components/Layout';
-import { ProtectedRoute } from 'router/ProtectedRoute';
+import withAuth from 'hoc/withAuth';
 
 import Login from 'views/Login';
 import Signup from 'views/Signup';
-import Dashboard from 'views/Dashboard';
-import Settings from 'views/Settings';
-import Customers from 'views/Customers';
-import Users from 'views/Users';
-import Items from 'views/Items';
-import Payments from 'views/Payments';
+import BaseDashboard from 'views/Dashboard';
+import BaseSettings from 'views/Settings';
+import BaseCustomers from 'views/Customers';
+import BaseUsers from 'views/Users';
+import BaseItems from 'views/Items';
+import BasePayments from 'views/Payments';
 import NotFound from 'views/NotFound';
+
+const Dashboard = withAuth(BaseDashboard);
+const Settings = withAuth(BaseSettings);
+const Customers = withAuth(BaseCustomers);
+const Users = withAuth(BaseUsers);
+const Items = withAuth(BaseItems);
+const Payments = withAuth(BasePayments);
 
 const App = () => (
   <BrowserRouter>
     <Routes>
       <Route exact path={'/'} element={<Login />} />
       <Route exact path={`/signup`} element={<Signup />} />
-      <Route
-        path={`/`}
-        element={
-          <ProtectedRoute>
-            <Layout />
-          </ProtectedRoute>
-        }>
+      <Route path={`/`} element={<Layout />}>
         <Route path={'dashboard'} element={<Dashboard />} />
         <Route path={'settings'} element={<Settings />} />
         <Route path={'customers'} element={<Customers />} />

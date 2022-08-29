@@ -3,7 +3,7 @@ import React from 'react';
 import { useDropzone } from 'react-dropzone';
 import Styles from './FileUploader.module.scss';
 import PropTypes from 'prop-types';
-import UploadToCloud from 'components/Icons/UploadToCloud';
+import IconCloudUpload from 'components/Icons/UploadToCloud';
 
 const FileUploader = ({ description, children, ...props }) => {
   const { getRootProps, getInputProps } = useDropzone({ ...props });
@@ -12,7 +12,7 @@ const FileUploader = ({ description, children, ...props }) => {
       <input {...getInputProps()} />
       {children || (
         <>
-          <UploadToCloud className={Styles.icon} />
+          <IconCloudUpload className={Styles.icon} />
           <p className={Styles.description}>{description}</p>
         </>
       )}
