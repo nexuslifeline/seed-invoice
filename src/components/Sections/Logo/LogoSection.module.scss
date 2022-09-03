@@ -1,0 +1,32 @@
+@import '../../../shared/styles/variables.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.logoSection {
+  display: flex;
+  color: $white;
+}
+
+.logoHeadlines {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 10px;
+}
+
+.headline,
+.subheadline {
+  color: $white;
+  margin: 0;
+  opacity: .8;
+}
+
+.headline {
+  line-height: 35px;
+  font-weight: 700;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+  opacity: .8;
+}
