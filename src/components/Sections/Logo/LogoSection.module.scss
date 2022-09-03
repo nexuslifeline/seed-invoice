@@ -1,7 +1,7 @@
 @import '../../../shared/styles/variables.scss';
 @import '../../../shared/styles/mixins.scss';
 
-.logoSection {
+.container {
   display: flex;
   color: $white;
 }
@@ -17,16 +17,20 @@
 .subheadline {
   color: $white;
   margin: 0;
-  opacity: .8;
+  opacity: .9;
 }
 
 .headline {
-  line-height: 35px;
-  font-weight: 700;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.subheadline {
+  font-size: $fs-2;
 }
 
 .logo {
-  height: 55px;
+  height: 36px;
   width: auto;
-  opacity: .8;
+  opacity: .9;
 }

@@ -1,12 +1,12 @@
 import Styles from './LogoSection.module.scss';
 import Logo from 'components/Icons/LogoWhite';
 
-const LogoSection = ({ children }) => {
+const LogoSection = () => {
   return (
-    <div className={Styles.logoSection}>
+    <div className={Styles.container}>
       <Logo className={Styles.logo} />
       <div className={Styles.logoHeadlines}>
-        <h1 className={Styles.headline}>{`Seed`}</h1>
+        <h3 className={Styles.headline}>{`Seed`}</h3>
         <p className={Styles.subheadline}>{`A workplace to grow your business`}</p>
       </div>
     </div>

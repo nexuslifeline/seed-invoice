@@ -1,6 +1,6 @@
 import Circle from 'components/Shapes/Circle';
 
-const CircleGroup = ({ ...props }) => {
+const CircleGroup = () => {
   return (
     <>
       <Circle bottom='-100px' left='-100px' />
