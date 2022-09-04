@@ -2,35 +2,26 @@
 @import '../../../shared/styles/mixins.scss';
 
 .container {
-  display: flex;
+  width: 100%;
   color: $white;
 }
 
-.logoHeadlines {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-left: 10px;
-}
 
-.headline,
 .subheadline {
   color: $white;
   margin: 0;
   opacity: .9;
 }
 
-.headline {
-  line-height: 20px;
-  font-weight: 500;
-}
 
 .subheadline {
   font-size: $fs-2;
+  line-height: 12px;
 }
 
 .logo {
-  height: 36px;
+  height: 24px;
   width: auto;
   opacity: .9;
+  margin: 0;
 }

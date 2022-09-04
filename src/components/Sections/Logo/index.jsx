@@ -1,14 +1,15 @@
 import Styles from './LogoSection.module.scss';
-import Logo from 'components/Icons/LogoWhite';
+import LogoWhiteFull from 'components/Icons/LogoWhiteFull';
 
 const LogoSection = () => {
   return (
     <div className={Styles.container}>
-      <Logo className={Styles.logo} />
-      <div className={Styles.logoHeadlines}>
+      <LogoWhiteFull className={Styles.logo} />
+      <p className={Styles.subheadline}>{`A workplace to grow your business`}</p>
+      {/* <div className={Styles.logoHeadlines}>
         <h3 className={Styles.headline}>{`Seed Platform`}</h3>
         <p className={Styles.subheadline}>{`A workplace to grow your business`}</p>
-      </div>
+      </div> */}
     </div>
   );
 };
