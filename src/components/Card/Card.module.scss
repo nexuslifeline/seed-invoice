@@ -4,7 +4,7 @@
 .container {
   width: 100%;
   border: 1px solid $gray-20;
-  border-radius: $border-radius;
+  border-radius: $form-element-radius;
   @include box-shadow;
 }
 

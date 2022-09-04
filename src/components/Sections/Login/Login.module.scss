@@ -1,0 +1,26 @@
+@import '../../../shared/styles/variables.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.container {
+  width: 100%;
+  max-width: 490px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.icon {
+  height: 22px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.actionsContainer {
+  margin: 10px auto 30px auto;
+}
+
+.signupLink {
+  color: $text-color;
+  margin: 0 7px;
+  text-decoration: none;
+  font-weight: 500;
+}

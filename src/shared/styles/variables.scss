@@ -69,7 +69,8 @@ $black: #212529;
 
 $cubic: cubic-bezier(.165, .84, .44, 1);
 
-$border-radius: 6px;
+$form-element-radius: 8px;
+$form-element-height: 46px;
 
 // Text, Title, Headlines
 $text-color: $gray-70;
@@ -79,8 +80,7 @@ $title-color: $gray-100;
 // form elements variables
 $form-input-border-color: $gray-20;
 
-// input variables
-$input-height: 44px;
+
 
 // textarea variables
 $textarea-height: 80px;
@@ -102,7 +102,7 @@ $primary-hover-bg-color: $purple-100;
 
 $secondary: $gray-50;
 $secondary-border-color: $gray-50;
-$secondary-hover-bg-color: $gray-60;
+$secondary-hover-bg-color: $gray-80;
 
-$secondary-outline-color: $gray-40;
-$secondary-outline-text-color: $gray-60;
+$secondary-outline-color: $gray-20;
+$secondary-outline-text-color: $gray-80;

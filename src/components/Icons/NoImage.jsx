@@ -1,5 +1,5 @@
 import SVG from 'react-inlinesvg';
-import IconNoImage from 'shared/icons/no-image.svg';
+import IconNoImage from 'shared/assets/icons/no-image.svg';
 
 const NoImage = (props) => <SVG src={IconNoImage} {...props} />;
 

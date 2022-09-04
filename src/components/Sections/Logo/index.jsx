@@ -6,7 +6,7 @@ const LogoSection = () => {
     <div className={Styles.container}>
       <Logo className={Styles.logo} />
       <div className={Styles.logoHeadlines}>
-        <h3 className={Styles.headline}>{`Seed`}</h3>
+        <h3 className={Styles.headline}>{`Seed Platform`}</h3>
         <p className={Styles.subheadline}>{`A workplace to grow your business`}</p>
       </div>
     </div>

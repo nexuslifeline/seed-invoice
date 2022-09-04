@@ -95,3 +95,15 @@
     border-color: $color transparent transparent transparent;
   }
 }
+
+@mixin apply-primary-theme {
+  background: $primary;
+  background: linear-gradient(90deg, $primary 0%, $purple-80 50%, $purple-50 100%);
+  border-color: $primary-border-color;
+  color: $purple-10;
+
+  &:hover:not(:disabled) {
+    background: $primary;
+    color: $white;
+  }
+}

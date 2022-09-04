@@ -31,12 +31,16 @@
   border: 1px solid transparent;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   line-height: 1.5;
   cursor: pointer;
   font-size: 16px;
-  padding: 6px 12px;
-  border-radius: $border-radius;
+  padding: 10px 12px;
+  border-radius: $form-element-radius;
   opacity: 1;
+  height: $form-element-height;
+  margin-bottom: 15px;
 
   &:disabled {
     cursor: default;
@@ -49,16 +53,15 @@
 }
 
 .primary {
-  background-color: $primary;
-  color: $white;
-  border-color: $primary-border-color;
+  // background-color: $primary;
+  // background: $primary;
+  // background: linear-gradient(90deg, $primary 0%, $purple-80 50%, $purple-50 100%);
+  // color: $white;
+  // border-color: $primary-border-color;
+  @include apply-primary-theme;
 
   :global(.loading__spinner) {
     @include apply-loader-color($white);
-  }
-
-  &:hover:not(:disabled) {
-    background-color: $primary-hover-bg-color;
   }
 }
 
@@ -101,15 +104,16 @@
   background-color: $white;
   color: $secondary-outline-text-color;
   border-color: $secondary-outline-color;
-  @include box-shadow;
+  // @include box-shadow;
 
   :global(.loading__spinner) {
     @include apply-loader-color($secondary-outline-text-color);
   }
 
   &:hover:not(:disabled) {
-    background-color: $secondary-outline-color;
+    background-color: $secondary-hover-bg-color;
     color: $white;
+    border-color: $secondary-hover-bg-color;
 
     :global(.loading__spinner) {
       @include apply-loader-color($secondary-outline-text-color);
@@ -137,7 +141,7 @@
   cursor: pointer;
   display: flex;
   padding: 5px 8px;
-  border-radius: $border-radius;
+  border-radius: $form-element-radius;
   align-items: center;
 
   &:hover {
