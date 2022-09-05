@@ -1,0 +1,44 @@
+@import '../../shared//styles//variables.scss';
+
+.container {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.bordered,
+.bordered tr,
+.bordered th,
+.bordered td {
+  border: solid 1px $gray-30;
+}
+
+.borderless,
+.borderless tr,
+.borderless th,
+.borderless td {
+  border: none;
+}
+
+.striped tr:nth-child(odd)>td {
+  background-color: $gray-10;
+}
+
+tr {
+  border-bottom: 1px solid $gray-30;
+  border-top: 1px solid $gray-30;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px 6px;
+  text-align: left;
+}
+
+.filterContainer {
+  margin-bottom: 10px;
+}
+
+.filterInput {
+  width: 250px;
+}
