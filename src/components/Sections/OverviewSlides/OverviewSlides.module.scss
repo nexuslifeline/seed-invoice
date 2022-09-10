@@ -1,11 +1,11 @@
 @import '../../../shared/styles/variables.scss';
 @import '../../../shared/styles/mixins.scss';
 
-.container {
+.slide {
   padding: 30px;
   width: 100%;
   max-width: 450px;
-  margin: 50px auto auto 40px;
+  margin: 40px auto 50px 40px;
 }
 
 .title,
@@ -22,4 +22,33 @@
 
 .description {
   font-size: $fs-5;
+}
+
+.navButtons {
+  display: none;
+}
+
+.dotsContainer {
+  display: inline-flex;
+  list-style: none;
+}
+
+.dotItem {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: darken($primary, 18%);
+  margin-right: 3px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.active {
+    width: 30px;
+    border-radius: 10px;
+  }
 }
