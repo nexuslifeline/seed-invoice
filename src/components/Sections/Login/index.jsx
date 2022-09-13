@@ -1,6 +1,7 @@
 import Button from 'components/Button';
 import UnderlinedText from 'components/UnderlinedText';
 import InputContainer from 'components/Form/InputContainer';
+import InputGroup from 'components/Form/InputGroup';
 import PasswordInput from 'components/Form/PasswordInput';
 import TextInput from 'components/Form/TextInput';
 import Toggle from 'components/Form/Toggle';
@@ -19,9 +20,14 @@ const LoginForm = (props) => {
       <InputContainer>
         <PasswordInput label='Password' placeholder='Password' />
       </InputContainer>
-      <InputContainer style={{ marginBottom: '30px' }}>
+      <div className={Styles.row}>
         <Toggle label={'Remember Me'} />
-      </InputContainer>
+        <button className={Styles.forgotLink}>{'Forgot password?'}</button>
+      </div>
+      <InputGroup>
+        <InputContainer style={{ marginBottom: '30px' }}></InputContainer>
+        <InputContainer style={{ marginBottom: '30px' }}></InputContainer>
+      </InputGroup>
       <div className={Styles.actionsContainer}>
         <Button block>{`Login`}</Button>
         <Button variant={Button.Variants.SECONDARY_OUTLINE} block>
@@ -35,9 +41,9 @@ const LoginForm = (props) => {
       </div>
       <div>
         {`Don't have an account?`}
-        <a href='#' className={Styles.signupLink}>
+        <button className={Styles.signupLink}>
           <UnderlinedText>{'Signup'}</UnderlinedText>
-        </a>
+        </button>
       </div>
     </div>
   );

@@ -8,8 +8,8 @@ const slides = [
     description: 'See the analytics and grow your business remotely, from anywhere.',
   },
   {
-    title: 'Design for your business needs 1',
-    description: 'See the analytics and grow your business remotely, from anywhere 1',
+    title: 'Start managing your business with us',
+    description: 'Crafted to easily manage your invoice that suits your business needs.',
   },
   {
     title: 'Design for your business needs 2',
