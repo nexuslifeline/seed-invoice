@@ -1,5 +1,5 @@
-const Signup = (props) => {
-  return <h1>{`Signup`}</h1>;
+export const Signup = () => {
+  return <div>test</div>;
 };
 
 export default Signup;

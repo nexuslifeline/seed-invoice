@@ -1,11 +1,16 @@
-import Layout from 'components/Layout/Base';
 import LoginForm from 'components/Sections/Login';
+import Panel from 'components/Panels';
+import RightPane from 'components/Sections/Login/RightPane';
+import { Fragment } from 'react';
 
 export const Login = () => {
   return (
-    <Layout>
-      <LoginForm />
-    </Layout>
+    <Fragment>
+      <Panel>
+        <LoginForm />
+      </Panel>
+      <RightPane />
+    </Fragment>
   );
 };
 

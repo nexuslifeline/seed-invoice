@@ -9,8 +9,10 @@ import IconFacebook from 'components/Icons/Facebook';
 import IconGoogle from 'components/Icons/Google';
 import Welcome from './components/Welcome';
 import Styles from './Login.module.scss';
+import { useNavigate } from 'react-router-dom';
 
-const LoginForm = (props) => {
+const LoginForm = () => {
+  const navigate = useNavigate();
   return (
     <div className={Styles.container}>
       <Welcome />
@@ -41,8 +43,8 @@ const LoginForm = (props) => {
       </div>
       <div>
         {`Don't have an account?`}
-        <button className={Styles.signupLink}>
-          <UnderlinedText>{'Signup'}</UnderlinedText>
+        <button className={Styles.signupLink} onClick={() => navigate('/signup')}>
+          <UnderlinedText>{'Signup for free'}</UnderlinedText>
         </button>
       </div>
     </div>

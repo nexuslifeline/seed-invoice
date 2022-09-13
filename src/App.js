@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
-import Layout from 'components/Layout/Main';
+import MainLayout from 'components/Layout/Main';
+import BaseLayout from 'components/Layout/Base';
 import withAuth from 'hoc/withAuth';
 
-import Login from 'views/Login';
 import Signup from 'views/Signup';
+import Login from 'views/Login';
 import BaseDashboard from 'views/Dashboard';
 import BaseSettings from 'views/Settings';
 import BaseCustomers from 'views/Customers';
@@ -25,10 +26,12 @@ const Payments = withAuth(BasePayments);
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route exact path={'/'} element={<Login />} />
-      <Route exact path={'/test'} element={<TestPage />} />
-      <Route exact path={`/signup`} element={<Signup />} />
-      <Route path={`/`} element={<Layout />}>
+      <Route path={`/`} element={<BaseLayout />}>
+        <Route index element={<Login />} />
+        <Route path={`/signup`} element={<Signup />} />
+        <Route path={`/test`} element={<TestPage />} />
+      </Route>
+      <Route path={`/`} element={<MainLayout />}>
         <Route path={'dashboard'} element={<Dashboard />} />
         <Route path={'settings'} element={<Settings />} />
         <Route path={'customers'} element={<Customers />} />
