@@ -15,27 +15,5 @@
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 1%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.13) 49%, rgba(255, 255, 255, 0.28) 95%, rgba(255, 255, 255, 0.3) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#4dffffff', GradientType=1);
-  /* IE6-9 */
-
-  /* IE6-9 */
-
-  /* IE6-9 */
-
-  &.shape1 {
-    top: -100px;
-    left: 0;
-    transform: rotate(-50deg);
-  }
-
-  &.shape2 {
-    top: 400px;
-    right: -500px;
-    transform: rotate(39deg);
-  }
-
-  &.shape3 {
-    top: 550px;
-    right: 200px;
-    transform: rotate(-26deg);
-  }
+  z-index: 10;
 }

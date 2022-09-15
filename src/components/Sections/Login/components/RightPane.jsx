@@ -7,7 +7,7 @@ import Styles from './RightPane.module.scss';
 
 const RightPane = () => {
   return (
-    <Panel hasBackground>
+    <Panel className={Styles.panel} hasBackground>
       <LogoSection />
       <OverviewSlides />
       <Circles />

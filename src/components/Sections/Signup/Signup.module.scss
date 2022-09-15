@@ -1,19 +1,11 @@
 @import '../../../shared/styles/variables.scss';
 @import '../../../shared/styles/mixins.scss';
-
 @import '../Shared.module.scss';
 
-
-.signupLink {
-  margin: 0 5px;
-}
-
-.row {
-  display: flex;
-  width: 100%;
-  margin: 20px 0;
-}
-
-.forgotLink {
+.login {
   margin-left: auto;
+}
+
+.actionsContainer {
+  margin-top: 15px;
 }
