@@ -1,5 +1,15 @@
+import ImageNotFound from 'components/Backgrounds/Images/NotFound';
+import Styles from './NotFound.module.scss';
+
 const NotFound = (props) => {
-  return <h1>{`NotFound`}</h1>;
+  return (
+    <div className={Styles.container}>
+      <ImageNotFound className={Styles.bgImage} />
+      <p>
+        Sorry, the page you requested cannot be found. Please go back to homepage or contact us ay support@support.com
+      </p>
+    </div>
+  );
 };
 
 export default NotFound;
