@@ -12,12 +12,41 @@ import Loader from 'components/Loader';
 import Card from 'components/Card';
 import FileUploader from 'components/FileUploader';
 import File from 'components/File';
+import Badge from 'components/Badge';
+import Accordion from 'components/Accordion';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [fruits, setFruits] = useState('');
   const [profilePhoto, setProfilePhoto] = useState(null);
   const [myFiles, setMyFiles] = useState([]);
+  const items = [
+    {
+      header: <div>Lorem ipsum dolor sit amet.</div>,
+      content: (
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi temporibus iste dolor illo dicta quo?</div>
+      ),
+    },
+    {
+      header: <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit veniam nihil itaque..</div>,
+      content: (
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt non sint illum. At expedita repellendus, earum
+          aliquam amet quisquam quasi, cupiditate tempore quae necessitatibus eligendi numquam, ab ex nisi inventore.
+        </div>
+      ),
+    },
+    {
+      header: <div>Lorem ipsum dolor sit amet consectetur.</div>,
+      content: (
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo corporis assumenda deleniti,
+          blanditiis veniam veritatis. Officia recusandae temporibus magnam laboriosam ducimus aliquam facilis inventore
+          molestias voluptates. Veritatis recusandae cumque mollitia error consequatur, possimus consectetur?
+        </div>
+      ),
+    },
+  ];
 
   const onPhotoChanged = (e) => {
     const [file] = e.target.files;
@@ -127,7 +156,18 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '30px' }}>
+    <div style={{ padding: '30px', width: '100%', height: '100%', overflow: 'auto' }}>
+      <div style={{ marginBottom: 20 }}>
+        <Accordion items={items} />
+      </div>
+
+      <div style={{ marginBottom: '10px', display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <Badge label='Badge' />
+        <Badge label='Badge' variant={Badge.Variants.PRIMARY_OUTLINE} />
+        <Badge label='Badge' variant={Badge.Variants.SECONDARY} />
+        <Badge label='Badge' variant={Badge.Variants.SECONDARY_OUTLINE} />
+      </div>
+
       <Card
         header={`This is a sample title`}
         footer={() => (
