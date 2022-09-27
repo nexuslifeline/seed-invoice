@@ -5,6 +5,8 @@ import Styles from './PasswordInput.module.scss';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
 import StrengthBar from './StrengthBar';
+import IconHidePassword from 'components/Icons/HidePassword';
+import IconShowPassword from 'components/Icons/ShowPassword';
 
 const strengths = {
   STRONG: 'strong',
@@ -33,6 +35,7 @@ const mediumPassword = new RegExp(`${minSix}|${noDigit}|${noCapital}|${noSpecial
 
 const PasswordInput = ({ label, containerClassName, showStrength, ...props }) => {
   const [strength, setStrength] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const checkPassword = (value) => {
     if (!value) {
@@ -56,6 +59,10 @@ const PasswordInput = ({ label, containerClassName, showStrength, ...props }) =>
 
   const debounceCheckPassword = useCallback(debounce(checkPassword, 200), []);
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   useEffect(() => {
     if (showStrength) {
       debounceCheckPassword(props?.value);
@@ -64,9 +71,12 @@ const PasswordInput = ({ label, containerClassName, showStrength, ...props }) =>
 
   return (
     <div className={classNames(Styles.container, containerClassName)}>
-      <input type='password' className={Styles.input} {...props} />
+      <input type={showPassword ? 'text' : 'password'} className={Styles.input} {...props} />
       <label className={Styles.label}>{label}</label>
       {showStrength && <StrengthBar {...{ strength, size: score[strength] }} />}
+      {(showPassword && <IconHidePassword className={Styles.showHideIcon} onClick={toggleShowPassword} />) || (
+        <IconShowPassword className={Styles.showHideIcon} onClick={toggleShowPassword} />
+      )}
     </div>
   );
 };
