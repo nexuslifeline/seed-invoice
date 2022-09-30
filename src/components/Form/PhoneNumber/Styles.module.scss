@@ -1,0 +1,153 @@
+@import '../../../shared/styles/variables.scss';
+@import '../shared.module.scss';
+
+$height: 50px;
+
+.countryPhoneNumber {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  border: 1px solid $gray-20;
+  border-radius: $form-element-radius;
+  box-sizing: border-box;
+  width: 100%;
+
+  .phoneCountry {
+    display: inline-flex;
+    align-items: center;
+
+    flex: 0 1 68px;
+  }
+
+  .selectPhoneCountry,
+  .fieldPhoneNumber {
+    border: none;
+    height: 100%;
+    min-height: $height - 2px;
+    flex: 1;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .selectPhoneCountry {
+    flex: 1;
+  }
+
+  .fieldPhoneNumber input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &.hasIcon {
+    .selectPhoneCountry {
+      :global {
+        .phone-country__value-container {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    .phoneCountry {
+      flex: 0 1 95px;
+    }
+  }
+
+  .selectPhoneCountry {
+    height: 100%;
+
+    :global {
+      .phone-country__dropdown-indicator {
+        display: none;
+      }
+
+      .phone-country__indicator-separator {
+        height: 100%;
+        margin: 0;
+        background-color: $gray-10;
+      }
+
+      .phone-country__value-container {
+        width: 100%;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+      }
+
+      .phone-country__menu {
+        min-width: 270px;
+        top: 47px;
+        z-index: 3;
+      }
+
+      .phone-country__control {
+        border: none;
+        border-radius: $form-element-radius;
+        min-height: $height - 2px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &.phone-country__control--is-focused {
+          // z-index: $z-menu;
+          transition: none;
+          outline: none;
+          border: 1px solid $blue-100;
+          box-shadow: 0 0 0 3px $blue-10;
+        }
+      }
+    }
+  }
+}
+
+.optionItem {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  font-size: 16px;
+  // font-weight: $fw-1;
+  align-items: center;
+
+  &.isSelected {
+    background-color: #2684ff;
+    color: $white;
+  }
+
+  &:hover {
+    cursor: pointer;
+    // background-color: $blue-7;
+  }
+}
+
+.flag {
+  margin: 2px 8px 0 0;
+}
+
+.countryText {
+  // font-size: $size-1;
+  flex: 1;
+}
+
+.dialCode {
+  // font-size: $size-2;
+  text-align: right;
+
+  flex: 0;
+}
+
+$icon-size: 18px;
+
+.icon {
+  // height: $icon-size;
+  // width: $icon-size;
+  position: absolute;
+  color: $gray-40;
+  left: 13px;
+  z-index: 5;
+
+  * {
+    fill: $gray-40;
+  }
+}

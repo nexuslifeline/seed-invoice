@@ -12,6 +12,7 @@ import Loader from 'components/Loader';
 import Card from 'components/Card';
 import FileUploader from 'components/FileUploader';
 import File from 'components/File';
+import PhoneNumber from 'components/Form/PhoneNumber';
 import Badge from 'components/Badge';
 import Accordion from 'components/Accordion';
 
@@ -182,6 +183,7 @@ function App() {
         )}>{`body test`}</Card>
       <br />
       <br />
+      <PhoneNumber />
       <Loader />
       <br />
       <Toggle label={'Yes, I am above 18y/o'} />
