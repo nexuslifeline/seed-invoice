@@ -4,6 +4,7 @@ import Select from 'react-select';
 import classNames from 'classnames';
 import Styles from './Styles.module.scss';
 import SharedStyles from '../shared.module.scss';
+import SelectStyles from '../Select/Select.module.scss';
 import FlagStyles from './Flags.module.scss';
 import countries from 'shared/data/countries.json'; // Note! move in backend
 
@@ -26,11 +27,11 @@ const PhoneCountryOption = ({ data, innerRef, innerProps, isSelected }) => {
 const PhoneNumber = ({ phoneCountry, phoneNumber, error, onPhoneCountryChange, onPhoneNumberChange }) => {
   return (
     <div className={classNames(Styles.countryPhoneNumber)}>
-      <div className={Styles.phoneCountry}>
+      <div className={classNames(SelectStyles.container, Styles.countryContainer)}>
         <Select
-          className={Styles.selectPhoneCountry}
+          className={classNames(SelectStyles.baseSelect, Styles.selectPhoneCountry)}
           value={phoneCountry}
-          classNamePrefix='phone-country'
+          classNamePrefix='select'
           name='phoneCountry'
           placeholder='Code'
           getOptionLabel={({ dialCode }) => dialCode}
