@@ -1,0 +1,16 @@
+@import '../../shared/styles/variables.scss';
+
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 320px;
+  border-right: 1px solid $gray-20;
+}
+
+.mainPanel {
+  width: 60px;
+  border-right: 1px solid $gray-20;
+  height: 100%;
+}

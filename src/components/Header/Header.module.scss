@@ -1,0 +1,11 @@
+@import '../../shared/styles/variables.scss';
+
+.container {
+  position: fixed;
+  height: 60px;
+  flex: 1;
+  left: 320px;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid $gray-20;
+}
