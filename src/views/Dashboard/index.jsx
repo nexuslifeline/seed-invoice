@@ -4,6 +4,7 @@ import { useMemo, useState, useCallback, useRef, useEffect } from 'react';
 import { customers } from 'sampleData';
 import Pagination from 'components/Pagination';
 import Table from 'components/Table';
+import withAuth from 'shared/hoc/withAuth';
 
 const Dashboard = (props) => {
   const columns = useMemo(
@@ -151,4 +152,4 @@ const Dashboard = (props) => {
   );
 };
 
-export default Dashboard;
+export default withAuth(Dashboard);

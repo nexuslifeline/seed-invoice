@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Styles from './Base.module.scss';
-import withTransition from 'hoc/withTransition';
+import withTransition from 'shared/hoc/withTransition';
 
 const Base = () => {
   return (
