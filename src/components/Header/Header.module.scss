@@ -1,11 +1,10 @@
 @import '../../shared/styles/variables.scss';
 
 .container {
-  position: fixed;
-  height: 60px;
+  grid-column-start: 2;
+  height: $header-height;
   flex: 1;
-  left: 320px;
+  left: $aside-width;
   top: 0;
-  width: 100%;
   border-bottom: 1px solid $gray-20;
 }

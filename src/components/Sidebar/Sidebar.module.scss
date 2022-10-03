@@ -5,12 +5,13 @@
   left: 0;
   top: 0;
   height: 100vh;
-  width: 320px;
+  width: $aside-width;
   border-right: 1px solid $gray-20;
+  // background-color: $white;
 }
 
 .mainPanel {
-  width: 60px;
+  width: $main-nav-panel;
   border-right: 1px solid $gray-20;
   height: 100%;
 }
