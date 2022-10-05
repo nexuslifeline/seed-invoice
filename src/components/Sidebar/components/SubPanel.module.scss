@@ -1,0 +1,19 @@
+@import '../../../shared/styles/variables.scss';
+
+.container {
+  width: 240px;
+  height: 100%;
+  border-right: 1px solid $gray-20;
+}
+
+.logo {
+  height: 26px;
+  width: auto;
+  margin: auto;
+}
+
+.logoContainer {
+  display: flex;
+  width: 100%;
+  padding: 20px 10px;
+}

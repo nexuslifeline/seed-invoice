@@ -1,0 +1,65 @@
+@import '../../../shared/styles/variables.scss';
+
+.container {
+  width: 100%;
+  padding: 15px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: $fs-1;
+  color: $gray-50;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.menus {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: $fs-3;
+  cursor: pointer;
+  margin-bottom: 4px;
+
+  &:hover {
+    background-color: $gray-10;
+    border-radius: 6px;
+  }
+}
+
+.icon {
+  height: 17px;
+  width: auto;
+  margin-right: 15px;
+}
+
+.btnSearch {
+  background: none;
+  border: 0;
+  margin-left: auto;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 26px;
+  width: 26px;
+  padding: 5px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $gray-10;
+    border-radius: 50%;
+  }
+}

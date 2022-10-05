@@ -4,11 +4,9 @@
   grid-column-start: 2;
   height: $header-height;
   flex: 1;
-  left: $aside-width;
-  top: 0;
   border-bottom: 1px solid $gray-20;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 30px;
 }

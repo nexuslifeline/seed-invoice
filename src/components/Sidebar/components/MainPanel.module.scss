@@ -1,0 +1,48 @@
+@import '../../../shared/styles/variables.scss';
+
+.container {
+  width: $main-nav-panel;
+  border-right: 1px solid $gray-20;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 8px;
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+  cursor: pointer;
+}
+
+.menus {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.menu {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 15px 0;
+
+  &:hover {
+    background-color: $purple-10;
+
+    .icon {
+      fill: $purple-100;
+      color: $purple-100;
+    }
+  }
+}
+
+.icon {
+  height: 30px;
+  width: auto;
+  fill: $gray-50;
+}
