@@ -9,6 +9,20 @@
   align-items: center;
   justify-content: center;
   // overflow: hidden;
+
+  &.online {
+    &::before {
+      position: absolute;
+      top: -2px;
+      right: -3px;
+      height: 9px;
+      width: 9px;
+      background-color: $green-100;
+      border: 2px solid $white;
+      content: '';
+      border-radius: 50%;
+    }
+  }
 }
 
 .square {

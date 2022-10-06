@@ -10,7 +10,7 @@ import Dashboard from 'views/Dashboard';
 import Settings from 'views/Settings';
 import Customers from 'views/Customers';
 import Users from 'views/Users';
-import Items from 'views/Items';
+import Products from 'views/Products';
 import Payments from 'views/Payments';
 import TestPage from 'views/Test';
 import NotFound from 'views/NotFound';
@@ -21,6 +21,11 @@ import Orders from 'views/Orders';
 import Expenses from 'views/Expenses';
 import Tax from 'views/Tax';
 import Account from 'views/Account';
+import Preferences from 'views/Preferences';
+import PaymentModes from 'views/PaymentModes';
+import Members from 'views/Members';
+import Categories from 'views/Categories';
+import Roles from 'views/Roles';
 
 const Index = () => (
   <BrowserRouter>
@@ -41,8 +46,13 @@ const Index = () => (
         <Route path={'expenses'} element={<Expenses />} />
         <Route path={'tax'} element={<Tax />} />
         <Route path={'account'} element={<Account />} />
+        <Route path={'preferences'} element={<Preferences />} />
+        <Route path={'payment-modes'} element={<PaymentModes />} />
+        <Route path={'members'} element={<Members />} />
+        <Route path={'categories'} element={<Categories />} />
+        <Route path={'roles'} element={<Roles />} />
         <Route path={'users'} element={<Users />} />
-        <Route path={'items'} element={<Items />} />
+        <Route path={'products'} element={<Products />} />
         <Route path={'payments'} element={<Payments />} />
       </Route>
       <Route path='*' element={<NotFound />} />

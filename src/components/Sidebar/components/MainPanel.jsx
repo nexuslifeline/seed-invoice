@@ -3,6 +3,7 @@ import PurpleMini from 'components/Icons/Logo/PurpleMini';
 import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
 import { navLinks } from './nav';
+import Avatar from 'components/Avatar';
 
 const MainPanel = (props) => {
   const location = useLocation();
@@ -24,6 +25,20 @@ const MainPanel = (props) => {
           );
         })}
       </ul>
+      <div className={Styles.bottom}>
+        <Avatar
+          round
+          containerProps={{
+            borderWidth: 0,
+            width: 40,
+            height: 40,
+          }}
+          src=''
+          initials={'PC'}
+          profileId={5}
+          isOnline
+        />
+      </div>
     </div>
   );
 };
