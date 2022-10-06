@@ -1,5 +1,7 @@
+import withAuth from 'shared/hoc/withAuth';
+
 const Payments = (props) => {
-  return <h1>{`Payments`}</h1>;
+  return <div style={{ padding: '30px' }}>This is the Payments</div>;
 };
 
-export default Payments;
+export default withAuth(Payments);

@@ -6,10 +6,10 @@ const Hamburger = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div class={classNames(Styles.hamburger, isActive && Styles.isActive)} onClick={() => setIsActive(!isActive)}>
-      <span class={Styles.line}></span>
-      <span class={Styles.line}></span>
-      <span class={Styles.line}></span>
+    <div className={classNames(Styles.hamburger, isActive && Styles.isActive)} onClick={() => setIsActive(!isActive)}>
+      <span className={Styles.line}></span>
+      <span className={Styles.line}></span>
+      <span className={Styles.line}></span>
     </div>
   );
 };

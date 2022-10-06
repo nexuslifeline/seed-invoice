@@ -1,22 +1,28 @@
 import Styles from './MainPanel.module.scss';
-import Home from 'components/Icons/HomeMono';
-import Apps from 'components/Icons/AppsMono';
-import Gear from 'components/Icons/GearMono';
+import PurpleMini from 'components/Icons/Logo/PurpleMini';
+import classNames from 'classnames';
+import { Link, useLocation } from 'react-router-dom';
+import { navLinks } from './nav';
 
 const MainPanel = (props) => {
+  const location = useLocation();
+
   return (
     <div className={Styles.container}>
-      {/* <LogoGreenMini className={Styles.logo} /> */}
+      <div className={Styles.logoContainer}>
+        <PurpleMini className={Styles.logo} />
+      </div>
       <ul className={Styles.menus}>
-        <li className={Styles.menu}>
-          <Home className={Styles.icon} />
-        </li>
-        <li className={Styles.menu}>
-          <Apps className={Styles.icon} />
-        </li>
-        <li className={Styles.menu}>
-          <Gear className={Styles.icon} />
-        </li>
+        {navLinks.map(({ icon: Icon, children }, idx) => {
+          const found = children.some((child) => child.to === location.pathname);
+          return (
+            <li key={idx} className={classNames(Styles.menu, found && Styles.active)}>
+              <Link to={children[0].to} className={Styles.link}>
+                <Icon className={Styles.icon} />
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -1,11 +1,13 @@
 import MagnifyingGlass from 'components/Icons/MagnifyingGlass';
-import Star from 'components/Icons/Star';
-import Cash from 'components/Icons/Cash';
-import Card from 'components/Icons/Card';
 import Styles from './SubPanelSection.module.scss';
-import Bookmark from 'components/Icons/Bookmark';
+import classNames from 'classnames';
+import { useLocation, Link } from 'react-router-dom';
+import { navLinks } from './nav';
 
-const SubPanelSection = ({ title }) => {
+const SubPanelSection = ({ title, children }) => {
+  const location = useLocation();
+  const subLinks = navLinks.find((v) => v.children.some((child) => child.to === location.pathname));
+
   return (
     <div className={Styles.container}>
       <div className={Styles.title}>
@@ -14,8 +16,19 @@ const SubPanelSection = ({ title }) => {
           <MagnifyingGlass />
         </button>
       </div>
+      {children}
       <ul className={Styles.menus}>
-        <li className={Styles.menu}>
+        {subLinks.children.map(({ icon: Icon, text, to }) => {
+          return (
+            <li className={classNames(Styles.menu, to === location.pathname && Styles.active)}>
+              <Link to={to} className={Styles.link}>
+                <Icon className={Styles.icon} />
+                {text}
+              </Link>
+            </li>
+          );
+        })}
+        {/* <li className={classNames(Styles.menu, Styles.active)}>
           <Star className={Styles.icon} />
           {'Invoices'}
         </li>
@@ -30,7 +43,7 @@ const SubPanelSection = ({ title }) => {
         <li className={Styles.menu}>
           <Card className={Styles.icon} />
           {'Expenses'}
-        </li>
+        </li> */}
       </ul>
     </div>
   );

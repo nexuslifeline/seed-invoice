@@ -1,0 +1,10 @@
+@import '../../shared/styles/variables.scss';
+
+.link {
+  text-decoration: none;
+  height: auto;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}

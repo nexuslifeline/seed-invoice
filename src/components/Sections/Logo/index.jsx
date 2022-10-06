@@ -1,5 +1,5 @@
 import Styles from './LogoSection.module.scss';
-import LogoWhiteFull from 'components/Icons/LogoWhiteFull';
+import LogoWhiteFull from 'components/Icons/Logo/WhiteFull';
 
 const LogoSection = () => {
   return (

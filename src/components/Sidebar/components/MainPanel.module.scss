@@ -1,4 +1,5 @@
 @import '../../../shared/styles/variables.scss';
+@import '../Shared.module.scss';
 
 .container {
   width: $main-nav-panel;
@@ -7,11 +8,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px 8px;
+  padding: 5px;
+}
+
+.logoContainer {
+  padding: 5px;
+  border-bottom: 1px solid $gray-20;
 }
 
 .logo {
-  height: 36px;
+  height: 25px;
   width: auto;
   cursor: pointer;
 }
@@ -31,8 +37,9 @@
   cursor: pointer;
   margin: 15px 0;
 
-  &:hover {
-    background-color: $purple-10;
+  &:hover,
+  &.active {
+    background-color: $gray-10;
 
     .icon {
       fill: $purple-100;
@@ -45,4 +52,5 @@
   height: 30px;
   width: auto;
   fill: $gray-50;
+  color: $gray-50;
 }
