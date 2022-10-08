@@ -1,9 +1,20 @@
 @import '../../../shared/styles/variables.scss';
 
 .container {
+  position: relative;
   width: 240px;
   height: 100%;
   border-right: 1px solid $gray-20;
+  transition: 0.5s ease width;
+  -moz-transition: 0.5s ease width;
+  -webkit-transition: 0.5s ease width;
+
+
+  &.collapse {
+    width: 0;
+    overflow: hidden;
+    border: 0;
+  }
 }
 
 .logo {

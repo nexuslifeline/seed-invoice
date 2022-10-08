@@ -5,4 +5,13 @@
   height: 100vh;
   width: auto;
   grid-column-start: 1;
+  position: relative;
+}
+
+.btnMenu {
+  position: absolute;
+  top: calc((#{$header-height} / 2) - 15px);
+  right: -50px;
+  background: none;
+  border: 0;
 }
