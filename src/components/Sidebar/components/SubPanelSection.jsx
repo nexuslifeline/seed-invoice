@@ -2,7 +2,7 @@ import MagnifyingGlass from 'components/Icons/MagnifyingGlass';
 import Styles from './SubPanelSection.module.scss';
 import classNames from 'classnames';
 import { useLocation, Link } from 'react-router-dom';
-import { navLinks } from './nav';
+import { navLinks } from '../../../router/nav';
 
 const SubPanelSection = ({ title, children }) => {
   const location = useLocation();

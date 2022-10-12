@@ -15,6 +15,7 @@ import File from 'components/File';
 import PhoneNumber from 'components/Form/PhoneNumber';
 import Badge from 'components/Badge';
 import Accordion from 'components/Accordion';
+import SearchInput from 'components/Form/SearchInput';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -161,6 +162,10 @@ function App() {
       <div style={{ marginBottom: 20 }}>
         <Accordion items={items} />
       </div>
+
+      <SearchInput placeholder='Search' />
+      <br />
+      <br />
 
       <div style={{ marginBottom: '10px', display: 'flex', gap: '10px', alignItems: 'center' }}>
         <Badge label='Badge' />

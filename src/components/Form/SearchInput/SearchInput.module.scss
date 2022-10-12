@@ -1,0 +1,35 @@
+@import '../../../shared/styles/variables.scss';
+@import '../shared.module.scss';
+
+.icon {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+}
+
+.input {
+  padding-left: 40px;
+
+  &::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: inherit;
+  }
+
+  &:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: inherit;
+  }
+
+  &::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: inherit;
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: inherit;
+  }
+}

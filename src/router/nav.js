@@ -15,6 +15,9 @@ import Invoice from 'components/Icons/Invoice';
 import CreditCard from 'components/Icons/CreditCard';
 import Team from 'components/Icons/Team';
 import Subfolder from 'components/Icons/Subfolder';
+import EditProfile from 'components/Icons/EditProfile';
+import Options from 'components/Icons/Options';
+import Vibration from 'components/Icons/Vibration';
 
 export const navLinks = [
   { text: 'Home', icon: Home, children: [{ text: 'Dashboard', to: '/dashboard', icon: Bookmark }] },
@@ -48,9 +51,9 @@ export const navLinks = [
     children: [
       { text: 'Company', to: '/company', icon: Building },
       { text: 'Tax', to: '/tax', icon: Tax },
-      { text: 'Account', to: '/account', icon: Bookmark },
-      { text: 'Payment Modes', to: '/payment-modes', icon: Star },
-      { text: 'Preferences', to: '/preferences', icon: Star },
+      { text: 'Account', to: '/account', icon: EditProfile },
+      { text: 'Payment Modes', to: '/payment-modes', icon: Vibration },
+      { text: 'Preferences', to: '/preferences', icon: Options },
       { text: 'Categories', to: '/categories', icon: Subfolder },
       { text: 'Members', to: '/members', icon: Team },
     ],

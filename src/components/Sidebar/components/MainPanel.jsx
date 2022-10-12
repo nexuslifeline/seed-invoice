@@ -2,7 +2,7 @@ import Styles from './MainPanel.module.scss';
 import PurpleMini from 'components/Icons/Logo/PurpleMini';
 import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
-import { navLinks } from './nav';
+import { navLinks } from '../../../router/nav';
 import Avatar from 'components/Avatar';
 
 const MainPanel = (props) => {
