@@ -72,7 +72,7 @@ $black: #212529;
 $cubic: cubic-bezier(.165, .84, .44, 1);
 
 $form-element-radius: 8px;
-$form-element-height: 48px;
+$form-element-height: 46px;
 
 // Text, Title, Headlines
 $text-color: $gray-70;
@@ -82,7 +82,8 @@ $title-color: $gray-100;
 // form elements variables
 $form-input-border-color: $gray-20;
 
-
+// Search input
+$search-radius: 15px;
 
 // textarea variables
 $textarea-height: 80px;

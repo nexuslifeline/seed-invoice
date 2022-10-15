@@ -9,7 +9,6 @@ const SearchInput = ({ label, containerClassName, ...props }) => {
     <div className={classNames(Styles.container, containerClassName)}>
       <MagnifyingGlass className={Styles.icon} />
       <input type='text' className={Styles.input} {...props} />
-      <label className={Styles.label}>{label}</label>
     </div>
   );
 };
