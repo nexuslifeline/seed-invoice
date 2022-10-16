@@ -1,12 +1,14 @@
 import Styles from './SubPanel.module.scss';
 // import LogoBlackFull from 'components/Icons/LogoBlackFull';
-import SubPanelSection from './SubPanelSection';
 import classNames from 'classnames';
+import SubPanelSection from './SubPanelSection';
 
-const SubPanel = ({ isCollapse }) => {
+const SubPanel = ({ linkGroups, isCollapse, setHasChildren, ...props }) => {
   return (
     <div className={classNames(Styles.container, isCollapse && Styles.collapse)}>
-      <SubPanelSection title={'Workspace'} />
+      {linkGroups.map((group, idx) => {
+        return <SubPanelSection key={idx} title={group.text} links={group.children} />;
+      })}
     </div>
   );
 };

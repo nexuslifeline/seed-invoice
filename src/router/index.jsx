@@ -26,6 +26,7 @@ import PaymentModes from 'views/PaymentModes';
 import Members from 'views/Members';
 import Categories from 'views/Categories';
 import Roles from 'views/Roles';
+import SalesReport from 'views/SalesReport';
 
 const Index = () => (
   <BrowserRouter>
@@ -54,6 +55,8 @@ const Index = () => (
         <Route path={'users'} element={<Users />} />
         <Route path={'products'} element={<Products />} />
         <Route path={'payments'} element={<Payments />} />
+        <Route path={'billing'} element={<Payments />} />
+        <Route path={'sales-report'} element={<SalesReport />} />
       </Route>
       <Route path='*' element={<NotFound />} />
     </Routes>

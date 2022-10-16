@@ -1,26 +1,23 @@
-import MagnifyingGlass from 'components/Icons/MagnifyingGlass';
 import Styles from './SubPanelSection.module.scss';
-import classNames from 'classnames';
 import { useLocation, Link } from 'react-router-dom';
-import { navLinks } from '../../../router/nav';
+import classNames from 'classnames';
 
-const SubPanelSection = ({ title, children }) => {
+const SubPanelSection = ({ title, children, links }) => {
   const location = useLocation();
-  const subLinks = navLinks.find((v) => v.children.some((child) => child.to === location.pathname));
 
   return (
     <div className={Styles.container}>
       <div className={Styles.title}>
         {title}
-        <button className={Styles.btnSearch}>
+        {/* <button className={Styles.btnSearch}>
           <MagnifyingGlass />
-        </button>
+        </button> */}
       </div>
       {children}
       <ul className={Styles.menus}>
-        {subLinks.children.map(({ icon: Icon, text, to }) => {
+        {links.map(({ icon: Icon, text, to }, idx) => {
           return (
-            <li className={classNames(Styles.menu, to === location.pathname && Styles.active)}>
+            <li key={idx} className={classNames(Styles.menu, to === location?.pathname && Styles.active)}>
               <Link to={to} className={Styles.link}>
                 <Icon className={Styles.icon} />
                 {text}

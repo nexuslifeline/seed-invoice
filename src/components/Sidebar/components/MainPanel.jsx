@@ -1,12 +1,15 @@
 import Styles from './MainPanel.module.scss';
 import PurpleMini from 'components/Icons/Logo/PurpleMini';
-import classNames from 'classnames';
-import { Link, useLocation } from 'react-router-dom';
-import { navLinks } from '../../../router/nav';
+import { Link } from 'react-router-dom';
 import Avatar from 'components/Avatar';
+import { navLinks } from 'router/nav';
+import classNames from 'classnames';
 
-const MainPanel = (props) => {
-  const location = useLocation();
+const MainPanel = ({ activeIndex }) => {
+  const getNavUrl = (idx) => {
+    const link = navLinks?.[idx] || {};
+    return link.to || link.groups?.[0]?.children?.[0]?.to;
+  };
 
   return (
     <div className={Styles.container}>
@@ -14,11 +17,10 @@ const MainPanel = (props) => {
         <PurpleMini className={Styles.logo} />
       </div>
       <ul className={Styles.menus}>
-        {navLinks.map(({ icon: Icon, children }, idx) => {
-          const found = children.some((child) => child.to === location.pathname);
+        {navLinks.map(({ icon: Icon }, idx) => {
           return (
-            <li key={idx} className={classNames(Styles.menu, found && Styles.active)}>
-              <Link to={children[0].to} className={Styles.link}>
+            <li key={idx} className={classNames(Styles.menu, idx === activeIndex && Styles.active)}>
+              <Link to={getNavUrl(idx)} className={Styles.link}>
                 <Icon className={Styles.icon} />
               </Link>
             </li>
