@@ -10,9 +10,20 @@ import Welcome from 'components/Sections/Welcome';
 import Styles from './Login.module.scss';
 import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
+import { useState } from 'react';
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate('/invoices');
+    }, 550);
+  };
+
   return (
     <div className={Styles.container}>
       <Welcome
@@ -30,7 +41,7 @@ const LoginForm = () => {
         <button className={classNames(Styles.link, Styles.forgotLink)}>{'Forgot password?'}</button>
       </div>
       <div className={Styles.actionsContainer}>
-        <Button block>{`Sign in`}</Button>
+        <Button onClick={handleLogin} isBusy={isLoading} block>{`Sign in`}</Button>
         <Button variant={Button.Variants.SECONDARY_OUTLINE} block>
           <IconGoogle className={Styles.icon} />
           {`Sign in with Google`}

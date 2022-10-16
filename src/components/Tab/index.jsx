@@ -1,24 +1,32 @@
 import { Tab } from '@headlessui/react';
 import PropTypes from 'prop-types';
 import Styles from './Tab.module.scss';
+import classNames from 'classnames';
 
-const Panel = ({ children }) => {
-  return <Tab.Panel className={Styles.panelItem}>{children}</Tab.Panel>;
+const Panel = ({ children, className, listItemClass, ...props }) => {
+  return (
+    <Tab.Panel className={classNames(Styles.panelItem, className)} {...props}>
+      {children}
+    </Tab.Panel>
+  );
 };
 
-const BaseTab = ({ children, ...props }) => {
+const BaseTab = ({ children, className, tabListClass, panelsClass, ...props }) => {
   return (
-    <Tab.Group {...props}>
+    <Tab.Group className={className} {...props}>
       {children.length > 0 && (
-        <Tab.List className={Styles.tabList}>
-          {children.map((item, idx) => (
-            <Tab key={idx} className={Styles.listItem}>
-              {item?.props?.title}
-            </Tab>
-          ))}
+        <Tab.List className={classNames(Styles.tabList, tabListClass)}>
+          {children.map((item, idx) => {
+            const { title, listItemClass } = item.props;
+            return (
+              <Tab key={idx} className={classNames(Styles.listItem, listItemClass)}>
+                {title}
+              </Tab>
+            );
+          })}
         </Tab.List>
       )}
-      <Tab.Panels>{children || ''}</Tab.Panels>
+      <Tab.Panels className={panelsClass}>{children || ''}</Tab.Panels>
     </Tab.Group>
   );
 };

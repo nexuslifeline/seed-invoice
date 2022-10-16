@@ -16,7 +16,11 @@
   }
 }
 
-.menu {
+.item {
+  margin: 0 5px;
+}
+
+.menuButton {
   border: 0;
   background: none;
   cursor: pointer;
@@ -24,7 +28,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 5px;
   position: relative;
 
   &:hover {
