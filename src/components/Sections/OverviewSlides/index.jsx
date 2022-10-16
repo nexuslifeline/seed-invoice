@@ -24,8 +24,8 @@ const OverviewSlides = () => {
       }}
       wrapAround
       autoplay>
-      {slides.map(({ title, description }) => (
-        <Slide {...{ title, description }} />
+      {slides.map(({ title, description }, idx) => (
+        <Slide key={idx} {...{ title, description }} />
       ))}
     </Carousel>
   );

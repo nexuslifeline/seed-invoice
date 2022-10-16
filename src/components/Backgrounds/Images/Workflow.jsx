@@ -1,6 +1,6 @@
 import SVG from 'react-inlinesvg';
-import IconWorkflow from 'shared/assets/images/workflow.svg';
+import SvgWorkflow from 'shared/assets/images/workflow.svg';
 
-const Workflow = (props) => <SVG src={IconWorkflow} {...props} />;
+const Workflow = (props) => <SVG src={SvgWorkflow} {...props} />;
 
 export default Workflow;
