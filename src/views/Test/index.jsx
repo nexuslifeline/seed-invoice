@@ -16,6 +16,7 @@ import PhoneNumber from 'components/Form/PhoneNumber';
 import Badge from 'components/Badge';
 import Accordion from 'components/Accordion';
 import SearchInput from 'components/Form/SearchInput';
+import InvalidFeedback from 'components/InvalidFeedback';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -159,6 +160,12 @@ function App() {
 
   return (
     <div style={{ padding: '30px', width: '100%', height: '100%', overflow: 'auto' }}>
+      <InvalidFeedback error={'Sample Error Message'} />
+      <br />
+      <InvalidFeedback error={'Sample Error Message1'} />
+      <br />
+      <InvalidFeedback error={'Sample Error Message2'} />
+
       <div style={{ marginBottom: 20 }}>
         <Accordion items={items} />
       </div>
@@ -194,11 +201,20 @@ function App() {
       <Toggle label={'Yes, I am above 18y/o'} />
       <br />
       <br />
-      <Select label={'Fruits'} value={fruits} onChange={(e) => setFruits(e)} options={options} isClearable />
+      <Select
+        label={'Fruits'}
+        value={fruits}
+        onChange={(e) => setFruits(e)}
+        options={options}
+        isClearable
+        error={'Fruits is required.'}
+      />
       <br />
-      <TextInput label={'Full Name'} placeholder={'Enter Full Name'} />
+      <TextInput label={'Full Name'} placeholder={'Enter Full Name'} error={null} />
       <br />
-      <TextArea label={'Address'} placeholder={'Enter Address'} />
+      <TextInput label={'Full Name'} placeholder={'Enter Full Name'} error={'Full name is required.'} />
+      <br />
+      <TextArea label={'Address'} placeholder={'Enter Address'} error={'Address is required.'} />
       <br />
       <Tab>
         <Tab.Panel title={'Full time'}>
@@ -317,6 +333,7 @@ function App() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           showStrength
+          error={'Password is required'}
         />
 
         <ul>

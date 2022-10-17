@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Styles from './TextInput.module.scss';
 import classNames from 'classnames';
+import InvalidFeedback from 'components/InvalidFeedback';
 
-const TextInput = ({ label, containerClassName, ...props }) => {
+const TextInput = ({ label, containerClassName, error, ...props }) => {
   return (
     <div className={classNames(Styles.container, containerClassName)}>
       <input type='text' className={Styles.input} {...props} />
       <label className={Styles.label}>{label}</label>
+      {error && <InvalidFeedback error={error} />}
     </div>
   );
 };
@@ -15,6 +17,7 @@ const TextInput = ({ label, containerClassName, ...props }) => {
 TextInput.propTypes = {
   label: PropTypes.string,
   containerClassName: PropTypes.string,
+  error: PropTypes.string,
 };
 
 export default TextInput;
