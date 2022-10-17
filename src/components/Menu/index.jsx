@@ -2,6 +2,7 @@ import { Fragment, memo } from 'react';
 import classNames from 'classnames';
 import { Menu, Transition } from '@headlessui/react';
 import Styles from './Menu.module.scss';
+import { snakeToCamel } from 'shared/lib/utils';
 
 const BaseMenu = memo(({ style, className, children }) => {
   return (
@@ -21,7 +22,7 @@ const Items = ({ children, className, direction = 'default', ...props }) => {
       leave={Styles.transition}
       leaveFrom={Styles.enterTo}
       leaveTo={Styles.enterFrom}>
-      <Menu.Items className={classNames(Styles.menuItems, Styles[direction], className)} {...props}>
+      <Menu.Items className={classNames(Styles.menuItems, Styles[snakeToCamel(direction)], className)} {...props}>
         {children}
       </Menu.Items>
     </Transition>

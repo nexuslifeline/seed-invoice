@@ -8,6 +8,7 @@
   transition: 0.5s ease all;
   -moz-transition: 0.5s ease all;
   -webkit-transition: 0.5s ease all;
+  z-index: $z-sub-sidebar;
 
   &.collapse {
     width: 0;

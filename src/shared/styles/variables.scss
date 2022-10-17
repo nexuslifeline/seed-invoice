@@ -93,11 +93,11 @@ $fs-1: 12px;
 $fs-2: 13px;
 $fs-3: 14px;
 $fs-4: 15px;
-$fs-5: 20px;
-$fs-6: 24px;
-$fs-7: 30px;
-$fs-8: 36px;
-$fs-9: 42px;
+$fs-5: 17px;
+$fs-6: 20px;
+$fs-7: 24px;
+$fs-8: 30px;
+$fs-9: 38px;
 
 $primary: $purple-90;
 $primary-border-color: $purple-100;
@@ -113,3 +113,6 @@ $secondary-outline-text-color: $gray-80;
 $header-height: 60px;
 // $aside-width: 320px;
 $main-nav-panel: 70px;
+
+$z-main-sidebar: 20;
+$z-sub-sidebar: 19;

@@ -1,7 +1,7 @@
 import Styles from './MainPanel.module.scss';
 import PurpleMini from 'components/Icons/Logo/PurpleMini';
 import { Link } from 'react-router-dom';
-import Avatar from 'components/Avatar';
+import Profile from 'components/Sidebar/components/ProfileMenu';
 import { navLinks } from 'router/nav';
 import classNames from 'classnames';
 
@@ -28,18 +28,7 @@ const MainPanel = ({ activeIndex }) => {
         })}
       </ul>
       <div className={Styles.bottom}>
-        <Avatar
-          round
-          containerProps={{
-            borderWidth: 0,
-            width: 40,
-            height: 40,
-          }}
-          src=''
-          initials={'PC'}
-          profileId={5}
-          isOnline
-        />
+        <Profile />
       </div>
     </div>
   );

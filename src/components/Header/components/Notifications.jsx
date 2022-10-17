@@ -2,11 +2,14 @@ import Styles from './Notifications.module.scss';
 import Tab from 'components/Tab';
 import ImgEmpty from 'components/Backgrounds/Images/Empty';
 import ImageView from 'components/ImageView';
+import Text from 'components/Text';
 
 const Notifications = () => {
   return (
     <div className={Styles.container}>
-      <div className={Styles.header}>{'Notifications'}</div>
+      <div className={Styles.header}>
+        <Text size={'md'}>{'Notifications'}</Text>
+      </div>
       <div className={Styles.body}>
         <Tab tabListClass={Styles.tabList} panelsClass={Styles.panels}>
           <Tab.Panel title={'All'} listItemClass={Styles.listItemClass}>
