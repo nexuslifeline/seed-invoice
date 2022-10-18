@@ -7,6 +7,7 @@ import debounce from 'lodash/debounce';
 import StrengthBar from './StrengthBar';
 import IconHidePassword from 'components/Icons/HidePassword';
 import IconShowPassword from 'components/Icons/ShowPassword';
+import InvalidFeedback from 'components/InvalidFeedback';
 
 const strengths = {
   STRONG: 'strong',
@@ -33,7 +34,7 @@ const strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-
 //medium strength if 6 char or below length or no digit, or no capital char
 const mediumPassword = new RegExp(`${minSix}|${noDigit}|${noCapital}|${noSpecialChar}`);
 
-const PasswordInput = ({ label, containerClassName, showStrength, ...props }) => {
+const PasswordInput = ({ label, containerClassName, showStrength, error, ...props }) => {
   const [strength, setStrength] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
@@ -70,14 +71,19 @@ const PasswordInput = ({ label, containerClassName, showStrength, ...props }) =>
   }, [props.value, showStrength]);
 
   return (
-    <div className={classNames(Styles.container, containerClassName)}>
-      <input type={showPassword ? 'text' : 'password'} className={Styles.input} {...props} />
-      <label className={Styles.label}>{label}</label>
-      {showStrength && <StrengthBar {...{ strength, size: score[strength] }} />}
-      {(showPassword && <IconHidePassword className={Styles.showHideIcon} onClick={toggleShowPassword} />) || (
-        <IconShowPassword className={Styles.showHideIcon} onClick={toggleShowPassword} />
-      )}
-    </div>
+    <>
+      <div className={classNames(Styles.container, containerClassName)}>
+        <input type={showPassword ? 'text' : 'password'} className={Styles.input} {...props} />
+        <label className={Styles.label}>{label}</label>
+        {showStrength && <StrengthBar {...{ strength, size: score[strength] }} />}
+        <div className={Styles.iconContainer}>
+          {(showPassword && <IconHidePassword className={Styles.showHideIcon} onClick={toggleShowPassword} />) || (
+            <IconShowPassword className={Styles.showHideIcon} onClick={toggleShowPassword} />
+          )}
+        </div>
+      </div>
+      {error && <InvalidFeedback error={error} />}
+    </>
   );
 };
 
