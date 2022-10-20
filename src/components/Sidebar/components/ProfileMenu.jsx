@@ -6,7 +6,7 @@ const ProfileMenu = () => {
   return (
     <Menu>
       <Menu.Button as={'div'}>
-        <ProfilePhoto isOnline />
+        <ProfilePhoto isOnline cursorPointer />
       </Menu.Button>
       <Profile />
     </Menu>

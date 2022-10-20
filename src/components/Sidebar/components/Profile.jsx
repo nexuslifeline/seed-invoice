@@ -48,7 +48,7 @@ const Profile = () => {
                 </Text>
               </div>
             </Menu.Item>
-            <Menu.Item as={Link} to='/company' className={Styles.menuItem}>
+            <Menu.Item as={Link} to='/preferences' className={Styles.menuItem}>
               {/* <Preferences className={Styles.icon} /> */}
               <div>
                 <Text size={'md'}>{'Preference'}</Text>
