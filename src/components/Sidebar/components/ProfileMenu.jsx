@@ -8,9 +8,7 @@ const ProfileMenu = () => {
       <Menu.Button as={'div'}>
         <ProfilePhoto isOnline />
       </Menu.Button>
-      <Menu.Items direction='top-right' as={'div'}>
-        <Profile />
-      </Menu.Items>
+      <Profile />
     </Menu>
   );
 };

@@ -8,6 +8,7 @@ const ProfilePhoto = (props) => {
         borderWidth: 0,
         width: 46,
         height: 46,
+        cursor: 'pointer',
       }}
       src=''
       initials={'PC'}

@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: 300px;
   min-height: 300px;
   background-color: $white;
 
@@ -15,12 +15,12 @@
 .header,
 .body {
   display: flex;
-  padding: 10px;
 }
 
 .header {
   background-color: $gray-10;
   align-items: center;
+  padding: 10px;
 }
 
 .profile {
@@ -29,6 +29,37 @@
 
 .body {
   flex-direction: column;
-  justify-content: flex-end;
+  padding: 0;
   flex: 1;
+}
+
+.menus {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+  padding: 8px 20px;
+  border-bottom: 1px solid $gray-10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    background-color: $gray-10;
+  }
+}
+
+.footer {
+  padding: 10px 10px 0 10px;
+}
+
+.icon {
+  height: 30px;
+  width: auto;
+  margin-right: 10px;
+  color: $gray-60;
 }
