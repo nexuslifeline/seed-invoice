@@ -22,7 +22,7 @@ const Profile = () => {
     <Menu.Items as='div' direction='top-right'>
       <div className={Styles.container}>
         <div className={Styles.header}>
-          <ProfilePhoto />
+          <ProfilePhoto size={40} />
           <div className={Styles.profile}>
             <Text size={'md'}>{'Paul Christian Rueda'}</Text>
             <Text variant='description'>{'Administrator'}</Text>
