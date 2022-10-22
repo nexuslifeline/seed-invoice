@@ -1,13 +1,13 @@
 import Avatar from 'components/Avatar';
 
-const ProfilePhoto = ({ cursorPointer, ...props }) => {
+const ProfilePhoto = ({ cursorPointer, size = 46, ...props }) => {
   return (
     <Avatar
       round
       containerProps={{
         borderWidth: 0,
-        width: 46,
-        height: 46,
+        width: size,
+        height: size,
         cursor: cursorPointer ? 'pointer' : 'default',
       }}
       src=''

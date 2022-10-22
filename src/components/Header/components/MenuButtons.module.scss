@@ -24,11 +24,12 @@
   border: 0;
   background: none;
   cursor: pointer;
-  padding: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  height: 34px !important;
+  width: 34px !important;
 
   &:hover {
     background-color: $gray-10;

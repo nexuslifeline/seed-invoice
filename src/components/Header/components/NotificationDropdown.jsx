@@ -1,8 +1,17 @@
-import Styles from './Notifications.module.scss';
+import Styles from './NotificationDropdown.module.scss';
 import Tab from 'components/Tab';
 import ImgEmpty from 'components/Backgrounds/Images/Empty';
 import ImageView from 'components/ImageView';
 import Text from 'components/Text';
+import List from 'components/Header/components/Notifications/List';
+
+const TabPanel = ({ children, ...props }) => {
+  return (
+    <Tab.Panel listItemClass={Styles.listItemClass} panelItemClass={Styles.panelItemClass} {...props}>
+      {children}
+    </Tab.Panel>
+  );
+};
 
 const Notifications = () => {
   return (
@@ -12,21 +21,19 @@ const Notifications = () => {
       </div>
       <div className={Styles.body}>
         <Tab tabListClass={Styles.tabList} panelsClass={Styles.panels}>
-          <Tab.Panel title={'All'} listItemClass={Styles.listItemClass}>
+          <TabPanel title={'All'}>
+            <List />
+          </TabPanel>
+          <TabPanel title={'Activity'}>
             <div>
               <ImageView img={ImgEmpty} title={'No Notifications'} description={'There are no notifications yet'} />
             </div>
-          </Tab.Panel>
-          <Tab.Panel title={'Activity'} listItemClass={Styles.listItemClass}>
+          </TabPanel>
+          <TabPanel title={'Billing'}>
             <div>
               <ImageView img={ImgEmpty} title={'No Notifications'} description={'There are no notifications yet'} />
             </div>
-          </Tab.Panel>
-          <Tab.Panel title={'Billing'} listItemClass={Styles.listItemClass}>
-            <div>
-              <ImageView img={ImgEmpty} title={'No Notifications'} description={'There are no notifications yet'} />
-            </div>
-          </Tab.Panel>
+          </TabPanel>
         </Tab>
       </div>
     </div>

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Styles from './Tab.module.scss';
 import classNames from 'classnames';
 
-const Panel = ({ children, className, listItemClass, ...props }) => {
+const Panel = ({ children, panelItemClass, ...props }) => {
   return (
-    <Tab.Panel className={classNames(Styles.panelItem, className)} {...props}>
+    <Tab.Panel className={classNames(Styles.panelItem, panelItemClass)} {...props}>
       {children}
     </Tab.Panel>
   );

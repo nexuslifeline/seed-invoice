@@ -5,7 +5,7 @@ import ProfilePhoto from 'components/ProfilePhoto';
 const ProfileMenu = () => {
   return (
     <Menu>
-      <Menu.Button as={'div'}>
+      <Menu.Button>
         <ProfilePhoto isOnline cursorPointer />
       </Menu.Button>
       <Profile />

@@ -1,7 +1,7 @@
 import Styles from './MainPanel.module.scss';
 import PurpleMini from 'components/Icons/Logo/PurpleMini';
 import { Link } from 'react-router-dom';
-import Profile from 'components/Sidebar/components/ProfileMenu';
+import Profile from 'components/Sidebar/components/ProfileDropdown';
 import { navLinks } from 'router/nav';
 import classNames from 'classnames';
 

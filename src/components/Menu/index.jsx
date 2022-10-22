@@ -31,7 +31,7 @@ const Items = ({ children, className, direction = 'default', ...props }) => {
 
 const Button = ({ className, children, ...props }) => {
   return (
-    <Menu.Button className={(Styles.button, className)} {...props}>
+    <Menu.Button className={classNames(Styles.button, className)} {...props}>
       {children}
     </Menu.Button>
   );

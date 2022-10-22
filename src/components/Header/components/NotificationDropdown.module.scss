@@ -1,7 +1,7 @@
 @import '../../../shared/styles/variables.scss';
 
 .container {
-  width: 320px;
+  width: 325px;
 }
 
 .header {
@@ -18,6 +18,13 @@
   color: $title-color  !important;
 }
 
+
 .panels {
   height: 300px;
+}
+
+.panelItemClass {
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
 }
