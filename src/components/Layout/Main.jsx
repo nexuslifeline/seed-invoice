@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Header from 'components/Header';
 import Sidebar from 'components/Sidebar';
+import SlidePanel from 'components/SlidePanel';
 import Styles from './Main.module.scss';
 
 const Layout = (props) => {
@@ -12,6 +13,8 @@ const Layout = (props) => {
       <div className={Styles.main}>
         <Outlet />
       </div>
+
+      <SlidePanel />
     </div>
   );
 };
