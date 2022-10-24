@@ -1,14 +1,23 @@
 @import '~shared/styles/variables.scss';
 
+$container: 370px;
+
 .container {
-  width: 350px;
+  width: $container;
   border-left: 1px solid $gray-20;
   position: fixed;
   top: 0;
-  right: 0;
+  right: calc(-1 * #{$container});
   z-index: 100;
   background-color: $white;
   height: 100vh;
+  transition: 0.3s ease right;
+  -moz-transition: 0.3s ease right;
+  -webkit-transition: 0.3s ease right;
+
+  &.open {
+    right: 0;
+  }
 }
 
 .header {

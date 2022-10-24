@@ -3,19 +3,24 @@ import Header from 'components/Header';
 import Sidebar from 'components/Sidebar';
 import SlidePanel from 'components/SlidePanel';
 import Styles from './Main.module.scss';
+import { LayoutStateContext } from 'shared/context/LayoutState';
+import { useState } from 'react';
 
-const Layout = (props) => {
+const Layout = () => {
+  const [isSlideOpen, setIsSlideOpen] = useState(false);
   return (
-    <div className={Styles.container}>
-      <Sidebar />
-      <Header />
+    <LayoutStateContext.Provider value={{ isSlideOpen, setIsSlideOpen }}>
+      <div className={Styles.container}>
+        <Sidebar />
+        <Header />
 
-      <div className={Styles.main}>
-        <Outlet />
+        <div className={Styles.main}>
+          <Outlet />
+        </div>
+
+        <SlidePanel />
       </div>
-
-      <SlidePanel />
-    </div>
+    </LayoutStateContext.Provider>
   );
 };
 
