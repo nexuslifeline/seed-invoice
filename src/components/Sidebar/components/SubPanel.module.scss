@@ -1,4 +1,5 @@
 @import '~shared/styles/variables.scss';
+@import '~shared/styles/mixins.scss';
 
 .container {
   position: relative;
@@ -14,6 +15,10 @@
     width: 0;
     overflow: hidden;
     margin-left: -1px;
+  }
+
+  @include for-size(phone-only) {
+    display: none;
   }
 }
 

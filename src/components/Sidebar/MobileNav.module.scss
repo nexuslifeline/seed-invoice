@@ -1,0 +1,22 @@
+@import '~shared/styles/variables.scss';
+@import '~shared/styles/mixins.scss';
+
+.container {
+  display: none;
+  position: fixed;
+  width: 280px;
+  bottom: 0;
+  left: -280px;
+  top: 0;
+  border-right: 1px solid $gray-20;
+  background-color: $white;
+  z-index: 12;
+
+  @include for-size(tablet-portrait-down) {
+    display: block;
+  }
+
+  &.open {
+    left: 0;
+  }
+}

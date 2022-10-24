@@ -5,6 +5,7 @@ import SlidePanel from 'components/SlidePanel';
 import Styles from './Main.module.scss';
 import { LayoutStateContext } from 'shared/context/LayoutState';
 import { useState } from 'react';
+import MobileNav from 'components/Sidebar/MobileNav';
 
 const Layout = () => {
   const [isSlideOpen, setIsSlideOpen] = useState(false);
@@ -12,12 +13,11 @@ const Layout = () => {
     <LayoutStateContext.Provider value={{ isSlideOpen, setIsSlideOpen }}>
       <div className={Styles.container}>
         <Sidebar />
+        <MobileNav />
         <Header />
-
         <div className={Styles.main}>
           <Outlet />
         </div>
-
         <SlidePanel />
       </div>
     </LayoutStateContext.Provider>
