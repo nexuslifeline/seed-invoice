@@ -26,27 +26,3 @@ $container: 370px;
   height: 35px;
   padding: 5px 10px;
 }
-
-.icon {
-  color: $text-color;
-  height: 22px;
-  width: auto;
-}
-
-.close {
-  background-color: transparent;
-  height: 25px;
-  width: 25px;
-  border: 0;
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 50%;
-  margin-left: auto;
-
-  &:hover {
-    background-color: $gray-10;
-  }
-}

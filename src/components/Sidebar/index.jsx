@@ -1,15 +1,13 @@
 import Styles from './Sidebar.module.scss';
 import SubPanel from './components/SubPanel';
 import MainPanel from './components/MainPanel';
-import Hamburger from 'components/Hamburger';
-import { useState } from 'react';
 import { navLinks } from 'router/nav';
 import { useLocation } from 'react-router-dom';
+import { withLayoutState } from 'shared/context/LayoutState';
 
-const Sidebar = () => {
+const Sidebar = ({ isMainNavOpen }) => {
   const location = useLocation();
 
-  const [isCollapse, setIsCollapse] = useState(false);
   const navIndex = navLinks.findIndex(({ groups }) =>
     groups?.some(({ children }) => children?.some((child) => child?.to === location?.pathname))
   );
@@ -19,13 +17,9 @@ const Sidebar = () => {
   return (
     <div className={Styles.container}>
       <MainPanel activeIndex={navIndex} />
-      <SubPanel linkGroups={linkGroups} isCollapse={!linkGroups?.length > 0 || isCollapse} />
-
-      <button className={Styles.btnMenu} onClick={() => setIsCollapse(!isCollapse)}>
-        <Hamburger isArrow={!isCollapse} />
-      </button>
+      <SubPanel linkGroups={linkGroups} isCollapse={!linkGroups?.length > 0 || isMainNavOpen} />
     </div>
   );
 };
 
-export default Sidebar;
+export default withLayoutState(Sidebar);

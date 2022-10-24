@@ -9,8 +9,12 @@ import MobileNav from 'components/Sidebar/MobileNav';
 
 const Layout = () => {
   const [isSlideOpen, setIsSlideOpen] = useState(false);
+  const [isMainNavOpen, setIsMainNavOpen] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
   return (
-    <LayoutStateContext.Provider value={{ isSlideOpen, setIsSlideOpen }}>
+    <LayoutStateContext.Provider
+      value={{ isSlideOpen, setIsSlideOpen, isMainNavOpen, setIsMainNavOpen, isMobileNavOpen, setIsMobileNavOpen }}>
       <div className={Styles.container}>
         <Sidebar />
         <MobileNav />
