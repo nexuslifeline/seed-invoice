@@ -19,7 +19,8 @@
   border: none;
 }
 
-.striped tr:nth-child(odd)>td {
+.striped tr:nth-child(even)>td,
+.striped th {
   background-color: $gray-10;
 }
 
@@ -31,8 +32,16 @@ tr {
 
 th,
 td {
-  padding: 8px 6px;
+  padding: 12px 10px;
   text-align: left;
+}
+
+th {
+  color: $title-color;
+}
+
+td {
+  color: $text-color;
 }
 
 .filterContainer {

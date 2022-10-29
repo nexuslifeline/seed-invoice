@@ -167,8 +167,11 @@ Table.propTypes = {
 };
 
 Table.defaultProps = {
-  showFilter: true,
-  isServerSide: false,
+  showFilter: false,
+  isServerSide: true,
+  bordered: false,
+  striped: true,
+  borderless: true,
 };
 
 export default Table;

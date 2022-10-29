@@ -1,0 +1,12 @@
+@import '~shared/styles/variables.scss';
+
+.container {
+  border-radius: 6px;
+  border: 1px solid $gray-20;
+  width: 100%;
+}
+
+.header,
+.body {
+  padding: 20px;
+}
