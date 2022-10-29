@@ -1,9 +1,10 @@
 import Styles from './Close.module.scss';
 import Times from 'components/Icons/Times';
+import classNames from 'classnames';
 
-const Close = (props) => {
+const Close = ({ className, ...props }) => {
   return (
-    <button className={Styles.close} {...props}>
+    <button className={classNames(Styles.close, className)} {...props}>
       <Times className={Styles.icon} />
     </button>
   );

@@ -12,10 +12,6 @@
   padding: 5px;
   background-color: $white;
   z-index: $z-main-sidebar;
-
-  @include for-size(tablet-portrait-down) {
-    display: none;
-  }
 }
 
 .logoContainer {

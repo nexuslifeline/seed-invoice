@@ -4,8 +4,10 @@ import MainPanel from './components/MainPanel';
 import { navLinks } from 'router/nav';
 import { useLocation } from 'react-router-dom';
 import { withLayoutState } from 'shared/context/LayoutState';
+import classNames from 'classnames';
+import CaretLeft from 'components/Icons/CaretLeft';
 
-const Sidebar = ({ isMainNavOpen }) => {
+const Sidebar = ({ isMainNavOpen, isMobileNavOpen, setIsMobileNavOpen }) => {
   const location = useLocation();
 
   const navIndex = navLinks.findIndex(({ groups }) =>
@@ -15,7 +17,10 @@ const Sidebar = ({ isMainNavOpen }) => {
   const linkGroups = navLinks?.[navIndex]?.groups || [];
 
   return (
-    <div className={Styles.container}>
+    <div className={classNames(Styles.container, isMobileNavOpen && Styles.mobileOpen)}>
+      <button className={Styles.btnCollapse} onClick={() => setIsMobileNavOpen(false)}>
+        <CaretLeft className={Styles.icon} />
+      </button>
       <MainPanel activeIndex={navIndex} />
       <SubPanel linkGroups={linkGroups} isCollapse={!linkGroups?.length > 0 || isMainNavOpen} />
     </div>
