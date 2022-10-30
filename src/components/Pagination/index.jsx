@@ -18,7 +18,7 @@ const Pagination = ({
   const buttonVariant = 'light';
 
   return (
-    <div className={Styles.container} {...props}>
+    <div className={Styles.container} style={{ ...props }}>
       <Button
         className={Styles.pageButton}
         label='<'

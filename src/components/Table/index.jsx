@@ -143,7 +143,8 @@ const Table = ({
       </table>
 
       <Pagination
-        style={{ marginTop: 20 }}
+        marginTop={30}
+        justifyContent='flex-end'
         currentPage={pageIndex + 1}
         pageCount={pageCount}
         canPreviousPage={canPreviousPage}

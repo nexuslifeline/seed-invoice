@@ -1,12 +1,18 @@
 @import '~shared/styles/variables.scss';
+@import '~shared/styles/mixins.scss';
 
 .container {
   border-radius: 6px;
-  border: 1px solid $gray-20;
+  background-color: $white;
   width: 100%;
+
+  @include box-shadow;
 }
 
-.header,
+.header {
+  padding: 25px 20px;
+}
+
 .body {
   padding: 20px;
 }
