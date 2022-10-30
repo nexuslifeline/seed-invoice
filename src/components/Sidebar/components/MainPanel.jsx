@@ -1,8 +1,9 @@
 import Styles from './MainPanel.module.scss';
-import PurpleMini from 'components/Icons/Logo/PurpleMini';
+import WhiteMini from 'components/Icons/Logo/WhiteMini';
 import { Link } from 'react-router-dom';
 import Profile from 'components/Sidebar/components/ProfileDropdown';
 import { navLinks } from 'router/nav';
+import Circle from 'components/Shapes/Circle';
 import classNames from 'classnames';
 
 const MainPanel = ({ activeIndex }) => {
@@ -14,7 +15,7 @@ const MainPanel = ({ activeIndex }) => {
   return (
     <div className={Styles.container}>
       <div className={Styles.logoContainer}>
-        <PurpleMini className={Styles.logo} />
+        <WhiteMini className={Styles.logo} />
       </div>
       <ul className={Styles.menus}>
         {navLinks.map(({ icon: Icon }, idx) => {
@@ -30,6 +31,7 @@ const MainPanel = ({ activeIndex }) => {
       <div className={Styles.bottom}>
         <Profile />
       </div>
+      <Circle bottom='120px' left='-120px' height='150px' width='150px' />
     </div>
   );
 };

@@ -4,19 +4,20 @@
 
 .container {
   width: $main-nav-panel;
-  border-right: 1px solid $gray-20;
+  border-right: 1px solid lighten($primary, 14%);
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5px;
-  background-color: $white;
+  background: linear-gradient(90.4deg, $primary 0.6%, lighten($primary, 14%) 90%);
   z-index: $z-main-sidebar;
 }
 
 .logoContainer {
   padding: 5px;
-  border-bottom: 1px solid $gray-20;
+  border-bottom: 1px solid $white;
+  padding-bottom: 0;
 }
 
 .logo {
@@ -33,16 +34,16 @@
 
 .menu {
   width: 100%;
-  padding: 8px;
+  padding: 6px;
   border-radius: 6px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin: 15px 0;
+  margin: 17px 0;
 
   &:hover,
   &.active {
-    background-color: $gray-10;
+    background-color: $white;
 
     .icon {
       fill: $purple-100;
@@ -54,8 +55,8 @@
 .icon {
   height: 30px;
   width: auto;
-  fill: $gray-50;
-  color: $gray-50;
+  fill: $white;
+  color: $white;
 }
 
 .bottom {

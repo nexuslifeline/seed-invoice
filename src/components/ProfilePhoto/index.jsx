@@ -5,7 +5,7 @@ const ProfilePhoto = ({ cursorPointer, size = 46, ...props }) => {
     <Avatar
       round
       containerProps={{
-        borderWidth: 0,
+        border: '1px solid white',
         width: size,
         height: size,
         cursor: cursorPointer ? 'pointer' : 'default',
