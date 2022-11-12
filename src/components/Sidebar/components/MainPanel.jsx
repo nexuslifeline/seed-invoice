@@ -31,7 +31,7 @@ const MainPanel = ({ activeIndex }) => {
       <div className={Styles.bottom}>
         <Profile />
       </div>
-      <Circle bottom='120px' left='-120px' height='150px' width='150px' />
+      <Circle bottom='120px' left='-210px' height='250px' width='250px' />
     </div>
   );
 };

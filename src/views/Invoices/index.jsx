@@ -3,6 +3,7 @@ import { invoices } from 'data/sample/invoices';
 import Table from 'components/Table';
 import TableContainer from 'components/Table/Container';
 import ContentView from 'components/ContentView';
+import Breadcrumb from 'components/Breadcrumb';
 
 const Invoice = (props) => {
   const columns = useMemo(
@@ -75,6 +76,7 @@ const Invoice = (props) => {
 
   return (
     <ContentView>
+      <Breadcrumb />
       <TableContainer>
         <Table columns={columns} data={tableData} isLoading={isLoading} pageCount={pageCount} fetchData={fetchData} />
       </TableContainer>

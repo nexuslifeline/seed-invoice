@@ -1,0 +1,27 @@
+@import '~shared/styles/variables.scss';
+@import '~shared/styles/mixins.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.items {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 30px;
+}
+
+.item {
+  cursor: pointer;
+  font-size: $fs-3;
+
+  &:not(:last-child) {
+    &::after {
+      content: '>';
+      margin: 0 20px;
+    }
+  }
+}
