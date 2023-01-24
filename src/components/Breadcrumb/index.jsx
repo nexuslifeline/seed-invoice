@@ -1,15 +1,19 @@
 import Styles from './Breadcrumb.module.scss';
 import Text from 'components/Text';
+import { Link } from 'react-router-dom';
 
 const Breadcrumb = ({ title, items }) => {
   return (
     <div className={Styles.container}>
       <Text variant='title' size='xl'>
-        {'Manage Invoices'}
+        {title}
       </Text>
       <ul className={Styles.items}>
-        <li className={Styles.item}>{'Workpspace'}</li>
-        <li className={Styles.item}>{'Invoices'}</li>
+        {items.map(({ text, to }, idx) => (
+          <li key={idx} className={Styles.item}>
+            {to ? <Link to={to}>{text}</Link> : text}
+          </li>
+        ))}
       </ul>
     </div>
   );

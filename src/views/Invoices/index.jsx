@@ -76,7 +76,13 @@ const Invoice = (props) => {
 
   return (
     <ContentView>
-      <Breadcrumb />
+      <Breadcrumb
+        title={'Manage Invoices'}
+        items={[
+          { text: 'Workspace', to: '/dashboard' },
+          { text: 'Invoices', to: '/invoices' },
+        ]}
+      />
       <TableContainer>
         <Table
           columns={columns}

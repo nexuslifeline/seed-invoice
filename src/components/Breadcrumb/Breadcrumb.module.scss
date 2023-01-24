@@ -18,6 +18,15 @@
   cursor: pointer;
   font-size: $fs-3;
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+
   &:not(:last-child) {
     &::after {
       content: '>';
