@@ -25,7 +25,11 @@ export const UserProvider = ({ children, initial }) => {
 
 export const withUser = (Component) => {
   return function WrapperComponent(props) {
-    return <UserContext.Consumer>{(state) => <Component {...props} currentUser={state} />}</UserContext.Consumer>;
+    return (
+      <UserContext.Consumer>
+        {(state) => <Component {...props} currentUser={state} />}
+      </UserContext.Consumer>
+    );
   };
 };
 

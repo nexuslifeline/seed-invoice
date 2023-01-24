@@ -6,12 +6,26 @@ import ReactSelect from 'react-select';
 import ReactAsyncSelect from 'react-select/async';
 import InvalidFeedback from 'components/InvalidFeedback';
 
-const Select = ({ label, value, isAsync, containerClassName, error, ...props }) => {
+const Select = ({
+  label,
+  value,
+  isAsync,
+  containerClassName,
+  error,
+  ...props
+}) => {
   const BaseSelect = isAsync ? ReactAsyncSelect : ReactSelect;
   return (
     <div className={classNames(Styles.container, containerClassName)}>
-      <BaseSelect className={Styles.baseSelect} classNamePrefix={'select'} {...props} />
-      <label className={classNames(Styles.label, { [Styles.hasValue]: !!value })}>{label}</label>
+      <BaseSelect
+        className={Styles.baseSelect}
+        classNamePrefix={'select'}
+        {...props}
+      />
+      <label
+        className={classNames(Styles.label, { [Styles.hasValue]: !!value })}>
+        {label}
+      </label>
       {error && <InvalidFeedback error={error} />}
     </div>
   );

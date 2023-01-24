@@ -7,12 +7,28 @@ import { Menu, Transition } from '@headlessui/react';
 import { variants, variantClasses } from './common/contants';
 import ChevronDown from 'components/Icons/ChevronDown';
 
-const ButtonMenu = ({ moreActions, icon, iconPlacement, label, variant, block, classsName, children }) => {
+const ButtonMenu = ({
+  moreActions,
+  icon,
+  iconPlacement,
+  label,
+  variant,
+  block,
+  classsName,
+  children,
+}) => {
   return (
     <Menu as='div' className={Styles.menu}>
       <Menu.Button
-        className={classNames(Styles.button, variantClasses[variant], classsName, { [Styles.block]: block })}>
-        {children || <Content icon={icon} iconPlacement={iconPlacement} label={label} />}
+        className={classNames(
+          Styles.button,
+          variantClasses[variant],
+          classsName,
+          { [Styles.block]: block }
+        )}>
+        {children || (
+          <Content icon={icon} iconPlacement={iconPlacement} label={label} />
+        )}
       </Menu.Button>
       <Transition
         as={Fragment}

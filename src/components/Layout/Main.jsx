@@ -13,7 +13,14 @@ const Layout = () => {
 
   return (
     <LayoutStateContext.Provider
-      value={{ isSlideOpen, setIsSlideOpen, isMainNavOpen, setIsMainNavOpen, isMobileNavOpen, setIsMobileNavOpen }}>
+      value={{
+        isSlideOpen,
+        setIsSlideOpen,
+        isMainNavOpen,
+        setIsMainNavOpen,
+        isMobileNavOpen,
+        setIsMobileNavOpen,
+      }}>
       <div className={Styles.container}>
         <Sidebar />
         {/* <MobileNav /> */}

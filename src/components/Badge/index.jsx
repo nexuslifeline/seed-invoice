@@ -6,7 +6,9 @@ import classNames from 'classnames';
 
 const Badge = ({ label, variant, ...props }) => {
   return (
-    <span className={classNames(Styles.container, variantClasses[variant])} {...props}>
+    <span
+      className={classNames(Styles.container, variantClasses[variant])}
+      {...props}>
       {label}
     </span>
   );

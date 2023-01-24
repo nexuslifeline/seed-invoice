@@ -17,19 +17,35 @@ const PhoneCountryOption = ({ data, innerRef, innerProps, isSelected }) => {
       className={classNames(Styles.optionItem, FlagStyles.f16, {
         [Styles.isSelected]: isSelected,
       })}>
-      <span className={classNames(FlagStyles.flag, FlagStyles?.[cca2?.toLowerCase()], Styles.flag)} />
+      <span
+        className={classNames(
+          FlagStyles.flag,
+          FlagStyles?.[cca2?.toLowerCase()],
+          Styles.flag
+        )}
+      />
       <span className={Styles.countryText}>{name}</span>
       <span className={Styles.dialCode}>{dialCode}</span>
     </div>
   );
 };
 
-const PhoneNumber = ({ phoneCountry, phoneNumber, error, onPhoneCountryChange, onPhoneNumberChange }) => {
+const PhoneNumber = ({
+  phoneCountry,
+  phoneNumber,
+  error,
+  onPhoneCountryChange,
+  onPhoneNumberChange,
+}) => {
   return (
     <div className={classNames(Styles.countryPhoneNumber)}>
-      <div className={classNames(SelectStyles.container, Styles.countryContainer)}>
+      <div
+        className={classNames(SelectStyles.container, Styles.countryContainer)}>
         <Select
-          className={classNames(SelectStyles.baseSelect, Styles.selectPhoneCountry)}
+          className={classNames(
+            SelectStyles.baseSelect,
+            Styles.selectPhoneCountry
+          )}
           value={phoneCountry}
           classNamePrefix='select'
           name='phoneCountry'

@@ -91,18 +91,20 @@ const Pagination = ({
 
       {/* last four button before the last page */}
       {pageCount - currentPage < 5 &&
-        [...Array.from({ length: 4 }, (_, i) => pageCount - 4 + i)].map((n, i) => {
-          return (
-            <Button
-              className={Styles.pageButton}
-              label={`${n}`}
-              variant={currentPage === n ? 'primary' : buttonVariant}
-              onClick={() => gotoPage(n)}
-              key={n}
-              disabled={currentPage === n}
-            />
-          );
-        })}
+        [...Array.from({ length: 4 }, (_, i) => pageCount - 4 + i)].map(
+          (n, i) => {
+            return (
+              <Button
+                className={Styles.pageButton}
+                label={`${n}`}
+                variant={currentPage === n ? 'primary' : buttonVariant}
+                onClick={() => gotoPage(n)}
+                key={n}
+                disabled={currentPage === n}
+              />
+            );
+          }
+        )}
 
       {/* ... button before the last page button, only appears when page count - current page > 4 */}
       {pageCount - currentPage > 4 && (

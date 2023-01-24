@@ -8,12 +8,18 @@ const Accordion = ({ items, ...props }) => {
   return (
     <>
       {items.map(({ header, content }, index) => (
-        <Disclosure className={Styles.container} {...props} key={index} as='div'>
+        <Disclosure
+          className={Styles.container}
+          {...props}
+          key={index}
+          as='div'>
           {({ open }) => (
             <>
               <Disclosure.Button className={Styles.header}>
                 {header}
-                {(open && <ChevronUp className={Styles.icon} />) || <ChevronDown className={Styles.icon} />}
+                {(open && <ChevronUp className={Styles.icon} />) || (
+                  <ChevronDown className={Styles.icon} />
+                )}
               </Disclosure.Button>
               <Transition
                 enter={Styles.transitionEnter}
@@ -22,7 +28,9 @@ const Accordion = ({ items, ...props }) => {
                 leave={Styles.transitionLeave}
                 leaveFrom={Styles.leaveFrom}
                 leaveTo={Styles.leaveTo}>
-                <Disclosure.Panel className={Styles.panel}>{content}</Disclosure.Panel>
+                <Disclosure.Panel className={Styles.panel}>
+                  {content}
+                </Disclosure.Panel>
               </Transition>
             </>
           )}

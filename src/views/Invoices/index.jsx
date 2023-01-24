@@ -78,7 +78,13 @@ const Invoice = (props) => {
     <ContentView>
       <Breadcrumb />
       <TableContainer>
-        <Table columns={columns} data={tableData} isLoading={isLoading} pageCount={pageCount} fetchData={fetchData} />
+        <Table
+          columns={columns}
+          data={tableData}
+          isLoading={isLoading}
+          pageCount={pageCount}
+          fetchData={fetchData}
+        />
       </TableContainer>
     </ContentView>
   );

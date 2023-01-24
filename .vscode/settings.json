@@ -1,8 +1,11 @@
 {
-  "editor.tabSize": 2,
+  // "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.addMissingImports": true,
   },
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "eslint.enable": true,
+  "eslint.format.enable": true
 }

@@ -13,7 +13,10 @@ const strengthClasses = {
 const StrengthBar = ({ strength, size = 0 }) => {
   return (
     <div className={Styles.barContainer}>
-      <div style={{ width: `${size}%` }} className={classNames(Styles.strengthBar, strengthClasses[strength])} />
+      <div
+        style={{ width: `${size}%` }}
+        className={classNames(Styles.strengthBar, strengthClasses[strength])}
+      />
     </div>
   );
 };

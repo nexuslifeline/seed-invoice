@@ -8,14 +8,31 @@ import Content from './common/Content';
 import ButtonMenu from './ButtonMenu';
 import Loader from 'components/Loader';
 
-const Button = ({ moreActions, icon, iconPlacement, label, variant, block, isBusy, className, children, ...props }) => {
+const Button = ({
+  moreActions,
+  icon,
+  iconPlacement,
+  label,
+  variant,
+  block,
+  isBusy,
+  className,
+  children,
+  ...props
+}) => {
   if (moreActions?.length > 0) {
-    return <ButtonMenu {...{ moreActions, icon, iconPlacement, label, variant, block }} />;
+    return (
+      <ButtonMenu
+        {...{ moreActions, icon, iconPlacement, label, variant, block }}
+      />
+    );
   }
 
   return (
     <button
-      className={classNames(Styles.button, variantClasses[variant], className, { [Styles.block]: block })}
+      className={classNames(Styles.button, variantClasses[variant], className, {
+        [Styles.block]: block,
+      })}
       {...props}>
       {isBusy && <Loader marginRight={'8px'} />}
       {children || <Content {...{ icon, iconPlacement, label }} />}
