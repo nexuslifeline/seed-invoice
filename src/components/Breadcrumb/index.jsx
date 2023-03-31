@@ -1,5 +1,6 @@
 import Styles from './Breadcrumb.module.scss';
 import Text from 'components/Text';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
 const Breadcrumb = ({ title, items }) => {
@@ -8,7 +9,7 @@ const Breadcrumb = ({ title, items }) => {
       <Text variant='title' size='xl'>
         {title}
       </Text>
-      <ul className={Styles.items}>
+      <ul className={classNames(Styles.items, Styles.border)}>
         {items.map(({ text, to }, idx) => (
           <li key={idx} className={Styles.item}>
             {to ? <Link to={to}>{text}</Link> : text}

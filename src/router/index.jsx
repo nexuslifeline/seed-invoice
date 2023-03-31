@@ -15,6 +15,7 @@ import Payments from 'views/Payments';
 import TestPage from 'views/Test';
 import NotFound from 'views/NotFound';
 import Invoices from 'views/Invoices';
+import NewInvoice from 'views/Invoices/NewInvoice';
 import Quotes from 'views/Quotes';
 import Company from 'views/Company';
 import Orders from 'views/Orders';
@@ -39,6 +40,7 @@ const Index = () => (
       <Route path={`/`} element={<MainLayout />}>
         <Route path={'dashboard'} element={<Dashboard />} />
         <Route path={'invoices'} element={<Invoices />} />
+        <Route path={'invoices/new'} element={<NewInvoice />} />
         <Route path={'quotes'} element={<Quotes />} />
         <Route path={'settings'} element={<Settings />} />
         <Route path={'customers'} element={<Customers />} />
