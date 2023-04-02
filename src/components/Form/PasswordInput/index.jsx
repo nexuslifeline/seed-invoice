@@ -23,31 +23,18 @@ const score = {
   veryWeak: 20,
 };
 
-const noCapital =
-  '(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{8,})|(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{6,})';
-const noDigit =
-  '((?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?=.{8,}))|(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?=.{6,})';
+const noCapital = '(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{8,})|(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{6,})';
+const noDigit = '((?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?=.{8,}))|(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?=.{6,})';
 const minSix = '((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{6,}))';
-const noSpecialChar =
-  '((?=.*[a-z])(?=.*[A-Z])(?=.{8,}))|(?=.*[a-z])(?=.*[A-Z])(?=.{6,})';
+const noSpecialChar = '((?=.*[a-z])(?=.*[A-Z])(?=.{8,}))|(?=.*[a-z])(?=.*[A-Z])(?=.{6,})';
 
 //a-z = has 1 lowercase | A-Z = has 1 uppercase | 0-9 = has 1 digit | ^a-zA-Z0-9 = has 1 special char | {8,} = atleast 8 char
-const strongPassword = new RegExp(
-  '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{8,})'
-);
+const strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?=.{8,})');
 
 //medium strength if 6 char or below length or no digit, or no capital char
-const mediumPassword = new RegExp(
-  `${minSix}|${noDigit}|${noCapital}|${noSpecialChar}`
-);
+const mediumPassword = new RegExp(`${minSix}|${noDigit}|${noCapital}|${noSpecialChar}`);
 
-const PasswordInput = ({
-  label,
-  containerClassName,
-  showStrength,
-  error,
-  ...props
-}) => {
+const PasswordInput = ({ label, containerClassName, showStrength, error, ...props }) => {
   const [strength, setStrength] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
@@ -86,26 +73,12 @@ const PasswordInput = ({
   return (
     <>
       <div className={classNames(Styles.container, containerClassName)}>
-        <input
-          type={showPassword ? 'text' : 'password'}
-          className={Styles.input}
-          {...props}
-        />
+        <input type={showPassword ? 'text' : 'password'} className={Styles.input} {...props} />
         <label className={Styles.label}>{label}</label>
-        {showStrength && (
-          <StrengthBar {...{ strength, size: score[strength] }} />
-        )}
+        {showStrength && <StrengthBar {...{ strength, size: score[strength] }} />}
         <div className={Styles.iconContainer}>
-          {(showPassword && (
-            <IconHidePassword
-              className={Styles.showHideIcon}
-              onClick={toggleShowPassword}
-            />
-          )) || (
-            <IconShowPassword
-              className={Styles.showHideIcon}
-              onClick={toggleShowPassword}
-            />
+          {(showPassword && <IconHidePassword className={Styles.showHideIcon} onClick={toggleShowPassword} />) || (
+            <IconShowPassword className={Styles.showHideIcon} onClick={toggleShowPassword} />
           )}
         </div>
       </div>

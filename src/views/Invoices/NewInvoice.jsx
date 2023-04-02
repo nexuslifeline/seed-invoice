@@ -5,7 +5,7 @@ import TextInput from 'components/Form/TextInput';
 import TextArea from 'components/Form/TextArea';
 import InputContainer from 'components/Form/InputContainer';
 import InputGroup from 'components/Form/InputGroup';
-import Select from 'components/Form/Select';
+import Form from 'components/Form';
 
 export const NewInvoice = () => {
   return (
@@ -19,9 +19,11 @@ export const NewInvoice = () => {
         ]}
       />
       <Card header={'Invoice'} maxWidth={800}>
-        <InputContainer>
-          <Select label='Customer' />
-        </InputContainer>
+        <Form>
+          <Form.Field label='Customer'>
+            <Form.Select />
+          </Form.Field>
+        </Form>
 
         <InputGroup>
           <InputContainer>

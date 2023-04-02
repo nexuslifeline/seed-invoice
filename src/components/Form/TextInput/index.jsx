@@ -4,11 +4,11 @@ import Styles from './TextInput.module.scss';
 import classNames from 'classnames';
 import InvalidFeedback from 'components/InvalidFeedback';
 
-const TextInput = ({ label, containerClassName, error, ...props }) => {
+const TextInput = ({ label, containerClassName, error, hideLabel = true, ...props }) => {
   return (
     <div className={classNames(Styles.container, containerClassName)}>
       <input type='text' className={Styles.input} {...props} />
-      <label className={Styles.label}>{label}</label>
+      {!hideLabel && <label className={Styles.label}>{label}</label>}
       {error && <InvalidFeedback error={error} />}
     </div>
   );
