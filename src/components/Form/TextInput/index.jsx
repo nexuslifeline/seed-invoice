@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Styles from './TextInput.module.scss';
 import classNames from 'classnames';
 import InvalidFeedback from 'components/InvalidFeedback';
 
-const TextInput = ({ label, containerClassName, error, hideLabel = true, ...props }) => {
+const TextInput = forwardRef(({ label, containerClassName, error, hideLabel = true, onChange, ...props }, ref) => {
   return (
     <div className={classNames(Styles.container, containerClassName)}>
-      <input type='text' className={Styles.input} {...props} />
+      <input ref={ref} type='text' className={Styles.input} {...props} />
       {!hideLabel && <label className={Styles.label}>{label}</label>}
       {error && <InvalidFeedback error={error} />}
     </div>
   );
-};
+});
 
 TextInput.propTypes = {
   label: PropTypes.string,

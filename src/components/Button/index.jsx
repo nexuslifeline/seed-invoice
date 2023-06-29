@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Styles from './Button.module.scss';
 import classNames from 'classnames';
@@ -8,37 +8,25 @@ import Content from './common/Content';
 import ButtonMenu from './ButtonMenu';
 import Loader from 'components/Loader';
 
-const Button = ({
-  moreActions,
-  icon,
-  iconPlacement,
-  label,
-  variant,
-  block,
-  isBusy,
-  className,
-  children,
-  ...props
-}) => {
-  if (moreActions?.length > 0) {
+const Button = forwardRef(
+  ({ moreActions, icon, iconPlacement, label, variant, block, isBusy, className, children, ...props }, ref) => {
+    if (moreActions?.length > 0) {
+      return <ButtonMenu ref={ref} {...{ moreActions, icon, iconPlacement, label, variant, block }} />;
+    }
+
     return (
-      <ButtonMenu
-        {...{ moreActions, icon, iconPlacement, label, variant, block }}
-      />
+      <button
+        ref={ref}
+        className={classNames(Styles.button, variantClasses[variant], className, {
+          [Styles.block]: block,
+        })}
+        {...props}>
+        {isBusy && <Loader marginRight={'8px'} />}
+        {children || <Content {...{ icon, iconPlacement, label }} />}
+      </button>
     );
   }
-
-  return (
-    <button
-      className={classNames(Styles.button, variantClasses[variant], className, {
-        [Styles.block]: block,
-      })}
-      {...props}>
-      {isBusy && <Loader marginRight={'8px'} />}
-      {children || <Content {...{ icon, iconPlacement, label }} />}
-    </button>
-  );
-};
+);
 
 Button.Variants = variants;
 

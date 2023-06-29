@@ -6,8 +6,14 @@ import TextArea from 'components/Form/TextArea';
 import InputContainer from 'components/Form/InputContainer';
 import InputGroup from 'components/Form/InputGroup';
 import Form from 'components/Form';
+import Button from 'components/Button';
 
 export const NewInvoice = () => {
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+  ];
   return (
     <ContentView>
       {' '}
@@ -20,15 +26,17 @@ export const NewInvoice = () => {
       />
       <Card header={'Invoice'} maxWidth={800}>
         <Form>
-          <Form.Field label='Customer'>
-            <Form.Select />
+          <Form.Field label='Customer' rules={[{ required: true }]}>
+            <Form.Select name='customer' options={options} />
           </Form.Field>
+          <Form.Field label='Date' rules={[{ required: true }]}>
+            <Form.TextInput name='date' label='Date' />
+          </Form.Field>
+          <Button type='submit'>Test Submit</Button>
         </Form>
 
         <InputGroup>
-          <InputContainer>
-            <TextInput label='Date' />
-          </InputContainer>
+          <InputContainer></InputContainer>
           <InputContainer>
             <TextInput label='Due Date' />
           </InputContainer>

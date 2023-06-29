@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Styles from './Button.module.scss';
 import classNames from 'classnames';
@@ -7,48 +7,34 @@ import { Menu, Transition } from '@headlessui/react';
 import { variants, variantClasses } from './common/contants';
 import ChevronDown from 'components/Icons/ChevronDown';
 
-const ButtonMenu = ({
-  moreActions,
-  icon,
-  iconPlacement,
-  label,
-  variant,
-  block,
-  classsName,
-  children,
-}) => {
-  return (
-    <Menu as='div' className={Styles.menu}>
-      <Menu.Button
-        className={classNames(
-          Styles.button,
-          variantClasses[variant],
-          classsName,
-          { [Styles.block]: block }
-        )}>
-        {children || (
-          <Content icon={icon} iconPlacement={iconPlacement} label={label} />
-        )}
-      </Menu.Button>
-      <Transition
-        as={Fragment}
-        enter={Styles.transitionEnter}
-        enterFrom={Styles.enterFrom}
-        enterTo={Styles.enterTo}
-        leave={Styles.transitionLeave}
-        leaveFrom={Styles.leaveFrom}
-        leaveTo={Styles.leaveTo}>
-        <Menu.Items className={Styles.menuItems}>
-          {moreActions.map(({ label, icon, children, ...props }, index) => (
-            <Menu.Item key={index} className={Styles.menuItem} {...props}>
-              <div>{children || <Content icon={icon} label={label} />}</div>
-            </Menu.Item>
-          ))}
-        </Menu.Items>
-      </Transition>
-    </Menu>
-  );
-};
+const ButtonMenu = forwardRef(
+  ({ moreActions, icon, iconPlacement, label, variant, block, classsName, children }, ref) => {
+    return (
+      <Menu ref={ref} as='div' className={Styles.menu}>
+        <Menu.Button
+          className={classNames(Styles.button, variantClasses[variant], classsName, { [Styles.block]: block })}>
+          {children || <Content icon={icon} iconPlacement={iconPlacement} label={label} />}
+        </Menu.Button>
+        <Transition
+          as={Fragment}
+          enter={Styles.transitionEnter}
+          enterFrom={Styles.enterFrom}
+          enterTo={Styles.enterTo}
+          leave={Styles.transitionLeave}
+          leaveFrom={Styles.leaveFrom}
+          leaveTo={Styles.leaveTo}>
+          <Menu.Items className={Styles.menuItems}>
+            {moreActions.map(({ label, icon, children, ...props }, index) => (
+              <Menu.Item key={index} className={Styles.menuItem} {...props}>
+                <div>{children || <Content icon={icon} label={label} />}</div>
+              </Menu.Item>
+            ))}
+          </Menu.Items>
+        </Transition>
+      </Menu>
+    );
+  }
+);
 
 ButtonMenu.Variants = variants;
 
