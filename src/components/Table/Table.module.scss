@@ -46,8 +46,12 @@ td {
 
 .filterContainer {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.filterInput {
-  width: 250px;
+.newCustomer {
+          margin: 10px;
+          width: 30%;
+          font-size: 12px;          
 }
