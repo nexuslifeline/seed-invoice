@@ -83,13 +83,18 @@ const Invoice = (props) => {
           { text: 'Invoices', to: '/invoices' },
         ]}
       />
-      <TableContainer>
+      <TableContainer
+        containerTitle={'Invoices'}
+        containerDesc={'List of invoices created by members'}
+      >
         <Table
           columns={columns}
           data={tableData}
           isLoading={isLoading}
           pageCount={pageCount}
           fetchData={fetchData}
+          showFilter={false}
+          openModal={false}
         />
       </TableContainer>
     </ContentView>
