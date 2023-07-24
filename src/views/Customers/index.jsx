@@ -175,7 +175,7 @@ const Customers = (props) => {
           <input {...register("middleName")} placeholder='Middle Name'></input>
           <input {...register("lastName")} placeholder='Last Name'></input>
           <input {...register("age")} placeholder='Age'></input>
-          <input {...register("displayName")} placeholder='Display Name'></input>
+{/*           <input {...register("displayName")} placeholder='Display Name'></input>
           <input {...register("company")} placeholder='Company'></input>
           <input {...register("email")} placeholder='Email'></input>
           <input {...register("phone")} placeholder='Phone'></input>
@@ -183,7 +183,7 @@ const Customers = (props) => {
           <input {...register("fax")} placeholder='Fax'></input>
           <input {...register("website")} placeholder='Website'></input>
           <input {...register("other")} placeholder='Other'></input>
-          <input {...register("address")} placeholder='Address'></input>
+          <input {...register("address")} placeholder='Address'></input> */}
           <button onClick={closeModal}>Cancel</button>
           <input type='submit'></input>
         </form>
