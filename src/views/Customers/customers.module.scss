@@ -1,1 +1,37 @@
+@import '~shared/styles/variables.scss';
+@import '~shared/styles/mixins.scss';
 
+.content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.container {
+  border-radius: 6px;
+  background-color: $white;
+  // background-color: red;
+  width: 100%;
+  padding: 10px;
+  @include box-shadow;
+}
+
+.containerLR {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+
+  .column-left {
+    // background-color: #f0f0f0;
+    padding: 10px;
+  }
+
+  .column-right {
+    // background-color: #e0e0e0;
+    padding: 10px;
+  }
+}
