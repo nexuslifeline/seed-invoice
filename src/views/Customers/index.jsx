@@ -1,5 +1,4 @@
 
-
 import withAuth from 'shared/hoc/withAuth';
 import { useMemo, useState, useCallback, useRef } from 'react';
 import { customers } from 'data/sample/customers';
@@ -149,17 +148,20 @@ const Customers = (props) => {
         <div className={Styles.container}>
 
           <h2>Customer Information</h2>
-          <p>Modal content goes here.</p>
+          <p>Fill in all informations.</p>
           <form
             onSubmit={handleSubmit((data) => {
               console.log(data);
             })}
           >
-            <input {...register("firstName")} id="firstName" placeholder='First Name' />
-            <input {...register("middleName")} id="middleName" placeholder='Middle Name' />
-            <input {...register("lastName")} id="lastName" placeholder='Last Name' />
-            <input {...register("address")} id="address" placeholder='Address' />
-            <input {...register("age")} id="age" placeholder='Age' />
+
+            <div className={Styles.flexColumn}>
+              <input {...register("firstName")} id="firstName" placeholder='First Name' />
+              <input {...register("middleName")} id="middleName" placeholder='Middle Name' />
+              <input {...register("lastName")} id="lastName" placeholder='Last Name' />
+              <input {...register("address")} id="address" placeholder='Address' />
+              <input {...register("age")} id="age" placeholder='Age' />
+            </div>
 
             <div className={Styles.containerLR}>
               <Button onClick={closeModal}>Cancel</Button>
