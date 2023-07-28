@@ -147,9 +147,84 @@ const Customers = (props) => {
 
         <div className={Styles.container}>
 
-          <h2>Customer Information</h2>
-          <p>Fill in all informations.</p>
+          {/* <h2>Customer Information</h2>
+          <p>Fill in all informations.</p> */}
+
+
           <form
+            onSubmit={handleSubmit((data) => {
+              console.log(data);
+            })}
+          >
+            <div className={Styles.formboldformtitle}>
+              <h2 className="">Customer Information</h2>
+              <p>
+                Fill in all informations.
+              </p>
+            </div>
+
+
+            <div className={Styles.formboldinputflex}>
+              <div>
+                <label>First Name</label>
+                <input {...register("firstName")} id="firstName" />
+              </div>
+
+              <div>
+                <label>Last Name</label>
+                <input {...register("lastName")} id="lastName" />
+              </div>
+            </div>
+
+            <div className={Styles.formboldinputflex}>
+              <div>
+                <label> Email </label>
+                <input {...register("email")} id="email" />
+              </div>
+              <div>
+                <label> Phone number </label>
+                <input {...register("phone")} id="phone" />
+              </div>
+            </div>
+
+
+            <div className={Styles.formboldinputflex}>
+              <div>
+                <label> Fax </label>
+                <input {...register("fax")} id="fax" />
+              </div>
+              <div>
+                <label> Website </label>
+                <input {...register("website")} id="website" />
+              </div>
+            </div>
+
+            <div className={Styles.formboldmb3}>
+              <label>Company</label>
+              <input {...register("company")} id="company" />
+            </div>
+
+            <div className={Styles.formboldmb3}>
+              <label>Billing Address</label>
+              <input {...register("Billing")} id="Billing" />
+            </div>
+
+            <div className={Styles.formboldmb3}>
+              <label>Shipping Address</label>
+              <input {...register("Shipping")} id="Shipping" />
+            </div>
+
+
+            <div className={Styles.containerLR}>
+              <Button onClick={closeModal}>Cancel</Button>
+              <Button type='submit'>Save</Button>
+            </div>
+
+          </form>
+
+
+
+          {/* <form
             onSubmit={handleSubmit((data) => {
               console.log(data);
             })}
@@ -167,12 +242,8 @@ const Customers = (props) => {
               <Button onClick={closeModal}>Cancel</Button>
               <Button type='submit'>Save</Button>
             </div>
-          </form>
+          </form> */}
         </div>
-
-
-
-
       </Modal>
 
       <TableContainer
