@@ -190,8 +190,19 @@ const Customers = (props) => {
 
             <div className={Styles.formboldinputflex}>
               <div>
+                <label> Mobile Number </label>
+                <input {...register("mobile")} id="mobile" />
+              </div>
+              <div>
                 <label> Fax </label>
                 <input {...register("fax")} id="fax" />
+              </div>
+            </div>
+
+            <div className={Styles.formboldinputflex}>
+              <div>
+                <label> Other </label>
+                <input {...register("other")} id="other" />
               </div>
               <div>
                 <label> Website </label>
@@ -214,6 +225,12 @@ const Customers = (props) => {
               <input {...register("Shipping")} id="Shipping" />
             </div>
 
+            {/* Display Name
+Notes
+Tax informations
+Payment and Billing
+Attachment */}
+
 
             <div className={Styles.containerLR}>
               <Button onClick={closeModal}>Cancel</Button>
@@ -222,27 +239,6 @@ const Customers = (props) => {
 
           </form>
 
-
-
-          {/* <form
-            onSubmit={handleSubmit((data) => {
-              console.log(data);
-            })}
-          >
-
-            <div className={Styles.flexColumn}>
-              <input {...register("firstName")} id="firstName" placeholder='First Name' />
-              <input {...register("middleName")} id="middleName" placeholder='Middle Name' />
-              <input {...register("lastName")} id="lastName" placeholder='Last Name' />
-              <input {...register("address")} id="address" placeholder='Address' />
-              <input {...register("age")} id="age" placeholder='Age' />
-            </div>
-
-            <div className={Styles.containerLR}>
-              <Button onClick={closeModal}>Cancel</Button>
-              <Button type='submit'>Save</Button>
-            </div>
-          </form> */}
         </div>
       </Modal>
 
