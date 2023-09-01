@@ -29,7 +29,7 @@ const Field = forwardRef(({ className, label, rules, children, ...props }, ref) 
         setError('');
       },
     }),
-    []
+    [rules]
   );
 
   return (
