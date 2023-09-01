@@ -12,7 +12,7 @@
   .baseSelect {
     height: 100%;
 
-    &~.hasValue {
+    & ~ .hasValue {
       top: -8px;
       font-size: $fs-2;
     }
@@ -40,7 +40,7 @@
     .select__control--is-focused,
     .select__control--menu-is-open {
       box-shadow: none !important;
-      border: 2px solid $primary  !important;
+      border: 2px solid $primary !important;
     }
 
     .select__option {
@@ -48,13 +48,13 @@
 
       &:hover {
         color: $white;
-        background-color: $primary  !important;
+        background-color: $primary !important;
       }
     }
 
     .select__option--is-selected {
       color: $primary;
-      background-color: $purple-10  !important;
+      background-color: $purple-10 !important;
     }
   }
 }

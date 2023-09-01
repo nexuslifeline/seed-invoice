@@ -4,22 +4,13 @@ import SearchBar from './components/SearchBar';
 import Hamburger from 'components/Hamburger';
 import { withLayoutState } from 'shared/context/LayoutState';
 
-const Header = ({
-  isMainNavOpen,
-  setIsMainNavOpen,
-  setIsMobileNavOpen,
-  isMobileNavOpen,
-}) => {
+const Header = ({ isMainNavOpen, setIsMainNavOpen, setIsMobileNavOpen, isMobileNavOpen }) => {
   return (
     <div className={Styles.container}>
-      <button
-        className={Styles.btnMenu}
-        onClick={() => setIsMainNavOpen(!isMainNavOpen)}>
+      <button className={Styles.btnMenu} onClick={() => setIsMainNavOpen(!isMainNavOpen)}>
         <Hamburger isArrow={!isMainNavOpen} />
       </button>
-      <button
-        className={Styles.btnMobile}
-        onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
+      <button className={Styles.btnMobile} onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
         <Hamburger />
       </button>
       <SearchBar />

@@ -8,7 +8,7 @@
 }
 
 .primary {
-  @include apply-primary-theme
+  @include apply-primary-theme;
 }
 
 .secondary {
@@ -21,7 +21,6 @@
   background-color: $white;
   color: $primary;
   border: solid 1px $primary-border-color;
-
 }
 
 .secondaryOutline {

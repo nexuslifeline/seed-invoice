@@ -24,7 +24,7 @@
 }
 
 .iconRight {
-  margin-left: 5px
+  margin-left: 5px;
 }
 
 .button {
@@ -44,7 +44,7 @@
 
   &:disabled {
     cursor: default;
-    opacity: .4;
+    opacity: 0.4;
   }
 }
 
@@ -79,7 +79,6 @@
     border-color: $secondary-hover-bg-color;
   }
 }
-
 
 .primaryOutline {
   background-color: $white;
@@ -121,7 +120,6 @@
   }
 }
 
-
 .menuItems {
   position: absolute;
   right: 0;
@@ -133,7 +131,6 @@
   border: solid 1px lightgray;
   border-radius: 4px;
   padding: 8px;
-
 }
 
 .menuItem {
@@ -148,11 +145,10 @@
     background-color: $primary;
     color: $white;
   }
-
 }
 
 .transitionEnter {
-  transition: opacity .3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .transitionLeave {

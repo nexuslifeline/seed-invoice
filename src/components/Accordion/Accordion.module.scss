@@ -39,12 +39,12 @@
 
 .enterFrom {
   opacity: 0;
-  transform: scale(.95);
+  transform: scale(0.95);
 }
 
 .enterTo {
   opacity: 100;
-  transform: scale(1)
+  transform: scale(1);
 }
 
 .leaveFrom {
@@ -54,5 +54,5 @@
 
 .leaveTo {
   opacity: 0;
-  transform: scale(.95);
+  transform: scale(0.95);
 }

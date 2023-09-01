@@ -19,7 +19,7 @@
   border: none;
 }
 
-.striped tr:nth-child(even)>td,
+.striped tr:nth-child(even) > td,
 .striped th {
   background-color: $gray-10;
 }

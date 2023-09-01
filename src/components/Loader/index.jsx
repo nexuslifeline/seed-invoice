@@ -8,12 +8,7 @@ const variants = {
 };
 
 const Loader = ({ variant, ...props }) => {
-  return (
-    <span
-      style={{ ...props }}
-      className={classNames('loading__spinner', variant)}
-    />
-  );
+  return <span style={{ ...props }} className={classNames('loading__spinner', variant)} />;
 };
 
 Loader.Variants = variants;

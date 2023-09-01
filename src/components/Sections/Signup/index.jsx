@@ -17,9 +17,7 @@ const Signup = () => {
     <div className={Styles.container}>
       <Welcome
         title={'Create an account'}
-        description={
-          'Create your account and have a full featured access for free. No credit card required.'
-        }
+        description={'Create your account and have a full featured access for free. No credit card required.'}
       />
       <InputContainer>
         <TextInput label='Name' placeholder='Name' />
@@ -32,10 +30,7 @@ const Signup = () => {
           <PasswordInput label='Password' placeholder='Password' />
         </InputContainer>
         <InputContainer>
-          <PasswordInput
-            label='Confirm Password'
-            placeholder='Confirm Password'
-          />
+          <PasswordInput label='Confirm Password' placeholder='Confirm Password' />
         </InputContainer>
       </InputGroup>
       <div className={Styles.actionsContainer}>
@@ -51,9 +46,7 @@ const Signup = () => {
       </div>
       <div>
         {`Already have an account?`}
-        <button
-          className={classNames(Styles.link, Styles.login)}
-          onClick={() => navigate('/')}>
+        <button className={classNames(Styles.link, Styles.login)} onClick={() => navigate('/')}>
           <UnderlinedText>{'Sign in'}</UnderlinedText>
         </button>
       </div>

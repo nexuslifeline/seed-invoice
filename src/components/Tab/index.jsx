@@ -5,21 +5,13 @@ import classNames from 'classnames';
 
 const Panel = ({ children, panelItemClass, ...props }) => {
   return (
-    <Tab.Panel
-      className={classNames(Styles.panelItem, panelItemClass)}
-      {...props}>
+    <Tab.Panel className={classNames(Styles.panelItem, panelItemClass)} {...props}>
       {children}
     </Tab.Panel>
   );
 };
 
-const BaseTab = ({
-  children,
-  className,
-  tabListClass,
-  panelsClass,
-  ...props
-}) => {
+const BaseTab = ({ children, className, tabListClass, panelsClass, ...props }) => {
   return (
     <Tab.Group className={className} {...props}>
       {children.length > 0 && (
@@ -27,9 +19,7 @@ const BaseTab = ({
           {children.map((item, idx) => {
             const { title, listItemClass } = item.props;
             return (
-              <Tab
-                key={idx}
-                className={classNames(Styles.listItem, listItemClass)}>
+              <Tab key={idx} className={classNames(Styles.listItem, listItemClass)}>
                 {title}
               </Tab>
             );

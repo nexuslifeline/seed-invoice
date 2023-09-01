@@ -32,9 +32,9 @@
   bottom: 0;
   background-color: $gray-20;
   border: 1px solid $gray-30;
-  -webkit-transition: .4s;
-  transition: .4s;
-  opacity: .8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 0.8;
 
   &:before {
     position: absolute;
@@ -44,12 +44,12 @@
     left: 3px;
     bottom: 3px;
     background-color: $white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: $primary;
   border-color: $primary;
   opacity: 1;
@@ -59,7 +59,7 @@ input:checked+.slider {
   }
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   -webkit-transform: translateX(25px);
   -ms-transform: translateX(25px);
   transform: translateX(25px);

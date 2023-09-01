@@ -21,7 +21,7 @@ const Table = ({
   ...props
 }) => {
   // eslint-disable-next-line prettier/prettier
-  const instance = !isServerSide && { data, columns } || {
+  const instance = (!isServerSide && { data, columns }) || {
     autoResetPage: false,
     data,
     columns,

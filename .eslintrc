@@ -1,36 +1,23 @@
 {
-    "plugins": [
-        "unused-imports",
-        "prettier"
+  "plugins": ["unused-imports", "prettier"],
+  "extends": ["react-app", "react-app/jest", "prettier"],
+  "ignorePatterns": ["archive", "node_modules", "build", "dist", "public"],
+  "rules": {
+    "react/jsx-no-target-blank": "off",
+    // "no-unused-expressions": "off",
+    // "no-unused-vars": "off",
+    "react/display-name": "off",
+    "unused-imports/no-unused-imports": "warn",
+    // "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {},
+      {
+        "usePrettierrc": true
+      }
     ],
-    "extends": [
-        "react-app",
-        "react-app/jest",
-        "prettier"
-    ],
-    "ignorePatterns": [
-        "archive",
-        "node_modules",
-        "build",
-        "dist",
-        "public"
-    ],
-    "rules": {
-        "react/jsx-no-target-blank": "off",
-        // "no-unused-expressions": "off",
-        // "no-unused-vars": "off",
-        "react/display-name": "off",
-        "unused-imports/no-unused-imports": "warn",
-        // "prettier/prettier": "error",
-        "prettier/prettier": [
-            "error",
-            {},
-            {
-                "usePrettierrc": true
-            }
-        ],
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "curly": "error"
-    }
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "curly": "error"
+  }
 }

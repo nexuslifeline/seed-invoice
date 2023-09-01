@@ -28,9 +28,7 @@ const LoginForm = () => {
     <div className={Styles.container}>
       <Welcome
         title={'Welcome Back'}
-        description={
-          'Enter your Seed Platform credentials and start growing your business.'
-        }
+        description={'Enter your Seed Platform credentials and start growing your business.'}
       />
       <InputContainer>
         <TextInput label='Email' placeholder='Email' />
@@ -40,15 +38,10 @@ const LoginForm = () => {
       </InputContainer>
       <div className={Styles.row}>
         <Toggle label={'Remember Me'} />
-        <button className={classNames(Styles.link, Styles.forgotLink)}>
-          {'Forgot password?'}
-        </button>
+        <button className={classNames(Styles.link, Styles.forgotLink)}>{'Forgot password?'}</button>
       </div>
       <div className={Styles.actionsContainer}>
-        <Button
-          onClick={handleLogin}
-          isBusy={isLoading}
-          block>{`Sign in`}</Button>
+        <Button onClick={handleLogin} isBusy={isLoading} block>{`Sign in`}</Button>
         <Button variant={Button.Variants.SECONDARY_OUTLINE} block>
           <IconGoogle className={Styles.icon} />
           {`Sign in with Google`}
@@ -60,9 +53,7 @@ const LoginForm = () => {
       </div>
       <div>
         {`Don't have an account?`}
-        <button
-          className={classNames(Styles.link, Styles.signupLink)}
-          onClick={() => navigate('/signup')}>
+        <button className={classNames(Styles.link, Styles.signupLink)} onClick={() => navigate('/signup')}>
           <UnderlinedText>{'Signup for free'}</UnderlinedText>
         </button>
       </div>

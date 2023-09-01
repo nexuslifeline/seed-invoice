@@ -6,7 +6,6 @@
   display: flex;
   margin-bottom: 5px;
   border: solid 1px $gray-20;
-
 }
 
 .innerContainer {
@@ -17,7 +16,6 @@
   cursor: pointer;
   padding: 8px 10px;
   flex: 1;
-
 
   &:hover {
     background-color: $gray-10;
@@ -40,7 +38,6 @@
   max-width: 28px;
   margin-right: 15px;
   fill: gray;
-
 }
 
 .actionContainer {

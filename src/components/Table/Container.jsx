@@ -6,9 +6,7 @@ const Container = ({ children }) => {
     <div className={Styles.container}>
       <div className={Styles.header}>
         <Text>{'Invoices'}</Text>
-        <Text variant='description'>
-          {'List of invoices created by members'}
-        </Text>
+        <Text variant='description'>{'List of invoices created by members'}</Text>
       </div>
       <div className={Styles.body}>{children}</div>
     </div>

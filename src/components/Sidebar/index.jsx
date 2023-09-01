@@ -11,29 +11,18 @@ const Sidebar = ({ isMainNavOpen, isMobileNavOpen, setIsMobileNavOpen }) => {
   const location = useLocation();
 
   const navIndex = navLinks.findIndex(({ groups }) =>
-    groups?.some(({ children }) =>
-      children?.some((child) => child?.to === location?.pathname)
-    )
+    groups?.some(({ children }) => children?.some((child) => child?.to === location?.pathname))
   );
 
   const linkGroups = navLinks?.[navIndex]?.groups || [];
 
   return (
-    <div
-      className={classNames(
-        Styles.container,
-        isMobileNavOpen && Styles.mobileOpen
-      )}>
-      <button
-        className={Styles.btnCollapse}
-        onClick={() => setIsMobileNavOpen(false)}>
+    <div className={classNames(Styles.container, isMobileNavOpen && Styles.mobileOpen)}>
+      <button className={Styles.btnCollapse} onClick={() => setIsMobileNavOpen(false)}>
         <CaretLeft className={Styles.icon} />
       </button>
       <MainPanel activeIndex={navIndex} />
-      <SubPanel
-        linkGroups={linkGroups}
-        isCollapse={!linkGroups?.length > 0 || isMainNavOpen}
-      />
+      <SubPanel linkGroups={linkGroups} isCollapse={!linkGroups?.length > 0 || isMainNavOpen} />
     </div>
   );
 };

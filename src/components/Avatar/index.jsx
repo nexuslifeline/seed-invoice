@@ -22,17 +22,7 @@ const initialStyles = [
   { color: 'white', backgroundColor: 'aqua' },
 ];
 
-const Avatar = ({
-  src,
-  onRemove,
-  initials,
-  containerProps,
-  allowUpload,
-  round,
-  profileId,
-  isOnline,
-  ...props
-}) => {
+const Avatar = ({ src, onRemove, initials, containerProps, allowUpload, round, profileId, isOnline, ...props }) => {
   const inputRef = useRef(null);
 
   const { width, height } = containerProps;
@@ -44,38 +34,21 @@ const Avatar = ({
 
   return (
     <div
-      className={classNames(
-        Styles.container,
-        isOnline && Styles.online,
-        (round && Styles.round) || Styles.square
-      )}
+      className={classNames(Styles.container, isOnline && Styles.online, (round && Styles.round) || Styles.square)}
       style={{ ...containerProps, width: `${width}px`, height: `${height}px` }}>
-      {(src && (
-        <img src={src} alt='No Selected' className={Styles.photo} />
-      )) || (
-        <div
-          className={Styles.initials}
-          style={{ ...initialStyles[initialStyleIndex], fontSize: width / 3 }}>
+      {(src && <img src={src} alt='No Selected' className={Styles.photo} />) || (
+        <div className={Styles.initials} style={{ ...initialStyles[initialStyleIndex], fontSize: width / 3 }}>
           {initials}
         </div>
       )}
-      <input
-        type={'file'}
-        className={Styles.input}
-        ref={inputRef}
-        {...props}
-        accept={fileTypes}
-      />
+      <input type={'file'} className={Styles.input} ref={inputRef} {...props} accept={fileTypes} />
       {allowUpload && (
         <>
           <Button className={Styles.browse} onClick={onBrowse}>
             <IconCamera className={Styles.browseIcon} />
           </Button>
           {src && (
-            <Button
-              className={Styles.remove}
-              onClick={onRemove}
-              variant={Button.Variants.SECONDARY}>
+            <Button className={Styles.remove} onClick={onRemove} variant={Button.Variants.SECONDARY}>
               <IconRemove className={Styles.iconRemove} />
             </Button>
           )}

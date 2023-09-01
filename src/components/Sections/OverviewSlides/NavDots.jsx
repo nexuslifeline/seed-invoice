@@ -6,12 +6,7 @@ const NavDots = ({ slideCount, currentSlide }) => {
   return (
     <ul className={Styles.dotsContainer}>
       {Array.from({ length: slideCount }).map((_, idx) => (
-        <li
-          className={classNames(
-            Styles.dotItem,
-            idx === currentSlide && Styles.active
-          )}
-        />
+        <li className={classNames(Styles.dotItem, idx === currentSlide && Styles.active)} />
       ))}
     </ul>
   );

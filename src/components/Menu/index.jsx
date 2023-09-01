@@ -6,10 +6,7 @@ import { snakeToCamel } from 'shared/lib/utils';
 
 const BaseMenu = memo(({ style, className, children }) => {
   return (
-    <Menu
-      as='div'
-      className={classNames(Styles.container, className)}
-      style={style}>
+    <Menu as='div' className={classNames(Styles.container, className)} style={style}>
       {children}
     </Menu>
   );
@@ -25,13 +22,7 @@ const Items = ({ children, className, direction = 'default', ...props }) => {
       leave={Styles.transition}
       leaveFrom={Styles.enterTo}
       leaveTo={Styles.enterFrom}>
-      <Menu.Items
-        className={classNames(
-          Styles.menuItems,
-          Styles[snakeToCamel(direction)],
-          className
-        )}
-        {...props}>
+      <Menu.Items className={classNames(Styles.menuItems, Styles[snakeToCamel(direction)], className)} {...props}>
         {children}
       </Menu.Items>
     </Transition>

@@ -21,7 +21,6 @@
 }
 
 input.input {
-
   &:not([type='submit']),
   &:not([type='radio']),
   &:not([type='checkbox']) {
@@ -49,13 +48,11 @@ input.input {
 
   &:focus,
   &:not(:placeholder-shown) {
-
-    ~.label {
+    ~ .label {
       top: -8px;
       font-size: $fs-2;
     }
   }
-
 
   &:not(:focus)::-webkit-input-placeholder {
     /* WebKit browsers */
@@ -92,7 +89,7 @@ input.input {
     flex: 50%;
   }
 
-  .inputContainer~.inputContainer {
+  .inputContainer ~ .inputContainer {
     margin-left: 10px;
   }
 }

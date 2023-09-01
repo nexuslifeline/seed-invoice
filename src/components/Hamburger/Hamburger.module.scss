@@ -1,8 +1,6 @@
 @import '~shared/styles/variables.scss';
 @import '~shared/styles/mixins.scss';
 
-
-
 .hamburger {
   cursor: pointer;
 
@@ -17,7 +15,6 @@
     transition: all 0.3s ease-in-out;
   }
 }
-
 
 .isActive .line:nth-child(1),
 .isActive .line:nth-child(3) {

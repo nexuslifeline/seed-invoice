@@ -20,12 +20,7 @@ const MainPanel = ({ activeIndex }) => {
       <ul className={Styles.menus}>
         {navLinks.map(({ icon: Icon }, idx) => {
           return (
-            <li
-              key={idx}
-              className={classNames(
-                Styles.menu,
-                idx === activeIndex && Styles.active
-              )}>
+            <li key={idx} className={classNames(Styles.menu, idx === activeIndex && Styles.active)}>
               <Link to={getNavUrl(idx)} className={Styles.link}>
                 <Icon className={Styles.icon} />
               </Link>

@@ -7,18 +7,18 @@ $orange-60: #ffcd94;
 $orange-70: #ffc482;
 $orange-80: #ffbc70;
 $orange-90: #ffb45e;
-$orange-100: #FFA33A;
+$orange-100: #ffa33a;
 
-$gray-10: #F0F4F8;
-$gray-20: #D9E2EC;
-$gray-30: #BCCCDC;
-$gray-40: #9FB3C8;
-$gray-50: #829AB1;
-$gray-60: #627D98;
+$gray-10: #f0f4f8;
+$gray-20: #d9e2ec;
+$gray-30: #bcccdc;
+$gray-40: #9fb3c8;
+$gray-50: #829ab1;
+$gray-60: #627d98;
 $gray-70: #486581;
-$gray-80: #334E68;
-$gray-90: #243B53;
-$gray-100: #102A43;
+$gray-80: #334e68;
+$gray-90: #243b53;
+$gray-100: #102a43;
 
 $purple-10: #f3e5fe;
 $purple-20: #e8cbfd;
@@ -40,7 +40,7 @@ $red-60: #f9a3a3;
 $red-70: #f89393;
 $red-80: #f78484;
 $red-90: #f67474;
-$red-100: #F56565;
+$red-100: #f56565;
 
 $green-10: #e7f9eb;
 $green-20: #cef3d7;
@@ -51,7 +51,7 @@ $green-60: #6cdc86;
 $green-70: #54d672;
 $green-80: #3bd05d;
 $green-90: #2ebf4f;
-$green-100: #28A745;
+$green-100: #28a745;
 
 $blue-10: #e6f0fd;
 $blue-20: #cde1fb;
@@ -69,7 +69,7 @@ $pink-100: #f000b9;
 $white: #ffffff;
 $black: #212529;
 
-$cubic: cubic-bezier(.165, .84, .44, 1);
+$cubic: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 $form-element-radius: 8px;
 $form-element-height: 46px;
@@ -77,7 +77,6 @@ $form-element-height: 46px;
 // Text, Title, Headlines
 $text-color: $gray-50;
 $title-color: $gray-90;
-
 
 // form elements variables
 $form-input-border-color: $gray-20;
@@ -87,7 +86,6 @@ $search-radius: 15px;
 
 // textarea variables
 $textarea-height: 80px;
-
 
 $fs-1: 12px;
 $fs-2: 13px;
