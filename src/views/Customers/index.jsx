@@ -10,6 +10,8 @@ import Styles from './customers.module.scss';
 import { useForm } from 'react-hook-form';
 import Button from 'components/Button';
 
+import Close from 'components/Actions/Panel/Close';
+
 const Customers = (props) => {
   const { register, handleSubmit, setValue, reset } = useForm({
     defaultValues: {
@@ -141,6 +143,10 @@ const Customers = (props) => {
           {/* <h2>Customer Information</h2>
           <p>Fill in all informations.</p> */}
 
+          <div className={Styles.containerLR}>
+                    <Close onClick={closeModal}/>
+          </div>
+          
           <form
             onSubmit={handleSubmit((data) => {
               console.log(data);
@@ -246,7 +252,7 @@ const Customers = (props) => {
           pageCount={pageCount}
           fetchData={fetchData}
           showFilter={true}
-          openModal={openModal}
+          // openModal={openModal}
         />
       </TableContainer>
     </ContentView>
