@@ -81,29 +81,9 @@ const Customers = (props) => {
         Cell: ({ row }) => (
           <button
             onClick={() => {
-              setValue('title', row.original.title);
-              setValue('firstname', row.original.firstname);
-              setValue('middlename', row.original.middlename);
-              setValue('lastname', row.original.lastname);              
-              setValue('company', row.original.company);
-              setValue('displayname', row.original.displayname);
-              setValue('email', row.original.email);
-              setValue('phone', row.original.phone);
-              setValue('mobile', row.original.mobile);
-              setValue('fax', row.original.fax);
-              setValue('other', row.original.other);
-              setValue('website', row.original.website);
-              setValue('bstreet', row.original.bstreet);
-              setValue('bcitytown', row.original.bcitytown);
-              setValue('bstateprovince', row.original.bstateprovince);
-              setValue('bpostal', row.original.bpostal);
-              setValue('bcountry', row.original.bcountry);
-              setValue('sstreet', row.original.sstreet);
-              setValue('scitytown', row.original.scitytown);
-              setValue('sstateprovince', row.original.sstateprovince);
-              setValue('spostal', row.original.spostal);
-              setValue('scountry', row.original.scountry);
-              setValue('isactive', row.original.isactive);
+              Object.keys(row.original).forEach((key) => {
+                  setValue(key, row.original[key]);                  
+              });
               setIsModalOpen(true);
             }}
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
