@@ -14,13 +14,33 @@ import Close from 'components/Actions/Panel/Close';
 
 const Customers = (props) => {
   const { register, handleSubmit, setValue, reset } = useForm({
-    defaultValues: {
-      firstName: '',
-      lastName: '',
-      age: '',
-      address: '',
+    defaultValues: {    
+      title: '',
+      firstname: '',
+      middlename: '',
+      lastname: '',
+      company: '',
+      displayname: '',
+      email: '',
+      phone: '',
+      mobile: '',
+      fax: '',
+      other: '',
+      website: '',
+      bstreet: '',
+      bcitytown: '',
+      bstateprovince: '',
+      bpostal: '',
+      bcountry: '',
+      sstreet: '',
+      scitytown: '',
+      sstateprovince: '',
+      spostal: '',
+      scountry: '',
+      isactive: '',
     },
   });
+
 
   const columns = useMemo(
     () => [
@@ -28,28 +48,32 @@ const Customers = (props) => {
         Header: 'ID #',
         accessor: 'id', // accessor is the "key" in the data
         thStyle: { width: '10%' },
-      },
+      },    
       {
         Header: 'Customer',
-        accessor: 'name', // accessor is the "key" in the data
+        accessor: 'firstname', // accessor is the "key" in the data
         thStyle: { width: '20%' },
         Cell: ({ cell: { row } }) => (
           <>
-            <div>{row?.original?.name}</div>
+            <div>{row?.original?.title} {row?.original?.firstname} {row?.original?.middlename} {row?.original?.lastname}</div>
           </>
         ),
-      },
+      },      
       {
         Header: 'Address',
-        accessor: 'address',
-        thStyle: { width: '60%' },
+        accessor: 'bstreet',        
+        thStyle: { width: '50%' },
+        Cell: ({ cell: { row } }) => (
+          <>
+            <div>{row?.original?.bstreet} {row?.original?.bcitytown} {row?.original?.bstateprovince} {row?.original?.bpostal}</div>
+          </>
+        ),        
       },
       {
-        Header: 'Age',
-        accessor: 'age',
-        thStyle: { width: '10%' },
-      },
-
+        Header: 'Company',
+        accessor: 'company',
+        thStyle: { width: '20%' },
+      },      
       {
         Header: 'Action',
         accessor: 'action',
@@ -57,10 +81,29 @@ const Customers = (props) => {
         Cell: ({ row }) => (
           <button
             onClick={() => {
-              setValue('firstName', row.original.name);
-              setValue('lastName', row.original.name);
-              setValue('age', row.original.age);
-              setValue('address', row.original.address);
+              setValue('title', row.original.title);
+              setValue('firstname', row.original.firstname);
+              setValue('middlename', row.original.middlename);
+              setValue('lastname', row.original.lastname);              
+              setValue('company', row.original.company);
+              setValue('displayname', row.original.displayname);
+              setValue('email', row.original.email);
+              setValue('phone', row.original.phone);
+              setValue('mobile', row.original.mobile);
+              setValue('fax', row.original.fax);
+              setValue('other', row.original.other);
+              setValue('website', row.original.website);
+              setValue('bstreet', row.original.bstreet);
+              setValue('bcitytown', row.original.bcitytown);
+              setValue('bstateprovince', row.original.bstateprovince);
+              setValue('bpostal', row.original.bpostal);
+              setValue('bcountry', row.original.bcountry);
+              setValue('sstreet', row.original.sstreet);
+              setValue('scitytown', row.original.scitytown);
+              setValue('sstateprovince', row.original.sstateprovince);
+              setValue('spostal', row.original.spostal);
+              setValue('scountry', row.original.scountry);
+              setValue('isactive', row.original.isactive);
               setIsModalOpen(true);
             }}
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -156,88 +199,190 @@ const Customers = (props) => {
               <p>Fill in all informations.</p>
             </div>
 
-            <div className={Styles.formboldinputflex}>
-              <div>
-                <label>First Name</label>
-                <input {...register('firstName')} id='firstName' />
+
+
+
+            
+            <div className={Styles.linecontainer}>
+
+                        <div className={Styles.linecolumnsmall}>
+                                <div>
+                                    <label>Title</label>
+                                    <input {...register('title')} id='title' />
+                                </div>
+                        </div>
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>First name</label>
+                                    <input {...register('firstname')} id='firstname' />
+                                </div>
+                        </div>
+
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Middle name</label>
+                                    <input {...register('middlename')} id='middlename' />
+                                </div>
+                        </div>
+
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Last name</label>
+                                    <input {...register('lastname')} id='lastname' />
+                                </div>
+                        </div>                    
               </div>
 
-              <div>
-                <label>Last Name</label>
-                <input {...register('lastName')} id='lastName' />
-              </div>
-            </div>
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Display Name</label>
+                                    <input {...register('displayname')} id='displayname' />
+                                </div>
+                        </div>
 
-            <div className={Styles.formboldinputflex}>
-              <div>
-                <label> Email </label>
-                <input {...register('email')} id='email' />
-              </div>
-              <div>
-                <label> Phone number </label>
-                <input {...register('phone')} id='phone' />
-              </div>
-            </div>
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Company</label>
+                                    <input {...register('company')} id='company' />
+                                </div>
+                        </div>   
+              </div>            
 
-            <div className={Styles.formboldinputflex}>
-              <div>
-                <label> Mobile Number </label>
-                <input {...register('mobile')} id='mobile' />
-              </div>
-              <div>
-                <label> Fax </label>
-                <input {...register('fax')} id='fax' />
-              </div>
-            </div>
 
-            <div className={Styles.formboldinputflex}>
-              <div>
-                <label> Other </label>
-                <input {...register('other')} id='other' />
-              </div>
-              <div>
-                <label> Website </label>
-                <input {...register('website')} id='website' />
-              </div>
-            </div>
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Email</label>
+                                    <input {...register('email')} id='email' />
+                                </div>
+                        </div>
 
-            <div className={Styles.formboldmb3}>
-              <label>Company</label>
-              <input {...register('company')} id='company' />
-            </div>
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Phone Number</label>
+                                    <input {...register('phone')} id='phone' />
+                                </div>
+                        </div>   
+              </div>      
 
-            <div className={Styles.formboldmb3}>
-              <label>Billing Address</label>
-              <input {...register('Billing')} id='Billing' />
-            </div>
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Fax</label>
+                                    <input {...register('fax')} id='fax' />
+                                </div>
+                        </div>
 
-            <div className={Styles.formboldmb3}>
-              <label>Shipping Address</label>
-              <input {...register('Shipping')} id='Shipping' />
-            </div>
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Mobile Number</label>
+                                    <input {...register('mobile')} id='mobile' />
+                                </div>
+                        </div>   
+              </div>  
+              
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Other</label>
+                                    <input {...register('other')} id='other' />
+                                </div>
+                        </div>
 
-            <div className={Styles.formboldmb3}>
-              <label>Notes</label>
-              <input {...register('notes')} id='notes' />
-            </div>
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Website</label>
+                                    <input {...register('website')} id='website' />
+                                </div>
+                        </div>   
+              </div>       
 
-            <div className={Styles.formboldmb3}>
-              <label>Tax Information</label>
-              <input {...register('tax')} id='tax' />
-            </div>
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Billing Address</label>
+                                    <input {...register('bstreet')} id='bstreet' />
+                                </div>
+                        </div>
+              </div>   
 
-            <div className={Styles.formboldmb3}>
-              <label>Payment and Billing</label>
-              <input {...register('Payment')} id='Payment' />
-            </div>
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <input {...register('bcitytown')} id='bcitytown' placeholder='City/Town'/>
+                                </div>
+                        </div>
 
-            <div className={Styles.formboldmb3}>
-              <label>Attachment</label>
-              <input {...register('Attachment')} id='Attachment' />
-            </div>
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <input {...register('bstateprovince')} id='bstateprovince' placeholder='State/Province'/>
+                                </div>
+                        </div>   
+              </div>                                    
+            
+
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <input {...register('bpostal')} id='bpostal' placeholder='Postal code'/>
+                                </div>
+                        </div>
+
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <input {...register('bcountry')} id='bcountry' placeholder='Country'/>
+                                </div>
+                        </div>   
+              </div> 
+
+
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <label>Shipping Address</label>
+                                    <input {...register('sstreet')} id='sstreet' />
+                                </div>
+                        </div>
+              </div>   
+
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <input {...register('scitytown')} id='scitytown' placeholder='City/Town'/>
+                                </div>
+                        </div>
+
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <input {...register('sstateprovince')} id='sstateprovince' placeholder='State/Province'/>
+                                </div>
+                        </div>   
+              </div>                                    
+            
+
+              <div className={Styles.linecontainer}>
+                          <div className={Styles.linecolumn}>
+                                <div>
+                                    <input {...register('spostal')} id='spostal' placeholder='Postal code'/>
+                                </div>
+                        </div>
+
+                        <div className={Styles.linecolumn}>
+                                <div>
+                                    <input {...register('scountry')} id='scountry' placeholder='Country'/>
+                                </div>
+                        </div>   
+              </div> 
+
+
+
 
             <div className={Styles.containerLR}>
-              <Button onClick={closeModal}>Cancel</Button>
+            <div>
+              <Button  className={Styles.rightmargi} onClick={closeModal}>Cancel</Button>
+              <Button>Make inactive</Button>
+            </div>              
               <Button type='submit'>Save</Button>
             </div>
           </form>
