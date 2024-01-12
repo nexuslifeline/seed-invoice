@@ -34,10 +34,10 @@ export const navLinks = [
           { text: 'Sales Order', to: '/orders', icon: Bag },
           { text: 'Invoices', to: '/invoices', icon: Invoice },
           { text: 'Payments', to: '/payments', icon: Wallet },
-          { text: 'Expenses', to: '/expenses', icon: CreditCard },
-        ],
-      },
-    ],
+          { text: 'Expenses', to: '/expenses', icon: CreditCard }
+        ]
+      }
+    ]
   },
   {
     text: 'References',
@@ -50,10 +50,10 @@ export const navLinks = [
           { text: 'Products', to: '/products', icon: Box },
           { text: 'Categories', to: '/categories', icon: Subfolder },
           { text: 'Payment Modes', to: '/payment-modes', icon: Vibration },
-          { text: 'Tax', to: '/tax', icon: Tax },
-        ],
-      },
-    ],
+          { text: 'Tax', to: '/tax', icon: Tax }
+        ]
+      }
+    ]
   },
   {
     text: 'Reports',
@@ -61,9 +61,9 @@ export const navLinks = [
     groups: [
       {
         text: 'Reports',
-        children: [{ text: 'Sales Report', to: '/sales-report', icon: SalesIncrease }],
-      },
-    ],
+        children: [{ text: 'Sales Report', to: '/sales-report', icon: SalesIncrease }]
+      }
+    ]
   },
   {
     text: 'Settings',
@@ -77,9 +77,9 @@ export const navLinks = [
           { text: 'Preferences', to: '/preferences', icon: Options },
           { text: 'Members', to: '/members', icon: Team },
           { text: 'Roles', to: '/roles', icon: Role },
-          { text: 'Billing', to: '/billing', icon: Bill },
-        ],
-      },
-    ],
-  },
+          { text: 'Billing', to: '/billing', icon: Bill }
+        ]
+      }
+    ]
+  }
 ];

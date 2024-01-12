@@ -6,5 +6,6 @@
   "arrowParens": "always",
   "bracketSameLine": true,
   "semi": true,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "trailingComma": "none"
 }
