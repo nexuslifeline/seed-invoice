@@ -1,9 +1,9 @@
 import Styles from './NotificationDropdown.module.scss';
-import Tab from 'components/Tab';
-import ImgEmpty from 'components/Backgrounds/Images/Empty';
-import ImageView from 'components/ImageView';
-import Text from 'components/Text';
-import List from 'components/Header/components/Notifications/List';
+import Tab from '@components/Tab';
+import ImgEmpty from '@components/Backgrounds/Images/Empty';
+import ImageView from '@components/ImageView';
+import Text from '@components/Text';
+import List from '@components/Header/components/Notifications/List';
 
 const TabPanel = ({ children, ...props }) => {
   return (

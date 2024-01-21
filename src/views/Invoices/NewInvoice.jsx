@@ -1,12 +1,12 @@
-import Breadcrumb from 'components/Breadcrumb';
-import Card from 'components/Card';
-import ContentView from 'components/ContentView';
-import TextInput from 'components/Form/TextInput';
-import TextArea from 'components/Form/TextArea';
-import InputContainer from 'components/Form/InputContainer';
-import InputGroup from 'components/Form/InputGroup';
-import Form from 'components/Form';
-import Button from 'components/Button';
+import Breadcrumb from '@components/Breadcrumb';
+import Card from '@components/Card';
+import ContentView from '@components/ContentView';
+import TextInput from '@components/Form/TextInput';
+import TextArea from '@components/Form/TextArea';
+import InputContainer from '@components/Form/InputContainer';
+import InputGroup from '@components/Form/InputGroup';
+import Form from '@components/Form';
+import Button from '@components/Button';
 
 export const NewInvoice = () => {
   const options = [

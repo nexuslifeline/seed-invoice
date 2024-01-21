@@ -5,9 +5,9 @@ import Styles from './PasswordInput.module.scss';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
 import StrengthBar from './StrengthBar';
-import IconHidePassword from 'components/Icons/HidePassword';
-import IconShowPassword from 'components/Icons/ShowPassword';
-import InvalidFeedback from 'components/InvalidFeedback';
+import IconHidePassword from '@components/Icons/HidePassword';
+import IconShowPassword from '@components/Icons/ShowPassword';
+import InvalidFeedback from '@components/InvalidFeedback';
 
 const strengths = {
   STRONG: 'strong',

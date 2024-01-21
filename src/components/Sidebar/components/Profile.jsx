@@ -1,9 +1,9 @@
-import ProfilePhoto from 'components/ProfilePhoto';
+import ProfilePhoto from '@components/ProfilePhoto';
 import Styles from './Profile.module.scss';
-import Text from 'components/Text';
-import Button from 'components/Button';
+import Text from '@components/Text';
+import Button from '@components/Button';
 import { Link, useNavigate } from 'react-router-dom';
-import Menu from 'components/Menu';
+import Menu from '@components/Menu';
 import { useState } from 'react';
 
 const Profile = () => {

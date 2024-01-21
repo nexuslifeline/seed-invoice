@@ -6,7 +6,7 @@ import Styles from './Styles.module.scss';
 import SharedStyles from '../shared.module.scss';
 import SelectStyles from '../Select/Select.module.scss';
 import FlagStyles from './Flags.module.scss';
-import countries from 'shared/data/countries.json'; // Note! move in backend
+import countries from '@shared/data/countries.json'; // Note! move in backend
 
 const PhoneCountryOption = ({ data, innerRef, innerProps, isSelected }) => {
   const { dialCode, name, cca2 } = data;

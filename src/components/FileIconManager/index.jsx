@@ -1,6 +1,6 @@
-import IconImage from 'components/Icons/Image';
-import IconPDF from 'components/Icons/Pdf';
-import IconDocument from 'components/Icons/Document';
+import IconImage from '@components/Icons/Image';
+import IconPDF from '@components/Icons/Pdf';
+import IconDocument from '@components/Icons/Document';
 
 const FileIconManager = ({ fileType, ...props }) => {
   const imageFileTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'];

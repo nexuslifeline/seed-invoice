@@ -1,9 +1,9 @@
 import { useMemo, useState, useCallback, useRef } from 'react';
-import { invoices } from 'data/sample/invoices';
-import Table from 'components/Table';
-import TableContainer from 'components/Table/Container';
-import ContentView from 'components/ContentView';
-import Breadcrumb from 'components/Breadcrumb';
+import { invoices } from '@data/sample/invoices';
+import Table from '@components/Table';
+import TableContainer from '@components/Table/Container';
+import ContentView from '@components/ContentView';
+import Breadcrumb from '@components/Breadcrumb';
 
 const Invoice = (props) => {
   const columns = useMemo(

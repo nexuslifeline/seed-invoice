@@ -1,4 +1,4 @@
-import ImageNotFound from 'components/Backgrounds/Images/NotFound';
+import ImageNotFound from '@components/Backgrounds/Images/NotFound';
 import Styles from './NotFound.module.scss';
 
 const NotFound = (props) => {

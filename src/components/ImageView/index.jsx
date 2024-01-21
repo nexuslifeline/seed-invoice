@@ -1,5 +1,5 @@
 import Styles from './ImageView.module.scss';
-import Text from 'components/Text';
+import Text from '@components/Text';
 
 const ImageView = ({ img: Img, title, description }) => {
   return (

@@ -1,5 +1,5 @@
 import Styles from './Breadcrumb.module.scss';
-import Text from 'components/Text';
+import Text from '@components/Text';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 

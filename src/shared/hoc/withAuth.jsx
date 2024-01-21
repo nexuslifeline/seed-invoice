@@ -1,4 +1,4 @@
-import { ProtectedRoute } from 'router/ProtectedRoute';
+import { ProtectedRoute } from '@router/ProtectedRoute';
 
 const withAuth = (Component) => (props) => {
   return (

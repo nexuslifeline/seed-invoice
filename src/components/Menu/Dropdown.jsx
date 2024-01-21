@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import Menu from 'components/Menu';
+import Menu from '@components/Menu';
 import Styles from './Dropdown.module.scss';
 
 const Dropdown = ({ children, button, direction, items }) => {

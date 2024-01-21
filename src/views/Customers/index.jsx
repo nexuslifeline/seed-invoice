@@ -1,16 +1,16 @@
-import withAuth from 'shared/hoc/withAuth';
+import withAuth from '@shared/hoc/withAuth';
 import { useMemo, useState, useCallback, useRef } from 'react';
-import { customers } from 'data/sample/customers';
-import Table from 'components/Table';
-import TableContainer from 'components/Table/Container';
-import ContentView from 'components/ContentView';
-import Breadcrumb from 'components/Breadcrumb';
-import EditProfile from 'components/Icons/EditProfile';
+import { customers } from '@data/sample/customers';
+import Table from '@components/Table';
+import TableContainer from '@components/Table/Container';
+import ContentView from '@components/ContentView';
+import Breadcrumb from '@components/Breadcrumb';
+import EditProfile from '@components/Icons/EditProfile';
 import Styles from './customers.module.scss';
 import { useForm } from 'react-hook-form';
-import Button from 'components/Button';
+import Button from '@components/Button';
 
-import Close from 'components/Actions/Panel/Close';
+import Close from '@components/Actions/Panel/Close';
 
 const Customers = (props) => {
   const { register, handleSubmit, setValue, reset } = useForm({

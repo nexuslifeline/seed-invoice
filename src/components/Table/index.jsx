@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { useTable, useFilters, useGlobalFilter, useAsyncDebounce, usePagination } from 'react-table';
 import Styles from './Table.module.scss';
-import Loader from 'components/Loader';
-import TextInput from 'components/Form/TextInput';
+import Loader from '@components/Loader';
+import TextInput from '@components/Form/TextInput';
 import PropTypes from 'prop-types';
-import Pagination from 'components/Pagination';
+import Pagination from '@components/Pagination';
 
 const Table = ({
   columns,

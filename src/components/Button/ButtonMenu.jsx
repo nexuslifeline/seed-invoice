@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import Content from './common/Content';
 import { Menu, Transition } from '@headlessui/react';
 import { variants, variantClasses } from './common/contants';
-import ChevronDown from 'components/Icons/ChevronDown';
+import ChevronDown from '@components/Icons/ChevronDown';
 
 const ButtonMenu = forwardRef(
   ({ moreActions, icon, iconPlacement, label, variant, block, classsName, children }, ref) => {

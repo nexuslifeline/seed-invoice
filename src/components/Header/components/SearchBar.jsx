@@ -1,4 +1,4 @@
-import SearchInput from 'components/Form/SearchInput';
+import SearchInput from '@components/Form/SearchInput';
 import Styles from './SearchBar.module.scss';
 
 const SearchBar = (props) => {

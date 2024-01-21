@@ -1,5 +1,5 @@
 import SVG from 'react-inlinesvg';
-import IconVibration from 'shared/assets/icons/vibration.svg';
+import IconVibration from '@shared/assets/icons/vibration.svg';
 
 const Vibration = (props) => <SVG src={IconVibration} {...props} />;
 

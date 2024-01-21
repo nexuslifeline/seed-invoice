@@ -1,4 +1,4 @@
-import Rectangle from 'components/Shapes/Rectangle';
+import Rectangle from '@components/Shapes/Rectangle';
 
 const RectangleGroup = () => {
   return (

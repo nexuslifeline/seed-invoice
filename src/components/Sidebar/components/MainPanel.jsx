@@ -1,9 +1,9 @@
 import Styles from './MainPanel.module.scss';
-import WhiteMini from 'components/Icons/Logo/WhiteMini';
+import WhiteMini from '@components/Icons/Logo/WhiteMini';
 import { Link } from 'react-router-dom';
-import Profile from 'components/Sidebar/components/ProfileDropdown';
-import { navLinks } from 'router/nav';
-import Circle from 'components/Shapes/Circle';
+import Profile from '@components/Sidebar/components/ProfileDropdown';
+import { navLinks } from '@router/nav';
+import Circle from '@components/Shapes/Circle';
 import classNames from 'classnames';
 
 const MainPanel = ({ activeIndex }) => {

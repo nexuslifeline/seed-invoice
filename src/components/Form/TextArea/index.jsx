@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Styles from './TextArea.module.scss';
 import classNames from 'classnames';
-import InvalidFeedback from 'components/InvalidFeedback';
+import InvalidFeedback from '@components/InvalidFeedback';
 
 const TextArea = ({ label, containerClassName, error, hideLabel = true, ...props }) => {
   return (

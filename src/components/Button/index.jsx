@@ -6,7 +6,7 @@ import { variants, variantClasses } from './common/contants';
 
 import Content from './common/Content';
 import ButtonMenu from './ButtonMenu';
-import Loader from 'components/Loader';
+import Loader from '@components/Loader';
 
 const Button = forwardRef(
   ({ moreActions, icon, iconPlacement, label, variant, block, isBusy, className, children, ...props }, ref) => {

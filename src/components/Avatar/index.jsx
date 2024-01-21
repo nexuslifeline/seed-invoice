@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import Styles from './Avatar.module.scss';
 import PropTypes from 'prop-types';
-import Button from 'components/Button';
-import IconCamera from 'components/Icons/Camera';
-import IconRemove from 'components/Icons/Times';
+import Button from '@components/Button';
+import IconCamera from '@components/Icons/Camera';
+import IconRemove from '@components/Icons/Times';
 import classNames from 'classnames';
 
 const fileTypes = 'image/png, image/jpeg, image/jpg';

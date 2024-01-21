@@ -1,38 +1,38 @@
 import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
-import MainLayout from 'components/Layout/Main';
-import BaseLayout from 'components/Layout/Base';
+import MainLayout from '@components/Layout/Main';
+import BaseLayout from '@components/Layout/Base';
 
-import Signup from 'views/Signup';
-import Login from 'views/Login';
-import Dashboard from 'views/Dashboard';
-import Settings from 'views/Settings';
-import Customers from 'views/Customers';
-import Users from 'views/Users';
-import Products from 'views/Products';
-import Payments from 'views/Payments';
-import TestPage from 'views/Test';
-import NotFound from 'views/NotFound';
-import Invoices from 'views/Invoices';
-import NewInvoice from 'views/Invoices/NewInvoice';
-import Quotes from 'views/Quotes';
-import Company from 'views/Company';
-import Orders from 'views/Orders';
-import Expenses from 'views/Expenses';
-import Tax from 'views/Tax';
-import Account from 'views/Account';
-import Preferences from 'views/Preferences';
-import PaymentModes from 'views/PaymentModes';
-import Members from 'views/Members';
-import Categories from 'views/Categories';
-import Roles from 'views/Roles';
-import SalesReport from 'views/SalesReport';
+import Signup from '@views/Signup';
+import Login from '@views/Login';
+import Dashboard from '@views/Dashboard';
+import Settings from '@views/Settings';
+import Customers from '@views/Customers';
+import Users from '@views/Users';
+import Products from '@views/Products';
+import Payments from '@views/Payments';
+import TestPage from '@views/Test';
+import NotFound from '@views/NotFound';
+import Invoices from '@views/Invoices';
+import NewInvoice from '@views/Invoices/NewInvoice';
+import Quotes from '@views/Quotes';
+import Company from '@views/Company';
+import Orders from '@views/Orders';
+import Expenses from '@views/Expenses';
+import Tax from '@views/Tax';
+import Account from '@views/Account';
+import Preferences from '@views/Preferences';
+import PaymentModes from '@views/PaymentModes';
+import Members from '@views/Members';
+import Categories from '@views/Categories';
+import Roles from '@views/Roles';
+import SalesReport from '@views/SalesReport';
 
 const Index = () => (
   <BrowserRouter>
     <Routes>
-      <Route path={`/`} element={<BaseLayout />}>
+      <Route element={<BaseLayout />}>
         <Route index element={<Login />} />
         <Route path={`/signup`} element={<Signup />} />
         <Route path={`/test`} element={<TestPage />} />

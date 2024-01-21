@@ -1,8 +1,8 @@
 import Styles from './Header.module.scss';
 import Menu from './components/MenuButtons';
 import SearchBar from './components/SearchBar';
-import Hamburger from 'components/Hamburger';
-import { withLayoutState } from 'shared/context/LayoutState';
+import Hamburger from '@components/Hamburger';
+import { withLayoutState } from '@shared/context/LayoutState';
 
 const Header = ({ isMainNavOpen, setIsMainNavOpen, setIsMobileNavOpen, isMobileNavOpen }) => {
   return (

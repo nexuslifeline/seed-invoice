@@ -2,7 +2,7 @@ import { Fragment, memo } from 'react';
 import classNames from 'classnames';
 import { Menu, Transition } from '@headlessui/react';
 import Styles from './Menu.module.scss';
-import { snakeToCamel } from 'shared/lib/utils';
+import { snakeToCamel } from '@shared/lib/utils';
 
 const BaseMenu = memo(({ style, className, children }) => {
   return (

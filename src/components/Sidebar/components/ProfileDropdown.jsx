@@ -1,6 +1,6 @@
-import Menu from 'components/Menu';
-import Profile from 'components/Sidebar/components/Profile';
-import ProfilePhoto from 'components/ProfilePhoto';
+import Menu from '@components/Menu';
+import Profile from '@components/Sidebar/components/Profile';
+import ProfilePhoto from '@components/ProfilePhoto';
 
 const ProfileMenu = () => {
   return (

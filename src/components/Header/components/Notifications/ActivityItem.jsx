@@ -1,6 +1,6 @@
 import Styles from './ActivityItem.module.scss';
-import ProfilePhoto from 'components/ProfilePhoto';
-import Text from 'components/Text';
+import ProfilePhoto from '@components/ProfilePhoto';
+import Text from '@components/Text';
 
 const ActivityItem = (props) => {
   return (

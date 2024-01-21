@@ -1,7 +1,7 @@
 import React from 'react';
 import Styles from './File.module.scss';
-import FileIconManager from 'components/FileIconManager';
-import IconTimes from 'components/Icons/Times';
+import FileIconManager from '@components/FileIconManager';
+import IconTimes from '@components/Icons/Times';
 import PropTypes from 'prop-types';
 
 const File = ({ file, children, onRemove, ...props }) => {

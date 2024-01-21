@@ -1,5 +1,5 @@
 import Styles from './Container.module.scss';
-import Text from 'components/Text';
+import Text from '@components/Text';
 
 const Container = ({ children, containerTitle, containerDesc }) => {
   return (

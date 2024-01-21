@@ -1,4 +1,4 @@
-import ActivityItem from 'components/Header/components/Notifications/ActivityItem';
+import ActivityItem from '@components/Header/components/Notifications/ActivityItem';
 import Styles from './List.module.scss';
 
 const List = (props) => {

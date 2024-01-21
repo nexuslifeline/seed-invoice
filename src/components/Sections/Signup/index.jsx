@@ -1,15 +1,15 @@
-import Button from 'components/Button';
-import UnderlinedText from 'components/UnderlinedText';
-import InputContainer from 'components/Form/InputContainer';
-import PasswordInput from 'components/Form/PasswordInput';
-import TextInput from 'components/Form/TextInput';
-import IconFacebook from 'components/Icons/Facebook';
-import IconGoogle from 'components/Icons/Google';
-import Welcome from 'components/Sections/Welcome';
+import Button from '@components/Button';
+import UnderlinedText from '@components/UnderlinedText';
+import InputContainer from '@components/Form/InputContainer';
+import PasswordInput from '@components/Form/PasswordInput';
+import TextInput from '@components/Form/TextInput';
+import IconFacebook from '@components/Icons/Facebook';
+import IconGoogle from '@components/Icons/Google';
+import Welcome from '@components/Sections/Welcome';
 import Styles from './Signup.module.scss';
 import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
-import InputGroup from 'components/Form/InputGroup';
+import InputGroup from '@components/Form/InputGroup';
 
 const Signup = () => {
   const navigate = useNavigate();

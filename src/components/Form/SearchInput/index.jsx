@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Styles from './SearchInput.module.scss';
 import classNames from 'classnames';
-import MagnifyingGlass from 'components/Icons/MagnifyingGlass';
+import MagnifyingGlass from '@components/Icons/MagnifyingGlass';
 
 const SearchInput = ({ label, containerClassName, ...props }) => {
   return (

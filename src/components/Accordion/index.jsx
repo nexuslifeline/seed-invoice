@@ -1,7 +1,7 @@
 import React from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
-import ChevronDown from 'components/Icons/ChevronDown';
-import ChevronUp from 'components/Icons/ChevronUp';
+import ChevronDown from '@components/Icons/ChevronDown';
+import ChevronUp from '@components/Icons/ChevronUp';
 import Styles from './Accordion.module.scss';
 
 const Accordion = ({ items, ...props }) => {

@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Styles from './TextInput.module.scss';
 import classNames from 'classnames';
-import InvalidFeedback from 'components/InvalidFeedback';
+import InvalidFeedback from '@components/InvalidFeedback';
 
 const TextInput = forwardRef(({ label, containerClassName, error, hideLabel = true, onChange, ...props }, ref) => {
   return (

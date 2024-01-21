@@ -1,5 +1,5 @@
 import Styles from './SubPanel.module.scss';
-// import LogoBlackFull from 'components/Icons/LogoBlackFull';
+// import LogoBlackFull from '@components/Icons/LogoBlackFull';
 import classNames from 'classnames';
 import SubPanelSection from './SubPanelSection';
 

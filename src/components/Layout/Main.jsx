@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import Header from 'components/Header';
-import Sidebar from 'components/Sidebar';
-import SlidePanel from 'components/SlidePanel';
+import Header from '@components/Header';
+import Sidebar from '@components/Sidebar';
+import SlidePanel from '@components/SlidePanel';
 import Styles from './Main.module.scss';
-import { LayoutStateContext } from 'shared/context/LayoutState';
+import { LayoutStateContext } from '@shared/context/LayoutState';
 import { useState } from 'react';
 
 const Layout = () => {

@@ -1,11 +1,11 @@
 import Styles from './Sidebar.module.scss';
 import SubPanel from './components/SubPanel';
 import MainPanel from './components/MainPanel';
-import { navLinks } from 'router/nav';
+import { navLinks } from '@router/nav';
 import { useLocation } from 'react-router-dom';
-import { withLayoutState } from 'shared/context/LayoutState';
+import { withLayoutState } from '@shared/context/LayoutState';
 import classNames from 'classnames';
-import CaretLeft from 'components/Icons/CaretLeft';
+import CaretLeft from '@components/Icons/CaretLeft';
 
 const Sidebar = ({ isMainNavOpen, isMobileNavOpen, setIsMobileNavOpen }) => {
   const location = useLocation();

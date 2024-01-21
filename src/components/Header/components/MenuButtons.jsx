@@ -1,10 +1,10 @@
-import Apps from 'components/Icons/Apps';
-import Bell from 'components/Icons/Bell';
+import Apps from '@components/Icons/Apps';
+import Bell from '@components/Icons/Bell';
 import Styles from './MenuButtons.module.scss';
 import classNames from 'classnames';
-import Menu from 'components/Menu';
-import Notifications from 'components/Header/components/NotificationDropdown';
-import { withLayoutState } from 'shared/context/LayoutState';
+import Menu from '@components/Menu';
+import Notifications from '@components/Header/components/NotificationDropdown';
+import { withLayoutState } from '@shared/context/LayoutState';
 
 const MenuButton = ({ button, content, hasSonar, ...props }) => {
   return (

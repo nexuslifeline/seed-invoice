@@ -1,6 +1,6 @@
 import Styles from './Text.module.scss';
 import classNames from 'classnames';
-import { snakeToCamel } from 'shared/lib/utils';
+import { snakeToCamel } from '@shared/lib/utils';
 
 const Text = ({ as: Elem = 'p', children, content, variant = 'title', size, color, className, style, ...props }) => {
   const sizeClass = size ? Styles[snakeToCamel(size)] : '';

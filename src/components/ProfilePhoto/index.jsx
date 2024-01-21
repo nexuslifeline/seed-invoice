@@ -1,4 +1,4 @@
-import Avatar from 'components/Avatar';
+import Avatar from '@components/Avatar';
 
 const ProfilePhoto = ({ cursorPointer, size = 46, ...props }) => {
   return (

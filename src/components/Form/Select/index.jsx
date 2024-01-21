@@ -4,7 +4,7 @@ import Styles from './Select.module.scss';
 import classNames from 'classnames';
 import ReactSelect from 'react-select';
 import ReactAsyncSelect from 'react-select/async';
-import InvalidFeedback from 'components/InvalidFeedback';
+import InvalidFeedback from '@components/InvalidFeedback';
 
 const Select = forwardRef(({ label, value, isAsync, containerClassName, error, hideLabel = true, ...props }, ref) => {
   const BaseSelect = isAsync ? ReactAsyncSelect : ReactSelect;

@@ -1,7 +1,7 @@
 import Styles from './SlidePanel.module.scss';
-import Close from 'components/Actions/Panel/Close';
+import Close from '@components/Actions/Panel/Close';
 import classNames from 'classnames';
-import { withLayoutState } from 'shared/context/LayoutState';
+import { withLayoutState } from '@shared/context/LayoutState';
 
 const SlidePanel = ({ isSlideOpen, setIsSlideOpen }) => {
   return (

@@ -1,4 +1,4 @@
-import Circle from 'components/Shapes/Circle';
+import Circle from '@components/Shapes/Circle';
 
 const CircleGroup = () => {
   return (
