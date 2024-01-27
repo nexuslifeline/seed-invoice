@@ -12,6 +12,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@steveeeie/react-page-transition": "^1.3.0",
+    "axios": "^1.6.7",
+    "axios-case-converter": "^1.1.1",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
     "nuka-carousel": "^7.0.0",
