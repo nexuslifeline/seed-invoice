@@ -1,7 +1,8 @@
 import applyConverters from 'axios-case-converter';
 import axios from 'axios';
+import Token from '@lib/token';
 
-const baseURL = `${process.env.BASE_URL}/${process.env.API_PREFIX}/`;
+const baseURL = `${import.meta.env.VITE_API_BASE_URL}/${import.meta.env.VITE_API_PREFIX}/`;
 
 const apiClient = applyConverters(
   axios.create({
@@ -14,7 +15,7 @@ const apiClient = applyConverters(
 );
 
 apiClient.interceptors.request.use((request) => {
-  const token = localStorage.getItem('token');
+  const token = Token.getToken('tenant-token');
 
   if (token) {
     request.headers['Authorization'] = `Bearer ${token}`;
