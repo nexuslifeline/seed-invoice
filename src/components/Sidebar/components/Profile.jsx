@@ -17,12 +17,13 @@ const Profile = () => {
 
   const handleSignout = () => {
     setIsLoading(true);
-    Token.remove();
-    revokeAuth();
+
     setTimeout(() => {
       setIsLoading(false);
+      Token.remove();
+      revokeAuth();
       navigate('/');
-    }, 550);
+    }, 1000);
   };
 
   return (

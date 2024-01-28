@@ -19,7 +19,8 @@ import Styles from './Login.module.scss';
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const { authenticate, isLoading } = useAuthMutation();
+  const { authenticate, isPending: isLoading } = useAuthMutation();
+
   const { acceptAuth } = useAuthStore();
 
   const [email, setEmail] = useState('');

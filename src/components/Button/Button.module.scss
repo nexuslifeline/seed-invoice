@@ -53,15 +53,12 @@
 }
 
 .primary {
-  // background-color: $primary;
-  // background: $primary;
-  // background: linear-gradient(90deg, $primary 0%, $purple-80 50%, $purple-50 100%);
-  // color: $white;
-  // border-color: $primary-border-color;
   @include apply-primary-theme;
 
-  .loader {
-    @include apply-loader-color($white);
+  :global(.loading__spinner) {
+    &.loader {
+      @include apply-loader-color($white);
+    }
   }
 }
 
@@ -71,7 +68,9 @@
   border-color: $secondary-border-color;
 
   :global(.loading__spinner) {
-    @include apply-loader-color($white);
+    &.loader {
+      @include apply-loader-color($white);
+    }
   }
 
   &:hover:not(:disabled) {
@@ -86,7 +85,9 @@
   border-color: $primary-border-color;
 
   :global(.loading__spinner) {
-    @include apply-loader-color($primary);
+    &.loader {
+      @include apply-loader-color($primary);
+    }
   }
 
   &:hover:not(:disabled) {
@@ -94,7 +95,9 @@
     color: $white;
 
     :global(.loading__spinner) {
-      @include apply-loader-color($white);
+      &.loader {
+        @include apply-loader-color($white);
+      }
     }
   }
 }
@@ -106,7 +109,9 @@
   // @include box-shadow;
 
   :global(.loading__spinner) {
-    @include apply-loader-color($secondary-outline-text-color);
+    &.loader {
+      @include apply-loader-color($secondary-outline-text-color);
+    }
   }
 
   &:hover:not(:disabled) {
@@ -115,7 +120,9 @@
     border-color: $secondary-hover-bg-color;
 
     :global(.loading__spinner) {
-      @include apply-loader-color($secondary-outline-text-color);
+      &.loader {
+        @include apply-loader-color($secondary-outline-text-color);
+      }
     }
   }
 }
