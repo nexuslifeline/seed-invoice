@@ -2,7 +2,9 @@ import applyConverters from 'axios-case-converter';
 import axios from 'axios';
 import Token from '@lib/token';
 
-const baseURL = `${import.meta.env.VITE_API_BASE_URL}/${import.meta.env.VITE_API_PREFIX}/`;
+const baseURL = `${import.meta.env.VITE_API_BASE_URL}/${
+  import.meta.env.VITE_API_PREFIX
+}/`;
 
 const apiClient = applyConverters(
   axios.create({
@@ -15,7 +17,7 @@ const apiClient = applyConverters(
 );
 
 apiClient.interceptors.request.use((request) => {
-  const token = Token.getToken('tenant-token');
+  const token = Token.get();
 
   if (token) {
     request.headers['Authorization'] = `Bearer ${token}`;
@@ -39,7 +41,12 @@ apiClient.interceptors.response.use(
       return Promise.resolve('Redirected to login page');
     }
 
-    console.log(`API [${method?.toUpperCase()}] ${url} | Error ${status} ${data?.message || ''} | ${message}`, error);
+    console.log(
+      `API [${method?.toUpperCase()}] ${url} | Error ${status} ${
+        data?.message || ''
+      } | ${message}`,
+      error
+    );
     // Continue rejecting the promise with the original error object
     return Promise.reject(error);
   }

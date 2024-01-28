@@ -1,14 +1,16 @@
+const tokenKey = 'tenant-token';
+
 class Token {
-  getToken(key) {
-    return localStorage.getItem(key);
+  get() {
+    return localStorage.getItem(tokenKey);
   }
 
-  setToken(key, token) {
-    localStorage.setItem(key, token);
+  set(token) {
+    localStorage.setItem(tokenKey, token);
   }
 
-  removeToken(key) {
-    localStorage.removeItem(key);
+  remove() {
+    localStorage.removeItem(tokenKey);
   }
 }
 

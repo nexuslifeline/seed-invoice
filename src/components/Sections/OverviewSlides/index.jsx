@@ -5,12 +5,12 @@ import Carousel from 'nuka-carousel';
 const slides = [
   {
     title: 'Design for your business needs',
-    description: 'Crafted to easily manage your invoice that suits your business needs.',
+    description: 'Crafted to easily manage your invoice that suits your business needs.'
   },
   {
     title: 'Start growing your business with us',
-    description: 'See the analytics and grow your business remotely, from anywhere.',
-  },
+    description: 'See the analytics and grow your business remotely, from anywhere.'
+  }
 ];
 
 const OverviewSlides = () => {
@@ -20,7 +20,7 @@ const OverviewSlides = () => {
       renderCenterRightControls={null}
       autoplayInterval={8000}
       renderBottomCenterControls={({ currentSlide, slideCount }) => {
-        return <NavDots {...{ currentSlide, slideCount }} />;
+        return <NavDots key={Date.now()} {...{ currentSlide, slideCount }} />;
       }}
       wrapAround
       autoplay>

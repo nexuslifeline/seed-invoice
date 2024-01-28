@@ -1,6 +1,6 @@
 import apiClient from '@api/apiClient';
 
-export const loginTenantUser = (data, config) => {
+export const loginUser = (data, config) => {
   return apiClient.post(`login`, data, config);
 };
 

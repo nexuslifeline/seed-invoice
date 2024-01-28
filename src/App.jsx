@@ -1,11 +1,16 @@
 import React from 'react';
-import { UserProvider } from '@shared/context/User';
+import { QueryClientProvider } from '@tanstack/react-query';
+
+import { UserProvider } from '@context/User';
+import { queryClient } from '@query/queryClient';
 import AppRoutes from './router';
 
 const App = () => (
-  <UserProvider initial={{}}>
-    <AppRoutes />
-  </UserProvider>
+  <QueryClientProvider client={queryClient}>
+    <UserProvider>
+      <AppRoutes />
+    </UserProvider>
+  </QueryClientProvider>
 );
 
 export default App;
