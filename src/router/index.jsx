@@ -8,7 +8,7 @@ import Signup from '@views/Signup';
 import Login from '@views/Login';
 import Dashboard from '@views/Dashboard';
 import Settings from '@views/Settings';
-import Customers from '@views/Customers';
+// import Customers from '@views/Customers';
 import Users from '@views/Users';
 import Products from '@views/Products';
 import Payments from '@views/Payments';
@@ -43,7 +43,7 @@ const Index = () => (
         <Route path={'invoices/new'} element={<NewInvoice />} />
         <Route path={'quotes'} element={<Quotes />} />
         <Route path={'settings'} element={<Settings />} />
-        <Route path={'customers'} element={<Customers />} />
+        {/* <Route path={'customers'} element={<Customers />} /> */}
         <Route path={'company'} element={<Company />} />
         <Route path={'orders'} element={<Orders />} />
         <Route path={'expenses'} element={<Expenses />} />
