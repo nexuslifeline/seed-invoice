@@ -12,8 +12,10 @@ export const NewInvoice = () => {
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
+    { value: 'vanilla', label: 'Vanilla' }
   ];
+
+  const onSubmit = (data) => console.log(data);
   return (
     <ContentView>
       {' '}
@@ -21,17 +23,33 @@ export const NewInvoice = () => {
         title={'New Invoice'}
         items={[
           { text: 'Workspace', to: '/dashboard' },
-          { text: 'Invoices', to: '/invoices' },
+          { text: 'Invoices', to: '/invoices' }
         ]}
       />
       <Card header={'Invoice'} maxWidth={800}>
-        <Form>
-          <Form.Field label='Customer' rules={[{ required: true }]}>
+        <Form onSubmit={onSubmit} defaultValues={{ amount: 7 }}>
+          {/* <Form.Field label='Customer' rules={[{ required: true }]}>
             <Form.Select name='customer' options={options} />
-          </Form.Field>
-          <Form.Field label='Date' rules={[{ required: true }]}>
-            <Form.TextInput name='date' label='Date' />
-          </Form.Field>
+          </Form.Field> */}
+          <Form.TextInput
+            name='date'
+            label='Date'
+            rule={{ required: true, minLength: 5, maxLength: 10 }}
+          />
+          <Form.TextInput
+            name='amount'
+            label='Amount'
+            type='number'
+            rule={{ min: 1, max: 10, required: true }}
+          />
+          {/* <Form.Select
+            name='customer'
+            rule={{ required: true }}
+            options={options}
+          /> */}
+
+          <br />
+          <br />
           <Button type='submit'>Test Submit</Button>
         </Form>
 
