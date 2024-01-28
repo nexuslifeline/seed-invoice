@@ -62,21 +62,26 @@
 }
 
 @mixin apply-loader-color($color) {
-  border-color: $color transparent $color transparent;
+  border-color: $color transparent $color transparent !important;
 
   &:before,
   &:after {
-    border-bottom-color: $color;
+    border-bottom-color: $color !important;
   }
 
   &:after {
-    border-color: $color transparent transparent transparent;
+    border-color: $color transparent transparent transparent !important;
   }
 }
 
 @mixin apply-primary-theme {
   background: $primary;
-  background: linear-gradient(90deg, $primary 0%, $purple-80 50%, $purple-50 100%);
+  background: linear-gradient(
+    90deg,
+    $primary 0%,
+    $purple-80 50%,
+    $purple-50 100%
+  );
   border-color: $primary-border-color;
   color: $purple-10;
 

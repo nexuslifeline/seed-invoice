@@ -60,7 +60,7 @@
   // border-color: $primary-border-color;
   @include apply-primary-theme;
 
-  :global(.loading__spinner) {
+  .loader {
     @include apply-loader-color($white);
   }
 }

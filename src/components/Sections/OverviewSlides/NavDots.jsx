@@ -6,7 +6,13 @@ const NavDots = ({ slideCount, currentSlide }) => {
   return (
     <ul className={Styles.dotsContainer}>
       {Array.from({ length: slideCount }).map((_, idx) => (
-        <li className={classNames(Styles.dotItem, idx === currentSlide && Styles.active)} />
+        <li
+          key={idx}
+          className={classNames(
+            Styles.dotItem,
+            idx === currentSlide && Styles.active
+          )}
+        />
       ))}
     </ul>
   );
@@ -14,7 +20,7 @@ const NavDots = ({ slideCount, currentSlide }) => {
 
 NavDots.propTypes = {
   slideCount: PropTypes.number,
-  activeSlide: PropTypes.number,
+  activeSlide: PropTypes.number
 };
 
 export default NavDots;

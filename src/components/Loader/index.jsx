@@ -4,21 +4,26 @@ import PropTypes from 'prop-types';
 const variants = {
   PRIMARY: 'primary',
   WHITE: 'white',
-  DARK: 'dark',
+  DARK: 'dark'
 };
 
-const Loader = ({ variant, ...props }) => {
-  return <span style={{ ...props }} className={classNames('loading__spinner', variant)} />;
+const Loader = ({ variant, className, ...props }) => {
+  return (
+    <span
+      style={{ ...props }}
+      className={classNames('loading__spinner', variant, className)}
+    />
+  );
 };
 
 Loader.Variants = variants;
 
 Loader.propTypes = {
-  variant: PropTypes.string,
+  variant: PropTypes.string
 };
 
 Loader.defaultProps = {
-  variant: variants.PRIMARY,
+  variant: variants.PRIMARY
 };
 
 export default Loader;

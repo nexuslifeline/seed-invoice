@@ -9,19 +9,43 @@ import ButtonMenu from './ButtonMenu';
 import Loader from '@components/Loader';
 
 const Button = forwardRef(
-  ({ moreActions, icon, iconPlacement, label, variant, block, isBusy, className, children, ...props }, ref) => {
+  (
+    {
+      moreActions,
+      icon,
+      iconPlacement,
+      label,
+      variant,
+      block,
+      isBusy,
+      className,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     if (moreActions?.length > 0) {
-      return <ButtonMenu ref={ref} {...{ moreActions, icon, iconPlacement, label, variant, block }} />;
+      return (
+        <ButtonMenu
+          ref={ref}
+          {...{ moreActions, icon, iconPlacement, label, variant, block }}
+        />
+      );
     }
 
     return (
       <button
         ref={ref}
-        className={classNames(Styles.button, variantClasses[variant], className, {
-          [Styles.block]: block,
-        })}
+        className={classNames(
+          Styles.button,
+          variantClasses[variant],
+          className,
+          {
+            [Styles.block]: block
+          }
+        )}
         {...props}>
-        {isBusy && <Loader marginRight={'8px'} />}
+        {isBusy && <Loader marginRight={'8px'} className={Styles.loader} />}
         {children || <Content {...{ icon, iconPlacement, label }} />}
       </button>
     );
@@ -35,13 +59,13 @@ Button.propTypes = {
   isBusy: PropTypes.bool,
   block: PropTypes.bool,
   moreActions: PropTypes.array,
-  icon: PropTypes.any,
+  icon: PropTypes.any
 };
 
 Button.defaultProps = {
   label: 'Button',
   variant: Button.Variants.PRIMARY,
-  block: false,
+  block: false
 };
 
 export default Button;
