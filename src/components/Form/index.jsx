@@ -12,6 +12,8 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
   const {
     register,
     handleSubmit,
+    setValue,
+    clearErrors,
     formState: { errors }
   } = useForm({ defaultValues });
 
@@ -48,23 +50,33 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       {children?.map((child, idx) => {
         const { rule, name } = child.props || {};
+
         // Spread register only if rule has a value
-        const registerProps = rule ? { ...register(name, rule) } : {};
-        const errorProps = errors[name]
-          ? {
-              error: makeFieldError({
-                fieldName: name,
-                error: errors[name],
-                ...rule
-              })
-            }
-          : {};
+        const registerProps = { ...register(name, rule) };
+        const errorProps = {
+          error: makeFieldError({
+            fieldName: name,
+            error: errors?.[name],
+            ...rule
+          })
+        };
+
+        // Check if child is a Select, if so, add onChange
+        const isSelect = child?.type?.InstanceOf === 'Select';
+        const selectProps = {
+          onChange: (option) => {
+            setValue(name, option); // set value in form so that react-hook-form can validate
+            clearErrors(name); // clear errors in react-hook-form
+            child?.props?.onChange?.(option); // then call onChange on child
+          }
+        };
 
         // Combine registerProps and errorProps when cloning the element
         return cloneElement(child, {
-          ...registerProps,
-          ...errorProps,
-          key: child?.key || idx
+          key: child?.key || idx,
+          ...(rule && registerProps),
+          ...(isSelect && selectProps),
+          ...(errors?.[name] && errorProps)
         });
       })}
     </form>

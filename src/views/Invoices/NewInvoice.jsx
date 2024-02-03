@@ -31,7 +31,7 @@ export const NewInvoice = () => {
           {/* <Form.Field label='Customer' rules={[{ required: true }]}>
             <Form.Select name='customer' options={options} />
           </Form.Field> */}
-          <Form.TextInput
+          {/* <Form.TextInput
             name='date'
             label='Date'
             rule={{ required: true, minLength: 5, maxLength: 10 }}
@@ -41,12 +41,13 @@ export const NewInvoice = () => {
             label='Amount'
             type='number'
             rule={{ min: 1, max: 10, required: true }}
-          />
-          {/* <Form.Select
+          /> */}
+          <Form.Select
             name='customer'
             rule={{ required: true }}
             options={options}
-          /> */}
+            isClearable
+          />
 
           <br />
           <br />
