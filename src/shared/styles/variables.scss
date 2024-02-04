@@ -9,16 +9,16 @@ $orange-80: #ffbc70;
 $orange-90: #ffb45e;
 $orange-100: #ffa33a;
 
-$gray-10: #f0f4f8;
-$gray-20: #d9e2ec;
-$gray-30: #bcccdc;
-$gray-40: #9fb3c8;
-$gray-50: #829ab1;
-$gray-60: #627d98;
-$gray-70: #486581;
-$gray-80: #334e68;
-$gray-90: #243b53;
-$gray-100: #102a43;
+$gray-10: #eff0f2;
+$gray-20: #e0e1e4;
+$gray-30: #d0d3d7;
+$gray-40: #c1c4ca;
+$gray-50: #b2b6be;
+$gray-60: #a3a8b1;
+$gray-70: #959aa5;
+$gray-80: #878d98;
+$gray-90: #797f8c;
+$gray-100: #6b7280;
 
 $purple-10: #f3e5fe;
 $purple-20: #e8cbfd;
@@ -67,7 +67,7 @@ $blue-100: #1269db;
 $pink-100: #f000b9;
 
 $white: #ffffff;
-$black: #212529;
+$black: rgb(17, 24, 39);
 
 $cubic: cubic-bezier(0.165, 0.84, 0.44, 1);
 
@@ -75,11 +75,11 @@ $form-element-radius: 8px;
 $form-element-height: 46px;
 
 // Text, Title, Headlines
-$text-color: $gray-50;
-$title-color: $gray-90;
+$secondary-text-color: rgb(107, 114, 128);
+$primary-text-color: $black;
 
 // form elements variables
-$form-input-border-color: $gray-20;
+$form-input-border-color: $gray-40;
 
 // Search input
 $search-radius: 15px;
@@ -97,7 +97,7 @@ $fs-7: 24px;
 $fs-8: 30px;
 $fs-9: 38px;
 
-$primary: $purple-90;
+$primary: $purple-100;
 $primary-border-color: $purple-100;
 $primary-hover-bg-color: $purple-100;
 

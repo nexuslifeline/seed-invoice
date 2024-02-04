@@ -42,7 +42,7 @@ const Profile = () => {
               {/* <EditProfile className={Styles.icon} /> */}
               <div>
                 <Text size={'md'}>{'Account'}</Text>
-                <Text size={'xs'} variant='description' color='light'>
+                <Text size={'xs'} variant='description'>
                   {'Enter your Account & Profile Info'}
                 </Text>
               </div>
@@ -51,7 +51,7 @@ const Profile = () => {
               {/* <Building className={Styles.icon} /> */}
               <div>
                 <Text size={'md'}>{'Company'}</Text>
-                <Text size={'xs'} variant='description' color='light'>
+                <Text size={'xs'} variant='description'>
                   {'Enter your Company Details'}
                 </Text>
               </div>
@@ -60,7 +60,7 @@ const Profile = () => {
               {/* <Preferences className={Styles.icon} /> */}
               <div>
                 <Text size={'md'}>{'Preference'}</Text>
-                <Text size={'xs'} variant='description' color='light'>
+                <Text size={'xs'} variant='description'>
                   {'Configure your App Preference'}
                 </Text>
               </div>

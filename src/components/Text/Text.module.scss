@@ -1,23 +1,23 @@
 @import 'src/shared/styles/variables.scss';
 
 .title {
-  color: $title-color;
+  color: $primary-text-color;
   font-size: $fs-5;
   margin: 0;
 }
 
 .description {
-  color: $gray-60;
+  color: $secondary-text-color;
   font-size: $fs-3;
   margin: 0;
 }
 
 .light {
-  color: $gray-40;
+  color: $gray-60;
 }
 
 .xs {
-  font-size: $fs-2;
+  font-size: $fs-1;
 }
 
 .sm {

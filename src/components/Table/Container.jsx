@@ -5,12 +5,8 @@ const Container = ({ children, containerTitle, containerDesc }) => {
   return (
     <div className={Styles.container}>
       <div className={Styles.header}>
-        {/* <Text>{'Invoices'}</Text> */}
         <Text>{containerTitle}</Text>
-        <Text variant='description'>
-          {/* {'List of invoices created by members'} */}
-          {containerDesc}
-        </Text>
+        <Text variant='description'>{containerDesc}</Text>
       </div>
       <div className={Styles.body}>{children}</div>
     </div>
