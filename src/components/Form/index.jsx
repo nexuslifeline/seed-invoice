@@ -61,6 +61,16 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
     };
   };
 
+  const createPhoneNumberProps = (child, name) => {
+    return {
+      onPhoneNumberChange: (e) => {
+        setValue(name, e.target.value); // set value in form so that react-hook-form can validate
+        clearErrors(name); // clear errors in react-hook-form
+        child?.props?.onPhoneNumberChange?.(e); // then call onPhoneNumberChange on child
+      }
+    };
+  };
+
   const injectProps = (child, key) => {
     const { rule, name, label } = child.props || {};
 
@@ -90,7 +100,17 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
 
     // Check if child is an instance of Select, if so, add other props
     if (child?.type?.InstanceOf === 'Select') {
-      mergedProps = { ...mergedProps, ...createSelectProps(child, name) };
+      return cloneElement(child, {
+        ...mergedProps,
+        ...createSelectProps(child, name)
+      });
+    }
+
+    if (child?.type?.InstanceOf === 'PhoneNumber') {
+      return cloneElement(child, {
+        ...mergedProps,
+        ...createPhoneNumberProps(child, name)
+      });
     }
 
     return cloneElement(child, mergedProps);
