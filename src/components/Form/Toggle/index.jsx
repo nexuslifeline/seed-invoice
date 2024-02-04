@@ -16,7 +16,9 @@ const Toggle = ({ label, ...props }) => {
 };
 
 Toggle.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string
 };
+
+Toggle.InstanceOf = 'Toggle';
 
 export default Toggle;

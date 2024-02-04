@@ -27,11 +27,13 @@ export const NewInvoice = () => {
         ]}
       />
       <Card header={'Invoice'} maxWidth={800}>
-        <Form onSubmit={onSubmit} defaultValues={{ amount: 7 }}>
-          {/* <Form.Field label='Customer' rules={[{ required: true }]}>
-            <Form.Select name='customer' options={options} />
-          </Form.Field> */}
-          {/* <Form.TextInput
+        <Form onSubmit={onSubmit} defaultValues={{ amount: 7, phone: 1232323 }}>
+          <Form.Password
+            name='password'
+            label='Password'
+            rule={{ required: true, minLength: 6, maxLength: 10 }}
+          />
+          <Form.TextInput
             name='date'
             label='Date'
             rule={{ required: true, minLength: 5, maxLength: 10 }}
@@ -41,7 +43,18 @@ export const NewInvoice = () => {
             label='Amount'
             type='number'
             rule={{ min: 1, max: 10, required: true }}
-          /> */}
+          />
+          <Form.TextArea
+            name='note'
+            label='Description'
+            rule={{ required: true }}
+          />
+
+          <Form.PhoneNumber
+            name='phone'
+            label='Phone Number'
+            rule={{ required: true }}
+          />
           <Form.Select
             name='customer'
             rule={{ required: true }}

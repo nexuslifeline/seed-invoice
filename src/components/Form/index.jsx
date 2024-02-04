@@ -123,9 +123,9 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
   );
 };
 
-Form.SearchInput = SearchInput;
+Form.Search = SearchInput;
 Form.Toggle = Toggle;
-Form.PasswordInput = PasswordInput;
+Form.Password = PasswordInput;
 Form.PhoneNumber = PhoneNumber;
 Form.TextArea = TextArea;
 Form.TextInput = TextInput;

@@ -9,4 +9,6 @@ const InputGroup = ({ className, children, ...props }) => {
   );
 };
 
+InputGroup.InstanceOf = 'InputGroup';
+
 export default InputGroup;

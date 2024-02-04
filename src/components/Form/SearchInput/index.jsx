@@ -10,8 +10,8 @@ import Styles from './SearchInput.module.scss';
 const SearchInput = forwardRef(
   ({ label, error, containerClassName, ...props }, ref) => {
     return (
-      <div className={Styles.container}>
-        <div className={classNames(Styles.searchContainer, containerClassName)}>
+      <div className={classNames(Styles.container, containerClassName)}>
+        <div className={Styles.searchContainer}>
           <MagnifyingGlass className={Styles.icon} />
           <input ref={ref} type='text' className={Styles.input} {...props} />
         </div>
