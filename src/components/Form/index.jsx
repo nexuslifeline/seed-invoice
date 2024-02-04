@@ -51,7 +51,7 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
     );
   };
 
-  const createSelectProps = (child) => {
+  const createSelectProps = (child, name) => {
     return {
       onChange: (option) => {
         setValue(name, option); // set value in form so that react-hook-form can validate
@@ -90,7 +90,7 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
 
     // Check if child is an instance of Select, if so, add other props
     if (child?.type?.InstanceOf === 'Select') {
-      mergedProps = { ...mergedProps, ...createSelectProps(child) };
+      mergedProps = { ...mergedProps, ...createSelectProps(child, name) };
     }
 
     return cloneElement(child, mergedProps);
