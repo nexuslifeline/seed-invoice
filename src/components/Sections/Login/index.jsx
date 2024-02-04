@@ -11,6 +11,7 @@ import Toggle from '@components/Form/Toggle';
 import IconFacebook from '@components/Icons/Facebook';
 import IconGoogle from '@components/Icons/Google';
 import Welcome from '@components/Sections/Welcome';
+import Form from '@components/Form';
 import useAuthMutation from '@query/auth';
 import useAuthStore from '@store/auth';
 import Token from '@lib/token';
@@ -23,10 +24,10 @@ const LoginForm = () => {
 
   const { acceptAuth } = useAuthStore();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
 
-  const handleLogin = () =>
+  const handleSubmit = ({ email, password }) =>
     authenticate(
       { email, password },
       {
@@ -52,42 +53,37 @@ const LoginForm = () => {
           'Enter your Seed Platform credentials and start growing your business.'
         }
       />
-      <InputContainer>
-        <TextInput
-          label='Email'
-          placeholder='Email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </InputContainer>
-      <InputContainer>
-        <PasswordInput
-          label='Password'
-          placeholder='Password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </InputContainer>
-      <div className={Styles.row}>
-        <Toggle label={'Remember Me'} />
-        <button className={classNames(Styles.link, Styles.forgotLink)}>
-          {'Forgot password?'}
-        </button>
-      </div>
-      <div className={Styles.actionsContainer}>
-        <Button
-          onClick={handleLogin}
-          isBusy={isLoading}
-          block>{`Sign in`}</Button>
-        <Button variant={Button.Variants.SECONDARY_OUTLINE} block>
-          <IconGoogle className={Styles.icon} />
-          {`Sign in with Google`}
-        </Button>
-        <Button variant={Button.Variants.SECONDARY_OUTLINE} block>
-          <IconFacebook className={Styles.icon} />
-          {`Sign in with Facebook`}
-        </Button>
-      </div>
+      <Form onSubmit={handleSubmit}>
+        <Form.FieldGroup label={'Email'}>
+          <Form.TextInput name='email' rule={{ required: true }} />
+        </Form.FieldGroup>
+        <Form.FieldGroup label={'Password'}>
+          <Form.Password name='password' rule={{ required: true }} />
+        </Form.FieldGroup>
+        <div className={Styles.row}>
+          <Toggle label={'Remember Me'} />
+          <button className={classNames(Styles.link, Styles.forgotLink)}>
+            {'Forgot password?'}
+          </button>
+        </div>
+        <div className={Styles.actionsContainer}>
+          <Button type={'submit'} isBusy={isLoading} block>{`Sign in`}</Button>
+          <Button
+            type={'button'}
+            variant={Button.Variants.SECONDARY_OUTLINE}
+            block>
+            <IconGoogle className={Styles.icon} />
+            {`Sign in with Google`}
+          </Button>
+          <Button
+            type={'button'}
+            variant={Button.Variants.SECONDARY_OUTLINE}
+            block>
+            <IconFacebook className={Styles.icon} />
+            {`Sign in with Facebook`}
+          </Button>
+        </div>
+      </Form>
       <div>
         {`Don't have an account?`}
         <button

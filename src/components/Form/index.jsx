@@ -87,12 +87,28 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
 
   // This function injects props into a React component based on certain conditions
   const injectProps = (child, { key, ...restProps } = {}) => {
+    if (
+      ![
+        'FieldGroup',
+        'PhoneNumber',
+        'Select',
+        'Toggle',
+        'PasswordInput',
+        'SearchInput',
+        'TextInput'
+      ].includes(child?.type?.Instance)
+    ) {
+      console.log('child', child);
+      return child;
+    }
+
     // If the child component is an instance of FieldGroup, recursively call injectProps on its children
     if (child?.type?.Instance === 'FieldGroup') {
       const { children, label } = child?.props || {};
       return cloneElement(child, {
+        key: child?.key || key,
         children: makeArrayChildren(children)?.map((c, cKey) =>
-          injectProps(c, { key: cKey, label })
+          injectProps(c, { key: `${key}-${cKey}`, label })
         )
       });
     }
@@ -101,18 +117,16 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
 
     // Check if the rule object has any keys, set hasRule to true if it does
     const hasRule = Boolean(Object.keys(rule || {})?.length);
+    // Spread the result of invoking the register function with name and rule as arguments into rcfProps
+    const rcfProps = { key: child?.key || key, ...register(name, rule) };
 
     // If the rule object is empty, return the child component as is
-    if (!hasRule) return child;
+    if (!hasRule) return cloneElement(child, { ...rcfProps });
 
     const label = child?.props?.label || restProps?.label;
 
-    // Spread the result of invoking the register function with name and rule as arguments into rcfProps
-    const rcfProps = { ...register(name, rule) };
-
     // Initialize mergedProps with the key from the child component or the provided key, and rcfProps
     let mergedProps = {
-      key: child?.key || key,
       ...rcfProps,
       ...restProps,
       label

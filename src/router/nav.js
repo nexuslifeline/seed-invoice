@@ -49,8 +49,8 @@ export const navLinks = [
         children: [
           { text: 'Products', to: '/products', icon: Box },
           { text: 'Customers', to: '/customers', icon: AddGroup },
-          { text: 'Unit', to: '/unit', icon: CheckList },
-          { text: 'Categories', to: '/categories', icon: Subfolder }
+          { text: 'Categories', to: '/categories', icon: Subfolder },
+          { text: 'Unit', to: '/unit', icon: CheckList }
         ]
       }
     ]

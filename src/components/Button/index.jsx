@@ -20,6 +20,7 @@ const Button = forwardRef(
       isBusy,
       className,
       children,
+      type = 'button',
       ...props
     },
     ref
