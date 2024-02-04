@@ -22,6 +22,6 @@ TextInput.propTypes = {
   error: PropTypes.string
 };
 
-TextInput.InstanceOf = 'TextInput';
+TextInput.Instance = 'TextInput';
 
 export default TextInput;

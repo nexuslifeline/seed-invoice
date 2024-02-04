@@ -1,16 +1,16 @@
-import { useRef, cloneElement } from 'react';
+import { cloneElement } from 'react';
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 
 import TextArea from './TextArea';
 import TextInput from './TextInput';
 import Select from './Select';
-import Field from './Field';
-import { capitalize } from '@lib/utils';
+import FieldGroup from './FieldGroup';
 import PhoneNumber from './PhoneNumber';
 import PasswordInput from './PasswordInput';
 import Toggle from './Toggle';
 import SearchInput from './SearchInput';
+import { capitalize } from '@lib/utils';
 
 const Form = ({ children, onSubmit, defaultValues = {} }) => {
   const {
@@ -21,6 +21,9 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
     formState: { errors }
   } = useForm({ defaultValues });
 
+  // Refactored the makeFieldError function to improve readability and maintainability
+  // Added comments to describe the purpose of the function and each error message
+
   const makeFieldError = ({
     fieldName,
     fieldLabel,
@@ -30,7 +33,8 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
     max,
     error
   }) => {
-    const field = fieldLabel || fieldName;
+    const field = fieldLabel || fieldName; // Set the field label or field name if label is not provided
+    // Return the appropriate error message based on the error type
     return (
       {
         required: error?.message || `${capitalize(field)} field is required.`,
@@ -45,14 +49,16 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
             field
           )} field must not exceed ${maxLength} characters in length.`,
         max: error?.message || `The ${field} field must not exceed ${max}.`,
-        min: error?.message || `The ${field} field must be atleast ${min}.`,
+        min: error?.message || `The ${field} field must be at least ${min}.`,
         pattern: `The ${field} field must match the expected pattern.`
-      }?.[error?.type] || 'Please enter a valid value.'
+      }?.[error?.type] || 'Please enter a valid value.' // Default error message if no specific error type is provided
     );
   };
 
+  // This function creates props for a select component
   const createSelectProps = (child, name) => {
     return {
+      // When the select value changes, update the form value using react-hook-form
       onChange: (option) => {
         setValue(name, option); // set value in form so that react-hook-form can validate
         clearErrors(name); // clear errors in react-hook-form
@@ -61,6 +67,10 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
     };
   };
 
+  // This function creates an object with a single property onPhoneNumberChange, which is a function.
+  // The onPhoneNumberChange function takes an event (e) as a parameter, updates the form value using setValue from react-hook-form,
+  // clears any errors in the form using clearErrors from react-hook-form, and then calls the onPhoneNumberChange function on the child
+  // component if it exists.
   const createPhoneNumberProps = (child, name) => {
     return {
       onPhoneNumberChange: (e) => {
@@ -71,20 +81,44 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
     };
   };
 
-  const injectProps = (child, key) => {
-    const { rule, name, label } = child.props || {};
+  const makeArrayChildren = (children) => {
+    return Array.isArray(children) ? children : [children];
+  };
 
+  // This function injects props into a React component based on certain conditions
+  const injectProps = (child, { key, ...restProps } = {}) => {
+    // If the child component is an instance of FieldGroup, recursively call injectProps on its children
+    if (child?.type?.Instance === 'FieldGroup') {
+      const { children, label } = child?.props || {};
+      return cloneElement(child, {
+        children: makeArrayChildren(children)?.map((c, cKey) =>
+          injectProps(c, { key: cKey, label })
+        )
+      });
+    }
+    // Destructure props from the child component, defaulting to an empty object
+    const { rule, name } = child.props || {};
+
+    // Check if the rule object has any keys, set hasRule to true if it does
     const hasRule = Boolean(Object.keys(rule || {})?.length);
 
+    // If the rule object is empty, return the child component as is
     if (!hasRule) return child;
 
-    // Spread register only if rule has a value
+    const label = child?.props?.label || restProps?.label;
+
+    // Spread the result of invoking the register function with name and rule as arguments into rcfProps
     const rcfProps = { ...register(name, rule) };
 
-    // Combine rcfProps, errorProps and other custom component specific props when cloning the element
-    let mergedProps = { key: child?.key || key, ...rcfProps };
+    // Initialize mergedProps with the key from the child component or the provided key, and rcfProps
+    let mergedProps = {
+      key: child?.key || key,
+      ...rcfProps,
+      ...restProps,
+      label
+    };
 
-    // If errors exist, add error props
+    // Check if errors exist for the field, and if so, add error props
     const hasErrors = Boolean(errors?.[name]);
     if (hasErrors) {
       const errorProps = {
@@ -98,27 +132,31 @@ const Form = ({ children, onSubmit, defaultValues = {} }) => {
       mergedProps = { ...mergedProps, ...errorProps };
     }
 
-    // Check if child is an instance of Select, if so, add other props
-    if (child?.type?.InstanceOf === 'Select') {
+    // Check if the child component is an instance of Select, and if so, merge select props into mergedProps
+    if (child?.type?.Instance === 'Select') {
       return cloneElement(child, {
         ...mergedProps,
         ...createSelectProps(child, name)
       });
     }
 
-    if (child?.type?.InstanceOf === 'PhoneNumber') {
+    // Check if the child component is an instance of PhoneNumber, and if so, merge phone number props into mergedProps
+    if (child?.type?.Instance === 'PhoneNumber') {
       return cloneElement(child, {
         ...mergedProps,
         ...createPhoneNumberProps(child, name)
       });
     }
 
+    // If none of the above conditions are met, simply clone the child component with mergedProps
     return cloneElement(child, mergedProps);
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      {children?.map((child, idx) => injectProps(child, idx))}
+      {makeArrayChildren(children)?.map((child, idx) =>
+        injectProps(child, idx)
+      )}
     </form>
   );
 };
@@ -130,12 +168,12 @@ Form.PhoneNumber = PhoneNumber;
 Form.TextArea = TextArea;
 Form.TextInput = TextInput;
 Form.Select = Select;
-Form.Field = Field;
+Form.FieldGroup = FieldGroup;
 
 Form.propTypes = {
   children: PropTypes.node
 };
 
-Form.InstanceOf = 'Form';
+Form.Instance = 'Form';
 
 export default Form;

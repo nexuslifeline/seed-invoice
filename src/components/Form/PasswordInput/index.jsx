@@ -130,6 +130,6 @@ PasswordInput.propTypes = {
   showStrength: PropTypes.bool
 };
 
-PasswordInput.InstanceOf = 'PasswordInput';
+PasswordInput.Instance = 'PasswordInput';
 
 export default PasswordInput;

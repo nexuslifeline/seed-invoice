@@ -103,6 +103,6 @@ PhoneNumber.defaultProps = {
   shouldValidate: true
 };
 
-PhoneNumber.InstanceOf = 'PhoneNumber';
+PhoneNumber.Instance = 'PhoneNumber';
 
 export default PhoneNumber;

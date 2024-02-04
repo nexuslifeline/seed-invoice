@@ -53,6 +53,6 @@ Select.defaultProps = {
   isAsync: false
 };
 
-Select.InstanceOf = 'Select';
+Select.Instance = 'Select';
 
 export default Select;

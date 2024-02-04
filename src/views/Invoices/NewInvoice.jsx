@@ -28,11 +28,13 @@ export const NewInvoice = () => {
       />
       <Card header={'Invoice'} maxWidth={800}>
         <Form onSubmit={onSubmit} defaultValues={{ amount: 7, phone: 1232323 }}>
-          <Form.Password
-            name='password'
-            label='Password'
-            rule={{ required: true, minLength: 6, maxLength: 10 }}
-          />
+          <Form.FieldGroup label='Password'>
+            <Form.Password
+              name='password'
+              rule={{ required: true, minLength: 6, maxLength: 20 }}
+            />
+          </Form.FieldGroup>
+
           <Form.TextInput
             name='date'
             label='Date'

@@ -27,6 +27,6 @@ SearchInput.propTypes = {
   error: PropTypes.string
 };
 
-SearchInput.InstanceOf = 'SearchInput';
+SearchInput.Instance = 'SearchInput';
 
 export default SearchInput;

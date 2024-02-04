@@ -19,6 +19,6 @@ Toggle.propTypes = {
   label: PropTypes.string
 };
 
-Toggle.InstanceOf = 'Toggle';
+Toggle.Instance = 'Toggle';
 
 export default Toggle;

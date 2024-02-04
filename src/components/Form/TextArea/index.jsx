@@ -27,6 +27,6 @@ TextArea.propTypes = {
   error: PropTypes.string
 };
 
-TextArea.InstanceOf = 'TextArea';
+TextArea.Instance = 'TextArea';
 
 export default TextArea;

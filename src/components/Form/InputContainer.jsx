@@ -15,6 +15,6 @@ const InputContainer = ({ className, children, noMargin, ...props }) => {
   );
 };
 
-InputContainer.InstanceOf = 'InputContainer';
+InputContainer.Instance = 'InputContainer';
 
 export default InputContainer;
