@@ -10,7 +10,12 @@
 }
 
 .header {
+  display: flex;
   padding: 25px 20px;
+}
+
+.titleContainer {
+  flex: 1;
 }
 
 .body {

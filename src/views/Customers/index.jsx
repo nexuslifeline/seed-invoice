@@ -14,7 +14,7 @@ import Close from '@components/Actions/Panel/Close';
 
 const Customers = (props) => {
   const { register, handleSubmit, setValue, reset } = useForm({
-    defaultValues: {    
+    defaultValues: {
       title: '',
       firstname: '',
       middlename: '',
@@ -37,43 +37,48 @@ const Customers = (props) => {
       sstateprovince: '',
       spostal: '',
       scountry: '',
-      isactive: '',
-    },
+      isactive: ''
+    }
   });
-
 
   const columns = useMemo(
     () => [
       {
         Header: 'ID #',
         accessor: 'id', // accessor is the "key" in the data
-        thStyle: { width: '10%' },
-      },    
+        thStyle: { width: '10%' }
+      },
       {
         Header: 'Customer',
         accessor: 'firstname', // accessor is the "key" in the data
         thStyle: { width: '20%' },
         Cell: ({ cell: { row } }) => (
           <>
-            <div>{row?.original?.title} {row?.original?.firstname} {row?.original?.middlename} {row?.original?.lastname}</div>
+            <div>
+              {row?.original?.title} {row?.original?.firstname}{' '}
+              {row?.original?.middlename} {row?.original?.lastname}
+            </div>
           </>
-        ),
-      },      
+        )
+      },
       {
         Header: 'Address',
-        accessor: 'bstreet',        
+        accessor: 'bstreet',
         thStyle: { width: '50%' },
         Cell: ({ cell: { row } }) => (
           <>
-            <div>{row?.original?.bstreet} {row?.original?.bcitytown} {row?.original?.bstateprovince} {row?.original?.bpostal}</div>
+            <div>
+              {row?.original?.bstreet} {row?.original?.bcitytown}{' '}
+              {row?.original?.bstateprovince} {row?.original?.bpostal}
+            </div>
           </>
-        ),        
+        )
       },
       {
         Header: 'Company',
         accessor: 'company',
-        thStyle: { width: '20%' },
-      },      
+        thStyle: { width: '20%' }
+      },
       {
         Header: 'Action',
         accessor: 'action',
@@ -82,15 +87,21 @@ const Customers = (props) => {
           <button
             onClick={() => {
               Object.keys(row.original).forEach((key) => {
-                  setValue(key, row.original[key]);                  
+                setValue(key, row.original[key]);
               });
               setIsModalOpen(true);
             }}
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <EditProfile style={{ width: '24px', height: '24px', fill: 'white' }} />
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+            <EditProfile
+              style={{ width: '24px', height: '24px', fill: 'white' }}
+            />
           </button>
-        ),
-      },
+        )
+      }
     ],
     [setValue]
   );
@@ -139,7 +150,7 @@ const Customers = (props) => {
       display: isOpen ? 'flex' : 'none',
       justifyContent: 'center',
       alignItems: 'center',
-      zIndex: 9999,
+      zIndex: 9999
     };
 
     return (
@@ -157,7 +168,7 @@ const Customers = (props) => {
         title={'Manage Customers'}
         items={[
           { text: 'Workspace', to: '/dashboard' },
-          { text: 'Customers', to: '/Customers' },
+          { text: 'Customers', to: '/Customers' }
         ]}
       />
 
@@ -167,9 +178,9 @@ const Customers = (props) => {
           <p>Fill in all informations.</p> */}
 
           <div className={Styles.containerLR}>
-                    <Close onClick={closeModal}/>
+            <Close onClick={closeModal} />
           </div>
-          
+
           <form
             onSubmit={handleSubmit((data) => {
               console.log(data);
@@ -179,197 +190,219 @@ const Customers = (props) => {
               <p>Fill in all informations.</p>
             </div>
 
-
-
-
-            
             <div className={Styles.linecontainer}>
-
-                        <div className={Styles.linecolumnsmall}>
-                                <div>
-                                    <label>Title</label>
-                                    <input {...register('title')} id='title' />
-                                </div>
-                        </div>
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>First name</label>
-                                    <input {...register('firstname')} id='firstname' />
-                                </div>
-                        </div>
-
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Middle name</label>
-                                    <input {...register('middlename')} id='middlename' />
-                                </div>
-                        </div>
-
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Last name</label>
-                                    <input {...register('lastname')} id='lastname' />
-                                </div>
-                        </div>                    
+              <div className={Styles.linecolumnsmall}>
+                <div>
+                  <label>Title</label>
+                  <input {...register('title')} id='title' />
+                </div>
+              </div>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>First name</label>
+                  <input {...register('firstname')} id='firstname' />
+                </div>
               </div>
 
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Display Name</label>
-                                    <input {...register('displayname')} id='displayname' />
-                                </div>
-                        </div>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Middle name</label>
+                  <input {...register('middlename')} id='middlename' />
+                </div>
+              </div>
 
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Company</label>
-                                    <input {...register('company')} id='company' />
-                                </div>
-                        </div>   
-              </div>            
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Last name</label>
+                  <input {...register('lastname')} id='lastname' />
+                </div>
+              </div>
+            </div>
 
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Display Name</label>
+                  <input {...register('displayname')} id='displayname' />
+                </div>
+              </div>
 
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Email</label>
-                                    <input {...register('email')} id='email' />
-                                </div>
-                        </div>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Company</label>
+                  <input {...register('company')} id='company' />
+                </div>
+              </div>
+            </div>
 
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Phone Number</label>
-                                    <input {...register('phone')} id='phone' />
-                                </div>
-                        </div>   
-              </div>      
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Email</label>
+                  <input {...register('email')} id='email' />
+                </div>
+              </div>
 
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Fax</label>
-                                    <input {...register('fax')} id='fax' />
-                                </div>
-                        </div>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Phone Number</label>
+                  <input {...register('phone')} id='phone' />
+                </div>
+              </div>
+            </div>
 
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Mobile Number</label>
-                                    <input {...register('mobile')} id='mobile' />
-                                </div>
-                        </div>   
-              </div>  
-              
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Other</label>
-                                    <input {...register('other')} id='other' />
-                                </div>
-                        </div>
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Fax</label>
+                  <input {...register('fax')} id='fax' />
+                </div>
+              </div>
 
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Website</label>
-                                    <input {...register('website')} id='website' />
-                                </div>
-                        </div>   
-              </div>       
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Mobile Number</label>
+                  <input {...register('mobile')} id='mobile' />
+                </div>
+              </div>
+            </div>
 
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Billing Address</label>
-                                    <input {...register('bstreet')} id='bstreet' />
-                                </div>
-                        </div>
-              </div>   
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Other</label>
+                  <input {...register('other')} id='other' />
+                </div>
+              </div>
 
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <input {...register('bcitytown')} id='bcitytown' placeholder='City/Town'/>
-                                </div>
-                        </div>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Website</label>
+                  <input {...register('website')} id='website' />
+                </div>
+              </div>
+            </div>
 
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <input {...register('bstateprovince')} id='bstateprovince' placeholder='State/Province'/>
-                                </div>
-                        </div>   
-              </div>                                    
-            
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Billing Address</label>
+                  <input {...register('bstreet')} id='bstreet' />
+                </div>
+              </div>
+            </div>
 
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <input {...register('bpostal')} id='bpostal' placeholder='Postal code'/>
-                                </div>
-                        </div>
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <input
+                    {...register('bcitytown')}
+                    id='bcitytown'
+                    placeholder='City/Town'
+                  />
+                </div>
+              </div>
 
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <input {...register('bcountry')} id='bcountry' placeholder='Country'/>
-                                </div>
-                        </div>   
-              </div> 
+              <div className={Styles.linecolumn}>
+                <div>
+                  <input
+                    {...register('bstateprovince')}
+                    id='bstateprovince'
+                    placeholder='State/Province'
+                  />
+                </div>
+              </div>
+            </div>
 
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <input
+                    {...register('bpostal')}
+                    id='bpostal'
+                    placeholder='Postal code'
+                  />
+                </div>
+              </div>
 
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <label>Shipping Address</label>
-                                    <input {...register('sstreet')} id='sstreet' />
-                                </div>
-                        </div>
-              </div>   
+              <div className={Styles.linecolumn}>
+                <div>
+                  <input
+                    {...register('bcountry')}
+                    id='bcountry'
+                    placeholder='Country'
+                  />
+                </div>
+              </div>
+            </div>
 
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <input {...register('scitytown')} id='scitytown' placeholder='City/Town'/>
-                                </div>
-                        </div>
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <label>Shipping Address</label>
+                  <input {...register('sstreet')} id='sstreet' />
+                </div>
+              </div>
+            </div>
 
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <input {...register('sstateprovince')} id='sstateprovince' placeholder='State/Province'/>
-                                </div>
-                        </div>   
-              </div>                                    
-            
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <input
+                    {...register('scitytown')}
+                    id='scitytown'
+                    placeholder='City/Town'
+                  />
+                </div>
+              </div>
 
-              <div className={Styles.linecontainer}>
-                          <div className={Styles.linecolumn}>
-                                <div>
-                                    <input {...register('spostal')} id='spostal' placeholder='Postal code'/>
-                                </div>
-                        </div>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <input
+                    {...register('sstateprovince')}
+                    id='sstateprovince'
+                    placeholder='State/Province'
+                  />
+                </div>
+              </div>
+            </div>
 
-                        <div className={Styles.linecolumn}>
-                                <div>
-                                    <input {...register('scountry')} id='scountry' placeholder='Country'/>
-                                </div>
-                        </div>   
-              </div> 
+            <div className={Styles.linecontainer}>
+              <div className={Styles.linecolumn}>
+                <div>
+                  <input
+                    {...register('spostal')}
+                    id='spostal'
+                    placeholder='Postal code'
+                  />
+                </div>
+              </div>
 
-
-
+              <div className={Styles.linecolumn}>
+                <div>
+                  <input
+                    {...register('scountry')}
+                    id='scountry'
+                    placeholder='Country'
+                  />
+                </div>
+              </div>
+            </div>
 
             <div className={Styles.containerLR}>
-            <div>
-              <Button  className={Styles.rightmargi} onClick={closeModal}>Cancel</Button>
-              <Button>Make inactive</Button>
-            </div>              
+              <div>
+                <Button className={Styles.rightmargi} onClick={closeModal}>
+                  Cancel
+                </Button>
+                <Button>Make inactive</Button>
+              </div>
               <Button type='submit'>Save</Button>
             </div>
           </form>
         </div>
       </Modal>
 
-      <TableContainer containerTitle={'Customer'} containerDesc={'Customer Information'}>
+      <TableContainer title={'Customer'} description={'Customer Information'}>
         <Table
           columns={columns}
           data={tableData}

@@ -11,7 +11,7 @@ const Invoice = (props) => {
       {
         Header: 'Invoice #',
         accessor: 'id', // accessor is the "key" in the data
-        thStyle: { width: '10%' },
+        thStyle: { width: '10%' }
       },
       {
         Header: 'Customer',
@@ -21,23 +21,23 @@ const Invoice = (props) => {
           <>
             <div>{row?.original?.name}</div>
           </>
-        ),
+        )
       },
       {
         Header: 'Billing Address',
         accessor: 'address',
-        thStyle: { width: '40%' },
+        thStyle: { width: '40%' }
       },
       {
         Header: 'Due Date',
         accessor: 'dueDate',
-        thStyle: { width: '10%' },
+        thStyle: { width: '10%' }
       },
       {
         Header: 'Total',
         accessor: 'total',
-        thStyle: { width: '10%' },
-      },
+        thStyle: { width: '10%' }
+      }
       // {
       //   Header: '',
       //   accessor: 'action',
@@ -80,11 +80,14 @@ const Invoice = (props) => {
         title={'Manage Invoices'}
         items={[
           { text: 'Workspace', to: '/dashboard' },
-          { text: 'Invoices', to: '/invoices' },
+          { text: 'Invoices', to: '/invoices' }
         ]}
       />
 
-      <TableContainer containerTitle={'Invoices'} containerDesc={'List of invoices created by members'}>
+      <TableContainer
+        title={'Invoices'}
+        buttonCaption={'Create Invoice'}
+        description={'List of invoices created by members'}>
         <Table
           columns={columns}
           data={tableData}
