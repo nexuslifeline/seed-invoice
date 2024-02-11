@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom';
 const Breadcrumb = ({ title, items }) => {
   return (
     <div className={Styles.container}>
-      <Text variant='title' size='xl'>
-        {title}
-      </Text>
-      <ul className={classNames(Styles.items, Styles.border)}>
+      {title && (
+        <Text variant='title' size='xl'>
+          {title}
+        </Text>
+      )}
+      <ul className={classNames(Styles.items, { [Styles.border]: !!title })}>
         {items.map(({ text, to }, idx) => (
           <li key={idx} className={Styles.item}>
             {to ? <Link to={to}>{text}</Link> : text}

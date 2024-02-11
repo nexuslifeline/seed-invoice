@@ -7,14 +7,15 @@ import Breadcrumb from '@components/Breadcrumb';
 import { useActiveOrganization } from '@shared/store/activeOrganization';
 import { useCategoriesQuery } from '@shared/query/categories';
 
-const Category = (props) => {
+const Category = () => {
+  const [search, setSearch] = useState('');
   const [pageCount, setPageCount] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const { activeOrganization } = useActiveOrganization();
   const { categories, meta, isLoading } = useCategoriesQuery(
     activeOrganization?.uuid,
     {
-      params: { page: currentPage }
+      params: { page: currentPage, search }
     }
   );
 
@@ -43,7 +44,6 @@ const Category = (props) => {
   );
 
   const handlePageChange = ({ selected }) => {
-    console.log('selected', selected);
     setCurrentPage(selected + 1);
   };
 
@@ -54,7 +54,6 @@ const Category = (props) => {
   return (
     <ContentView>
       <Breadcrumb
-        title={'Manage Categories'}
         items={[
           { text: 'Workspace', to: '/dashboard' },
           { text: 'Categories', to: '/categories' }
@@ -63,16 +62,15 @@ const Category = (props) => {
 
       <TableContainer
         title={'Categories'}
-        buttonCaption={'Create Category'}
         description={
           'Manage your product categories seamlessly for better inventory control.'
-        }>
+        }
+        onSearch={setSearch}
+        buttonCaption={'New Category'}>
         <Table
-          columns={columns}
           data={categories || []}
           onPageChange={handlePageChange}
-          pageCount={pageCount}
-          isLoading={isLoading}
+          {...{ pageCount, isLoading, columns }}
         />
       </TableContainer>
     </ContentView>

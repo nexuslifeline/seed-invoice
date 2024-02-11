@@ -14,10 +14,20 @@
   padding: 25px 20px;
 }
 
+.actionContainer {
+  display: flex;
+  padding: 0 20px;
+}
+
 .titleContainer {
   flex: 1;
 }
 
 .body {
   padding: 20px;
+}
+
+.btn {
+  min-width: 160px;
+  margin-left: 20px;
 }
