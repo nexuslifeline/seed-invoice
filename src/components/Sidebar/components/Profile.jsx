@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import ProfilePhoto from '@components/ProfilePhoto';
-import useAuthStore from '@store/auth';
+import { useAuthStore } from '@store/auth';
 import Text from '@components/Text';
 import Button from '@components/Button';
 import Menu from '@components/Menu';

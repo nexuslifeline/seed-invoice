@@ -13,7 +13,7 @@ import IconGoogle from '@components/Icons/Google';
 import Welcome from '@components/Sections/Welcome';
 import Form from '@components/Form';
 import useAuthMutation from '@query/auth';
-import useAuthStore from '@store/auth';
+import { useAuthStore } from '@store/auth';
 import Token from '@lib/token';
 
 import Styles from './Login.module.scss';
