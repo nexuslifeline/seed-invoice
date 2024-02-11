@@ -25,6 +25,7 @@
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.49.3",
     "react-inlinesvg": "^4.1.0",
+    "react-paginate": "^8.2.0",
     "react-router-dom": "^6.21.3",
     "react-select": "^5.8.0",
     "react-table": "^7.8.0",
