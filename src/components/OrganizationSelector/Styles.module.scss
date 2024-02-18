@@ -1,0 +1,61 @@
+@import 'src/shared/styles/variables.scss';
+
+.selectContainer {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 15px;
+  width: auto !important;
+  min-width: 200px !important;
+  box-shadow: none !important;
+  border: 0 !important;
+
+  .orgSelect {
+    :global {
+      .icon-select__control {
+        border: 0;
+        padding: 0;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      .icon-select__control--is-focused,
+      .icon-select__control--menu-is-open {
+        box-shadow: none !important;
+        border: 0 !important;
+      }
+
+      .icon-select__single-value,
+      .icon-select__placeholder {
+        text-align: right;
+        padding-right: 10px;
+      }
+
+      .icon-select__value-container {
+        display: flex;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.selectedItem,
+.optionItem {
+  display: flex;
+  align-items: center;
+}
+
+.optionItem {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-bottom: 1px solid $gray-10;
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.optionName {
+  margin-left: 5px;
+}
